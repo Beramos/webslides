@@ -55,7 +55,7 @@
         <style>
             
             #highTitle.slide {
-                padding:20px 50px 0 !important;
+                padding:20px 100px 0 !important;
             }
         </style>
     </section>
@@ -69,11 +69,33 @@
 		<h2>Problem?</h2>
         <img src="pictures/faultySnappy.png" alt="" class="cover">
         <p style="position:absolute;bottom:10px; font-size:30px;"><b>Origin:</b> non-closed .stl file </p>
-    </section>
+    </section>    
     
     <section class="slide" id="highTitle">
-		<h2>Problem?</h2>
+		<h2>SurfaceCheck</h2>
+        <pre>
+            <code> >> surfaceCheck foo.stl </code>
+        </pre>
+        <h3> <b>Output:</b> </h3>
+        <pre>
+            <code id="lot"> <mark class="important"> Surface is not closed </mark> since not all edges connected to two faces:  </code>
+            <code id="lot">      connected to one face : 228 </code>
+            <code id="lot">      connected to >2 faces : 2 </code>
+            <code id="lot"> Conflicting face labels:234</code>
+            <code id="lot"> Dumping conflicting face labels to "problemFaces"</code>
+            <code id="lot"> Paste this into the input for surfaceSubset</code>
+        </pre>
+        <style>
+             code {
+                font-size: 20px !important;
+            }
+        </style>
+        
+    </section>
+    <section class="slide" id="highTitle">
+		<h2>SurfaceSubset: visualising the problem </h2>
         <img src="pictures/faultySnappy.png" alt="" class="cover">
+        <p style="position:absolute;bottom:10px; font-size:30px;"><b>Origin:</b> non-closed .stl file </p>
     </section>
 
 	<!--
