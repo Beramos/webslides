@@ -89,13 +89,26 @@
              code {
                 font-size: 20px !important;
             }
-        </style>
-        
+        </style>        
     </section>
+    
     <section class="slide" id="highTitle">
 		<h2>SurfaceSubset: visualising the problem </h2>
-        <img src="pictures/faultySnappy.png" alt="" class="cover">
-        <p style="position:absolute;bottom:10px; font-size:30px;"><b>Origin:</b> non-closed .stl file </p>
+        <p> Write subset of the triSurface <span style="color:Grey;">(foo.stl)</span> to separate .stl <span style="color:Grey;">(problemFaces.stl)</span> </p>
+        <p style="margin-bottom:1px;"><b>Requirements:</b></p>
+        <ol>
+            <li>surfaceSubsetDict</li>
+            <li>reference zone/surface</li>
+            <li>output of surfaceCheck (problemFaces)</li>
+        </ol>
+        <p> Examples can be found <a href="https://github.ugent.be/brdjaegh/PhD/tree/master/OpenFOAM/SurfaceDiagnosis"> here</a> </p>
+        <pre>
+            <code> >> surfaceSubset SubsetDict foo.stl problemFaces.stl  </code>
+        </pre>
+    </section>
+
+    <section class="slide" id="highTitle">
+		
     </section>
 
 	<!--
