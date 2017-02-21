@@ -51,7 +51,8 @@
 	
     </section>
 	<section class="slide" id="highTitle">
-		<h2>Problem?</h2>
+		<h2>Problem</h2>
+        <p><b>Geometry .stl</b></p>
         <img src="pictures/waterTowerSTL.png" alt="" class="cover">
         <style>
             
@@ -62,12 +63,14 @@
     </section>
     
     <section class="slide" id="highTitle">
-		<h2>Problem?</h2>
+		<h2>Problem</h2>
+        <p><b>You want this:</b></p>
         <img src="pictures/snappyGeometry.png" alt="" class="cover" style="padding-top:0px;">
     </section>
     
     <section class="slide" id="highTitle">
-		<h2>Problem?</h2>
+		<h2>Problem</h2>
+        <p><b>But you get this:</b></p>
         <img src="pictures/faultySnappy.png" alt="" class="cover">
         <p style="position:absolute;bottom:10px; font-size:30px;"><b>Origin:</b> non-closed .stl file </p>
     </section>    
@@ -86,13 +89,7 @@
             <code id="lot"> Dumping conflicting face labels to "problemFaces"</code>
             <code id="lot"> Paste this into the input for surfaceSubset</code>
         </pre>
-        <style>    <section class="slide" id="highTitle">
-		<h2>SurfaceSubset: visualising the problem </h2>
-        <img src="pictures/waterTowerSTLZoom.png" alt="" class="cover" style="margin-top:10px;width:700px;">
-       <!-- <script src="https://embed.github.com/view/3d/Beramos/webSlides/master/STL-OpenFOAM/pictures/towerProblem.stl"></script> -->    
-        <p style="position:absolute;bottom:10px"><b>Edges connected to one face</b></p>
-    </section>
-
+        <style>   
              code {
                 font-size: 20px !important;
              }
@@ -157,6 +154,24 @@
         <div class="sketchfab-embed-wrapper" align="center">
            <iframe align="middle" width="540" height="331" src="https://sketchfab.com/models/5f49f9bf080346289f06e9b8a64cfe36/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
         </div>      
+    </section>
+    
+    <section class="slide" id="highTitle">
+		<h2>The solution </h2>
+        <pre>
+            <code> >> surfaceCheck newFoo.stl </code>
+        </pre>
+        <h3> <b>Output:</b> </h3>
+        <pre>
+            <code id="lot"> <mark class="important"> Surface is closed </mark> All edges connected to two faces. </code>
+            <code id="lot"> Number of unconnected parts : 1 </code>
+        </pre>
+        <h2>Final notes</h2>
+        <ol>
+            <li>STL repairing software tools</li>
+            <li>OpenFOAM utility?</li>
+            <li>According to CFDOnline: <i>"Voorkomen is beter dan genezen", <span style="color:grey;"> "a stitch in time saves nine"</span> </i></li>
+        </ol>  
     </section>
         
 	<div class="progress"></div>
