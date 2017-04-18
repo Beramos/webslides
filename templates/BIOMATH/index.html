@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>SnappyHexMesh: non-closed surfaces</title>
+	<title>The title of you presentation</title>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,13 +10,22 @@
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>SnappyHexMesh: non-closed surfaces</h1>
-		<p>Bram De Jaegher</p>
+		<h1>The title of you presentation</h1>
+		<p>Your name</p>
 	</header>
 	<section class="slide" id="cover">
-		<h2>SnappyHexMesh: non-closed surfaces</h2>
-		<img src="pictures/snappyGeometry.png" alt="" class="cover">
-		<!--
+        <div id="coverHeader">  
+		  <img src="shower/themes/UGentBIOMATH/images/logo_UGent_EN.eps" alt="logoUGent" id="logoUGent">
+        
+        
+        </div>
+		<h2>The title of you presentation</h2>
+        <p id="name">Your name</p>
+        <p id="additionalInformation">Additional information</p>
+        <img src="pictures/snappyGeometry.png" alt="" id="logoFaculty">
+        <img src="pictures/snappyGeometry.png" alt="" id="logoBiomath">
+		
+        <!--
 			To apply styles to the certain slides
 			set slide ID to get needed elements
 			-->
@@ -24,6 +33,10 @@
             
             #cover.slide {
                 padding:0px 50px 0 !important;
+            }
+            
+            #cover div {
+                height: 25%;
             }
             
             #cover img {
@@ -34,12 +47,12 @@
 			#cover h2 {
 				margin:30px 0 0;
 				color:#585A5E;
-				text-align:center;
+				text-align:left;
 				font-size:60px;
 				}
 			#cover p {
 				margin:10px 0 0;
-				text-align:center;
+				text-align:left;
 				color:##1C1C1F;
 				font-style:italic;
 				font-size:20px;
