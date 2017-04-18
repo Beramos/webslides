@@ -15,15 +15,16 @@
 	</header>
 	<section class="slide" id="cover">
         <div id="coverHeader">  
-		  <img src="shower/themes/UGentBIOMATH/images/logo_UGent_EN.eps" alt="logoUGent" id="logoUGent">
-        
-        
+            <img src="shower/themes/UGentBIOMATH/images/logo_UGent_EN_RGB_2400_color.png" alt="logoUGent" id="logoUGent">
+            <img src="shower/themes/UGentBIOMATH/images/icon_UGent_BW_EN_RGB_2400_color.png" alt="logoFaculty" id="logoFaculty">
+                
         </div>
 		<h2>The title of you presentation</h2>
         <p id="name">Your name</p>
         <p id="additionalInformation">Additional information</p>
-        <img src="pictures/snappyGeometry.png" alt="" id="logoFaculty">
-        <img src="pictures/snappyGeometry.png" alt="" id="logoBiomath">
+        <div id="coverFooter"> 
+            <img src="shower/themes/UGentBIOMATH/images/logoBiomath.png" alt="logoBiomath" id="logoBiomath">
+        </div>  
 		
         <!--
 			To apply styles to the certain slides
@@ -39,10 +40,35 @@
                 height: 25%;
             }
             
-            #cover img {
-                padding-top: 70px;
-                padding-left: 100px;
+            #cover div img {
+                margin: auto;
+                display: inline-block;
             }
+            
+            #coverFooter {
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+            
+            #logoUGent {
+                vertical-align: middle;
+                height: 100%;
+                padding-top: 20px;
+                padding-left: 20px;
+            }
+            
+            #logoFaculty {
+                vertical-align: middle;
+                margin-right: auto;
+                height: 50%;
+                padding: 0px 40px 10px 200px;
+            }
+            
+            #logoBiomath {
+                height: 50%;
+            }
+            
             
 			#cover h2 {
 				margin:30px 0 0;
