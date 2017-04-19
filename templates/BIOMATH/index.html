@@ -16,8 +16,7 @@
 	<section class="slide" id="cover">
         <div id="coverHeader">  
             <img src="shower/themes/UGentBIOMATH/images/logo_UGent_EN_RGB_color.svg" alt="logoUGent" id="logoUGent">
-            <img src="shower/themes/UGentBIOMATH/images/icon_UGent_BW_EN_RGB_color.svg" alt="logoFaculty" id="logoFaculty">
-                
+            <img src="shower/themes/UGentBIOMATH/images/icon_UGent_BW_EN_RGB_color.svg" alt="logoFaculty" id="logoFaculty">    
         </div>
 		<h2>The title of you presentation</h2>
         <p id="name">Your name</p>
@@ -38,6 +37,10 @@
                 padding:0px 50px 0 !important;
             }
             
+            #cover h2, #cover #name, #cover #additionalInformation {
+                color: #164b79;
+            }
+            
             #cover div {
                 height: 25%;
             }
@@ -51,9 +54,6 @@
                 position: fixed;
                 bottom: 0;
                 width: 100%;
-            }
-            
-            #coverFooter {
                 font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
                 font-style: normal;
                 font-variant: normal;
@@ -95,20 +95,9 @@
             
 			#cover h2 {
 				margin:30px 0 0;
-				color:#585A5E;
 				text-align:left;
 				font-size:60px;
 				}
-			#cover #name, #cover #additionalInformation  {
-				margin:10px 0 0;
-				text-align:left;
-				color:##1C1C1F;
-				font-style:italic;
-				font-size:20px;
-				}
-            #cover p a {
-                color:#FFF;
-                }
 		</style>
 	
     </section>
