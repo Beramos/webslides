@@ -102,19 +102,52 @@
             
             #logoBiomath {
                 height: 40%;
-            }
-            
+            }       
 		</style>
 	
     </section>
-	<section class="slide" id="highTitle">
-		<h2>Problem</h2>
-        <p><b>Geometry .stl</b></p>
-        <img src="pictures/waterTowerSTL.png" alt="" class="cover">
-        <style>
+	<section class="slide section" id="section1">
+        <div class="sectionHeader">  
+            <h2>Title of the first slide...</h2>
+        </div>        
+        <ul>
+            <li> Enough whitespace to do what you want </li>
+            <li> The colours are according to the house style - blue
+                <ul>
+                    <li> <span class="yellow"> and yellow </span> </li>
+                </ul> 
             
-            #highTitle.slide {
-                padding:20px 100px 0 !important;
+            </li>
+            <li> Font is <span style="font-style:italic;"> UGent Panno Text </span> </li>
+            <li> Adding slide number is optional </li>
+        </ul>
+
+        <style>
+            .sectionHeader {
+                margin-bottom: 20px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 15%;
+                width: 100%;
+                z-index: 1;
+                background-color: #1E64C8;
+                vertical-align: middle;
+            }
+            
+            .sectionHeader h2 {
+                margin-bottom: 0px;
+                color: #FFFFFF;
+                padding-left: 20px;
+                padding-top: 20px;
+            }
+            
+            .slide ul {
+                font-size: 32px;
+            }
+            
+            .yellow {
+                color: #FFD200;
             }
         </style>
     </section>
