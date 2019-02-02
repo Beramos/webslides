@@ -50,3 +50,8 @@ code {
 ol >li > ul > li {
     font-size: 14px;
 }
+
+.center img {
+    display: block;
+    margin: auto;
+}

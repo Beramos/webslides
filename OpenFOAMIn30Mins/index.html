@@ -19,75 +19,80 @@
 </head>
 <body class="shower list">
 	<header class="caption">
-		<h1>OpenFOAM tricks &amp; tips: <span style="color:darkslategrey;font-size:36px;">Debugging and VSCode intellisense</span> </h1>
+		<h1> A taste of OpenFOAM <span style="color:darkslategrey;font-size:36px;"></span> </h1>
 		<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
 	</header>
 	<section class="slide" id="cover">
-        <h2 style="margin-bottom: 10px;">OpenFOAM tricks &amp; tips:</h2>
-        <h2 s><span style="font-size:36px;margin-left: 10px;">Debugging and VSCode intellisense</span></h2>
-		<img style="top: 400px;" width="60%" src="figs/debugger.png" alt="" class="cover">
+        <h2 style="margin-bottom: 10px;">A taste of OpenFOAM:</h2>
+        <h2 s><span style="font-size:36px;margin-left: 10px;">a 30' guided tour</span></h2>
 		<!--
 			To apply styles to the certain slides
 			set slide ID to get needed elements
         -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/b6wfODEp0VE?start=13" frameborder="0" allow="autoplay"></iframe>
     </section>
     
-    
-    <section class="slide  highTitle" id="whyDebug">
-		<h2>Motivation</h2>
-        <p> OpenFOAM is compiled for maximal performance <span style="color:gray;"> (default)</span> </p>
-        
-        <p style="margin-bottom: 0px;">Floating point error<span style="color:gray;"> (e.g. division by zero)</span>:</p>
-        <pre>
-            <code> Foam::error::printStack(Foam::Ostream&) at <mark>??:? </mark></code>
-            <code> Foam::sigFpe::sigHandler(int) at <mark>??:? </mark></code>
-            <code> ? in "/lib/x86_64-linux-gnu/libc.so.6" </code>
-		</pre>
-        
-        <p style="margin-bottom: 0px;">OpenFOAM compiled with debug modus <span style="color: grey;">(poor performance)</span>:</p>
-        <pre>
-            <code> Program received signal SIGFPE, Arithmetic exception. </code>
-            <code> 0x00007ffff6668e5f in <mark>Foam::divide</mark> &lt;double&gt; (res=..., f1=..., </code>
-            <code> at <mark> /home/bram/openfoam4_debug/src/OpenFOAM/lnInclude/FieldFunctions.C:631/ </mark> </code>
-            <code>631 BINARY_TYPE_OPERATOR_FS(Type, Type, scalar, /, divide)</code>
-		</pre>
-        <p><span style="color: black">Notice: specific error info, file location, # line, etc. </span></p>
+    <section class="slide  highTitle" id="what">
+        <h2>OpenFOAM</h2>
+        <img  style="position: absolute; bottom: -20px; right: 40px;" src="figs/openfoam.png" width="30%">
+        <p>Open-source CFD toolbox </p>
     </section> 
     
-    <section class="slide highTitle">
-        <div style="position: absolute; left: 40px;top: 100px;">
-            <p><b>Without debug version: </b></p>
-            <div class="wrapper" style="">
-                <img src="http://mnsales.com/wp-content/uploads/2015/02/Dollarphotoclub_64802661.jpg" width="50%" class="center">
-            </div>
-        </div>
-        <div style="position: absolute; right: 80px;top: 100px;">
-            <p><b> With debug version: </b></p>
-            <div class="wrapper" style="padding-top: 40px;">
-                <img src="https://wutcode.files.wordpress.com/2013/12/31804326.jpg?w=284&h=284" width="100%" class="center">
-            </div>
-        </div>
-    </section> 
-    
-    <section class="slide highTitle">
-        <h2>Debugging in OpenFOAM</h2>
-        <!-- Ok, I showed how to get better error traces, but how do I use this to debug -->
-        <ul>
-            <li>Recompile OpenFOAM with debug modus</li>
-            <li>Install GDB, the GNU debugger </li>
-            <li>An OpenFOAM extension is available: <a href="https://openfoamwiki.net/images/1/18/GdbOF-Manual.pdf">GDBOF</a></li>
+    <section class="slide  highTitle" id="what">
+        <h2>OpenFOAM</h2>
+        <img  style="position: absolute; bottom: -20px; right: 40px;" src="figs/openfoam.png" width="30%">
+        <p>Open-source toolbox for solving partial differential equations </p>
+        <ul> 
+            <li><b>Fluid flow:</b>
+                <ul>
+                    <li>Turbulent</li>
+                    <li>Reactive</li>
+                    <li>Multiphase</li>
+                </ul>
+            </li> 
         </ul>
-        
-        <p class="next"><span class="redAlert">Warning:</span> <b>Live session incoming!</b></p>
-        <p style="margin-top: 60px;" class="next"> GDB is really useful when developing OpenFOAM applications, not only for <b>debugging</b> but also as <b>sandbox</b>.</p>
-        <style>
-            .redAlert{
-                background: #c00;
-                color: #fff;
-            }
-        </style>
+        <ul>
+            <li><b>Heat transfer</b></li>
+            <li><b>Combustion</b></li>
+            <li><b>...</b></li>
+        </ul>
     </section> 
-        
+    
+    <section class="slide  highTitle" id="examples">
+        <h2>Some examples</h2>
+        <ul>
+            <li>Electrochemistry</li>
+            <li>Bioreactors</li>
+            <li>Iets in de trens van anita's stuff</li>
+        </ul>
+    </section> 
+    
+    <section class="slide  highTitle" id="examples">
+        <h2>OpenFOAM cooking book</h2>
+        <p style="color: grey;font-size: 26px;margin-top:-20px;"><i>Ingredients of a CFD simulation</i></p>
+        <ul>
+            <li>Equations <span style="color:grey;">(application)</span></li>
+            <li>Boundary conditions</li>
+            <li>Domain discretisation <span style="color:grey;">(mesh)</span> </li>
+            <li>Equation discretisation</li>
+            <li>Solvers</li>
+            <li>Post-processing</li>
+        </ul>
+    </section> 
+    
+    <section class="slide  highTitle" id="examples">
+        <h2>Live seshion</h2>
+        <p style="color: grey;font-size: 26px;margin-top:-20px;"><i>Less talking, more showing</i></p>
+        <div class="center">
+            <img src="figs/dam.png" width="60%">
+        </div>
+    </section> 
+    
+    <section class="slide  highTitle" id="examples">
+        <h2>Some closing remarks</h2>
+        <p style="color: grey;font-size: 26px;margin-top:-20px;"><i>pros and cons</i></p>
+    </section> 
+    
     <section class="slide highTitle">
         <h2>References</h2>
         <ul>
@@ -95,31 +100,6 @@
             <li><a href="http://www.cimec.org.ar/ojs/index.php/mc/article/viewFile/3244/3167">GDBOF: A debugging tool for OpenFOAM </a></li>
             <li><a href="http://www.tfd.chalmers.se/~hani/kurser/OS_CFD_2007/FabianPengKarrholm/gdbfoam.pdf">GDB and OpenFOAM - a quick summary</a></li>
             <li><a href="https://stackoverflow.com"> Stack overflow</a></li>
-        </ul>
-    </section> 
-    
-    <section class="slide highTitle">
-        <h2>VSCode</h2>
-        <img  style="position: absolute; top:30px; right: 100px;" src="https://mobilemancerblog.blob.core.windows.net/blog/2016/08/VSCode.png" width="20%">
-        <ul>
-            <li> Microsoft </li>
-            <li> Free, Open Source <span style="color:grey;">(Windows, Linux, IOS)</span> </li>
-            <li> Like Atom, but <b>lightweight</b> and <b>more active community</b></li>
-        </ul>
-        <div class="next">
-            <p style="margin-bottom: 0px;"><b>Intellisense:</b></p>
-            <p style="position: relative;left: 20px;">Smart code completion based on variable types, function definitions and imported modules.  <b>Reads all OpenFOAM classes, functions, templates. </b></p>
-        </div>
-    </section> 
-        
-    <section class="slide highTitle">
-        <h2>VSCode</h2>
-        <img  style="position: absolute; top:30px; right: 100px;" src="https://mobilemancerblog.blob.core.windows.net/blog/2016/08/VSCode.png" width="20%">
-        <p><b>I don't program in OpenFOAM, why is this useful? </b></p>
-        <ul>
-            <li>Easy and fast navigation to the implementation of solvers, boundary conditions, etc.</li>
-            <li>Great git diff tool</li>
-            <li>...</li>
         </ul>
     </section> 
 
