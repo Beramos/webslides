@@ -55,3 +55,12 @@ ol >li > ul > li {
     display: block;
     margin: auto;
 }
+
+.row {
+    width: 100%;
+}
+
+.col {
+    height: 100%;
+    position: relative;
+}
