@@ -78,3 +78,7 @@ h2.fork:after{
     background-size: contain;
     left:10px;
 }
+
+.badge a {
+    background: rgba(130, 0, 0, 255);
+}
