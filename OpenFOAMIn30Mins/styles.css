@@ -67,3 +67,14 @@ ol >li > ul > li {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
+
+h2.fork:after{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: url("figs/knifeFork.svg") no-repeat fixed;
+    position: relative;
+    display: inline-block;
+    background-size: contain;
+    left:10px;
+}
