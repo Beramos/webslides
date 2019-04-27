@@ -62,3 +62,12 @@ img.centerFill{
     font-family: 'AnimalesFantastic';
     src: url("fonts/AnimalesFantastic.otf") format("opentype");
 }
+
+a.ref {
+    font-size:20px;
+    color: grey;
+    text-decoration-style: dotted;
+    position: absolute;
+    bottom: 20px;
+    left:100px;
+}

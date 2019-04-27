@@ -16,7 +16,6 @@
 	</script>
 	<script type="text/javascript" async src="../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-
 	<body class="shower list">
 		<header class="caption">
 			<h1>Fantastic methods and where to find them: <span style="color:darkslategrey;font-size:36px;">Automatic Differentiation</span> </h1>
@@ -78,7 +77,7 @@
 			</div>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="algoDiff">
 			<h2>Derivatives</h2>
 			<div class="container" style="width:80%;height:80%;">
 				<div style="width:50%;height: 80%; border-right: solid 2px darkgray">
@@ -92,9 +91,10 @@
 					<img class="next" src="figs/backProp.png" width="200%" style="margin: 0 auto;">
 				</div>
 			</div>
+			<a class="ref" href="https://arxiv.org/abs/1502.05767">Source: Günes A, et al. (2018)</a>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="Symbolic">
 			<h2>Symbolic differentiation</h2>
 			<ul>
 				<li style="color: green">Accuracy <span style="color: grey">(machine precision)</span></li>
@@ -105,14 +105,14 @@
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="numeric1">
 			<h2>Numeric differentiation</h2>
 			<ul>
 				<li style="color: green">Simple </li>
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="numeric2">
 			<h2>Numeric differentiation</h2>
 			<ul>
 				<li style="color: green">Simple </li>
@@ -120,7 +120,7 @@
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="numeric3">
 			<h2>Numeric differentiation</h2>
 			<ul>
 				<li style="color: green">Simple </li>
@@ -128,9 +128,10 @@
 				<li style="color: crimson">Round-off &amp; truncation error </li>
 				<img class="next centerFill" src="figs/error.png">
 			</ul>
+			<a class="ref" href="https://arxiv.org/abs/1502.05767">Source: Günes A, et al. (2018)</a>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="numeric4">
 			<h2>Numeric differentiation</h2>
 			<ul>
 				<li style="color: green">Simple </li>
@@ -140,7 +141,7 @@
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="AD1">
 			<h2>Automatic differentiation (AD)</h2>
 			<ul>
 				<li style="color: green">Accuracy <span style="color: grey">(machine precision)</span></li>
@@ -150,7 +151,7 @@
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="workingPrinc1">
 			<h2>Working principle (AD)</h2>
 			<ul>
 				<p>$$ y = f(x_1,x_2) = ln(x_1) + x_1\,x_2 - sin(x_2) $$</p>
@@ -159,7 +160,7 @@
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="workingPrinc2">
 			<h2>Working principle (AD)</h2>
 			<ul>
 				<p>$$ y = f(x_1,x_2) = ln(x_1) + x_1\,x_2 - sin(x_2) $$</p>
@@ -169,7 +170,7 @@
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="workingPrinc3">
 			<h2>Working principle (AD)</h2>
 			<ul>
 				<p>Function evaluation using <b>dual numbers</b>, ($v + v'\, \epsilon$)</p>
@@ -183,7 +184,7 @@
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="types3">
 			<h2>Types of AD</h2>
 			<p>$$ f\, : \,{\rm I\!R}^n \rightarrow {\rm I\!R}^m$$</p>
 			<ul>
@@ -192,7 +193,7 @@
 			</ul>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="examples1">
 			<h2>Examples</h2>
 			<p>Calibration of 1D-diffusion equation</p>
 			<p$$\frac{\partial u}{\partial t}= \nu \frac{\partial^2 u}{\partial x^2}$$</p>
@@ -206,14 +207,14 @@
 			<img src="figs/benchMark.png" style="width: 85%;">
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="examples2">
 			<h2>Examples</h2>
 			<p>Calibration of my ED model <span style="color: grey">(next seminar)</span></p>
 			<img src="figs/EDModel.png" class="centerFill" style="width:50%">
 			<p class="next"><b>Six-times speed up!</b></p>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="oppo">
 			<h2>Opportunities</h2>
 			<ul>
 				<li>Fast calibration</li>
@@ -224,15 +225,15 @@
 			</ul>
 		</section>
 		
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="NODE">
 			<h2>Neural ODEs</h2>
 			<p><b>WIP</b></p>
 	    </section>
 
-		<section class="slide  highTitle" id="whyDebug">
+		<section class="slide  highTitle" id="refs">
 			<h2>References</h2>
 			<ol>
-				<li><a href="https://arxiv.org/abs/1502.05767">Günes A, et al. Automatic Differentiation in Machine Learning: a Survey</a></li>
+				<li><a href="https://arxiv.org/abs/1502.05767">Günes A, et al. (2018) Automatic Differentiation in Machine Learning: a Survey</a></li>
 				<li><a href="http://www.juliadiff.org/">JuliaDiff</a></li>
 				<li><a href="https://julialang.org/blog/2019/01/fluxdiffeq">DiffEqFlux.jl – A Julia Library for Neural Differential Equations</a></li>
 				<li><a href="https://fluxml.ai/2019/03/05/dp-vs-rl.html">Reinforcement Learning vs. Differentiable Programming</a></li>
