@@ -1,0 +1,246 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Fantastic methods and where to find them: Automatic Differentiation</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+	<body class="shower list">
+		<header class="caption">
+			<h1>Fantastic methods and where to find them: <span style="color:darkslategrey;font-size:36px;">Automatic Differentiation</span> </h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+		<section class="slide" id="cover">
+	        <h2 style="margin-bottom: 10px;font-family: 'AnimalesFantastic',serif;font-size: 30px;color: black">Fantastic methods and where to find them: </h2>
+	        <h2 s><span style="font-size:20px;margin-left: 10px;font-family: 'AnimalesFantastic',serif;">Automatic Differentiation</span></h2>
+			<img style="top: 400px;margin-left:100px;" width="60%" src="figs/deriffler.png" alt="" class="cover">
+			<p style="position: absolute; bottom: 20px; font-size: 20px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Derivatives</h2>
+			<div style="height: 60%;position: relative;">
+				<img src="figs/tangent.png" class="centerFill">
+			</div>
+	    </section>
+
+		<section class="slide  highTitle" id="quiz">
+			<h2>Derivatives</h2>
+			<p>$$\frac{d}{dx}(log(x))$$</p>
+			<div class="lijntje" style="width:80%;border-bottom: solid 2px darkgrey;margin: 0 auto;margin-bottom:40px;"></div>
+			<p>How many methods for taking derivatives by means of a computer?</p>
+			<img src="figs/question.png" class="centerFill"s>
+			<p><b>(WIP)</b></p>
+	    </section>
+
+		<section class="slide  highTitle" id="types1">
+			<h2>Derivatives</h2>
+			<div class="container" style="width:80%;height:80%;">
+				<div style="width:50%;height: 80%; border-right: solid 2px darkgray">
+					<ul>
+						<li><b>Symbolic differentiation</b></li>
+					</ul>
+				</div>
+				<div style="width:40%">
+					<img class="next" src="figs/symbolic.png" width="200%">
+				</div>
+			</div>
+	    </section>
+
+		<section class="slide  highTitle" id="types2">
+			<h2>Derivatives</h2>
+			<div class="container" style="width:80%;height:80%;">
+				<div style="width:50%;height: 80%; border-right: solid 2px darkgray">
+					<ul>
+						<li>Symbolic differentiation</li>
+						<li><b>Numerical differentiation</b></li>
+					</ul>
+				</div>
+				<div style="width:40%">
+					<p class="next">$$\frac{\partial f(x)}{\partial x} \approx \frac{f(x+\epsilon)-f(x)}{\epsilon}$$</p>
+				</div>
+			</div>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Derivatives</h2>
+			<div class="container" style="width:80%;height:80%;">
+				<div style="width:50%;height: 80%; border-right: solid 2px darkgray">
+					<ul>						
+						<li>Symbolic differentiation</li>
+						<li>Numerical differentiation</li>
+						<li><b>Algorithmic differentiation <span style="color: grey">(automatic diff.)</span></b></li>
+					</ul>
+				</div>
+				<div style="width:40%">
+					<img class="next" src="figs/backProp.png" width="200%" style="margin: 0 auto;">
+				</div>
+			</div>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Symbolic differentiation</h2>
+			<ul>
+				<li style="color: green">Accuracy <span style="color: grey">(machine precision)</span></li>
+				<li class="next" style="color: green">Analytic expression <span style="color: grey">(efficient)</span></li>
+				<li class="next" style="color: crimson">Complex expression <span style="color: grey">(expression swell)</span></li>
+				<li class="next" style="color: crimson">Closed-form expression of $f(x)$</li>
+				<li class="next" style="color: crimson">Control flow <span style="color: grey">(if, for, etc.)</span> </li>
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Numeric differentiation</h2>
+			<ul>
+				<li style="color: green">Simple </li>
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Numeric differentiation</h2>
+			<ul>
+				<li style="color: green">Simple </li>
+				<li style="color: green">Control flow <span style="color: grey">(if, for, etc.)</span></li>
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Numeric differentiation</h2>
+			<ul>
+				<li style="color: green">Simple </li>
+				<li style="color: green">Control flow <span style="color: grey">(if, for, etc.)</span></li>
+				<li style="color: crimson">Round-off &amp; truncation error </li>
+				<img class="next centerFill" src="figs/error.png">
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Numeric differentiation</h2>
+			<ul>
+				<li style="color: green">Simple </li>
+				<li style="color: green">Control flow <span style="color: grey">(if, for, etc.)</span></li>
+				<li style="color: crimson">Round-off &amp; truncation error </li>
+				<li style="color: crimson"> Scales poorly <span style="color: grey">(multivariate, higher order, number of parameters)</span></li>
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Automatic differentiation (AD)</h2>
+			<ul>
+				<li style="color: green">Accuracy <span style="color: grey">(machine precision)</span></li>
+				<li class="next" style="color: green">Efficiency <span style="color: grey">(less function evaluations, ...)</span></li>
+				<li class="next" style="color: green">Control flow <span style="color: grey">(if, for, etc.)</span></li>
+				<li class="next" style="color: crimson"> Software dependencies</li>
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Working principle (AD)</h2>
+			<ul>
+				<p>$$ y = f(x_1,x_2) = ln(x_1) + x_1\,x_2 - sin(x_2) $$</p>
+				<p>Evaluate at (2, 5)</p>
+				<img src="figs/forwardPathEval.png" width="48%">
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Working principle (AD)</h2>
+			<ul>
+				<p>$$ y = f(x_1,x_2) = ln(x_1) + x_1\,x_2 - sin(x_2) $$</p>
+				<p>Evaluate at (2, 5) and compute $\frac{\partial y}{\partial x_1}$  </p>
+				<img src="figs/forwardGradientTrace.png" width="100%">
+				<p style="font-size: 20px;" class="next">$$\frac{\partial y(2,5)}{\partial x_1} = \frac{1}{x_1} + x_2 = 5.5 $$</p>
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Working principle (AD)</h2>
+			<ul>
+				<p>Function evaluation using <b>dual numbers</b>, ($v + v'\, \epsilon$)</p>
+				<p></p>
+				<p>$$(v + v'\, \epsilon) + (u + u'\, \epsilon) = (v + u) + (v' + u') \, \epsilon $$</p>
+				<p>$$(v + v'\, \epsilon) \, (u + u'\, \epsilon) = (v\,u) + (v\,u' + v'\,u) \, \epsilon $$</p>
+				<p>We enforce the following, <span style="color:grey"> (function definition)</span>,</p>
+				<p>$$f(v + v'\, \epsilon) = f(v) + f'(v)\,v'\, \epsilon $$</p>
+				<p>The chain rule emerges...</p>
+				<p>$$f(g(v + v'\, \epsilon)) = f(g(v)) + f'(g(v))\,g'(v)\,v'\, \epsilon $$</p>
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Types of AD</h2>
+			<p>$$ f\, : \,{\rm I\!R}^n \rightarrow {\rm I\!R}^m$$</p>
+			<ul>
+				<li>Foward differentiation <span style="color:grey">($m \gg n$)</span></li>
+				<li>Reverse differentiation <span style="color:grey">($n \gg n$)</span></li>
+			</ul>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Examples</h2>
+			<p>Calibration of 1D-diffusion equation</p>
+			<p$$\frac{\partial u}{\partial t}= \nu \frac{\partial^2 u}{\partial x^2}$$</p>
+			<img src="figs/diffusion.svg" class="centerFill">
+			<p class="next"> &rarr; <b>Live session!</b></p>
+	    </section>
+
+		<section class="slide  highTitle" id="bench1">
+			<h2>Examples</h2>
+			<p>Calibration of 1D-diffusion equation</p>
+			<img src="figs/benchMark.png" style="width: 85%;">
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Examples</h2>
+			<p>Calibration of my ED model <span style="color: grey">(next seminar)</span></p>
+			<img src="figs/EDModel.png" class="centerFill" style="width:50%">
+			<p class="next"><b>Six-times speed up!</b></p>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Opportunities</h2>
+			<ul>
+				<li>Fast calibration</li>
+				<li>Fast sensitivity analysis</li>
+				<li>Inclusion of ODE/PDE in neural networks</li>
+				<li>Neural ODEs</li>
+				<li>...</li>
+			</ul>
+		</section>
+		
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>Neural ODEs</h2>
+			<p><b>WIP</b></p>
+	    </section>
+
+		<section class="slide  highTitle" id="whyDebug">
+			<h2>References</h2>
+			<ol>
+				<li><a href="https://arxiv.org/abs/1502.05767">Günes A, et al. Automatic Differentiation in Machine Learning: a Survey</a></li>
+				<li><a href="http://www.juliadiff.org/">JuliaDiff</a></li>
+				<li><a href="https://julialang.org/blog/2019/01/fluxdiffeq">DiffEqFlux.jl – A Julia Library for Neural Differential Equations</a></li>
+				<li><a href="https://fluxml.ai/2019/03/05/dp-vs-rl.html">Reinforcement Learning vs. Differentiable Programming</a></li>
+			</ol>
+	    </section>
+
+	<div class="progress"></div>
+	<script src="../../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
