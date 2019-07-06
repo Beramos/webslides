@@ -1,0 +1,271 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> An advanced electrodialysis process model in the Julia ecosystem </title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">	<!--Syntax highlighting-->
+    <link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+	
+	<!--Syntax highlighting-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+
+	<body class="shower list">
+		<header class="caption">
+			<h1> An advanced electrodialysis process model in the Julia ecosystem </h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+		<section class="slide" id="cover1">
+					<h2> An advanced electrodialysis process model <br> in the Julia ecosystem  </h2>
+			<img style="top: 320px;right:2000px;" width="90%" src="figs/coverdrawing.svg" alt="" class="cover">					
+			<p style="position: absolute; bottom: 220px; font-size: 26px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a>, Ingmar Nopens</p>
+			<p style="margin-top:60px;"> JuliaCon 2019</p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="attentionPlease1">
+			<img src="figs/saltShaker.png" width="40%">
+		</section>
+			
+		<section class="slide  highTitle" id="attentionPlease2">
+			<img  style="z-index:20;position:fixed;top:230px;right:150px;" src="figs/handOfWater.png" width="70%">
+			<img style="z-index:40" src="figs/saltShaker.png" width="40%">
+		</section>
+
+		<section class="slide" id="cover2">
+			<h2> An advanced electrodialysis process model <br> in the Julia ecosystem  </h2>
+			<img style="top: 320px;right:2000px;" width="90%" src="figs/coverdrawing.svg" alt="" class="cover">
+			<p style="position: absolute; bottom: 220px; font-size: 26px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a>, Ingmar Nopens</p>
+			<p style="margin-top:60px;"> JuliaCon 2019</p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="ED">
+			<h2>Electrodialysis removes charged components from fluids</h2>
+			<img class="center" src="figs/ED-2.svg" width=45%>
+		</section>
+
+		<section class="slide  highTitle" id="ED">
+			<h2>Electrodialysis removes charged components from fluids</h2>
+			<img class="center" src="figs/ED-2New.svg" width=45%>
+		</section>
+
+		<section class="slide  highTitle" id="ED">
+			<h2>Electrodialysis removes charged components from fluids</h2>
+			<img class="center" src="figs/ED.svg" width=45%>
+		</section>
+
+		<section class="slide  highTitle" id="ED">
+			<h2>Some charged components are ennoying...</h2>
+			<img class="center" src="figs/EDFouled1.svg" width=45%>
+		</section>
+
+		<section class="slide  highTitle" id="ED">
+			<h2>Some charged components are ennoying...</h2>
+			<img class="center" src="figs/EDFouled2.svg" width=45%>
+		</section>
+
+		<section class="slide  highTitle" id="ED">
+			<h2>Some charged components are ennoying...</h2>
+			<img class="center" src="figs/EDFouled3.svg" width=45%>
+		</section>
+
+		<section class="slide  highTitle" id="ED">
+			<h2>Some charged components are ennoying...</h2>
+			<img class="center" src="figs/EDFouled4.svg" width=45%>
+		</section>
+<!--
+		<section class="slide  highTitle" id="howModel">
+			<p>How can we model this process?</p>
+		</section>
+		
+		<section class="slide  highTitle" id="whatEquat">
+			<h2> A balance between transport processes </h2>
+			<p>$$\cfrac{\partial c}{\partial t} = D\, \nabla \cdot \left( \nabla c + z\,c\,\nabla \varphi \right) - \nabla \cdot \left( c \, v \right)$$</p>
+			<div class="container">
+				<div class="item" style="width:25%">
+						<p>$$D \cfrac{\partial^2 c(x)}{\partial x^2} = v(x)\, \cfrac{\partial c(x)}{\partial y}\, ,$$</p>
+				</div>
+				<div class="item" style="width:15%">
+						<p>$$ \frac{dc(x)}{dx} = i\, \Bigr|_{x=L}\, , $$ </p>
+				</div>
+				<div class="item" style="width:25%">
+						<p>$$ v(x) = v_0 \left( 1 - \cfrac{x}{h}^2 \right)\, $$</p>
+				</div>
+			</div>
+			<p>Some equations & code</p>
+		</section>
+		
+		<section class="slide  highTitle" id="code1">
+			<h2> Following the DifferentialEquations.jl recipes </h2>
+			<div class="container">
+				<div class="item" style="width:30%">
+						<p>$$ v(x) = v_0 \left( 1 - \cfrac{x}{h}^2 \right)\, , $$</p>
+						<p>$$ \frac{dc(x)}{dx} = i\, \Bigr|_{x=L} $$ </p>
+						<p style="color:grey">$$D \cfrac{\partial^2 c(x)}{\partial x^2} = v\, \cfrac{\partial c(x)}{\partial y}\, ,$$</p>
+				</div>
+				<div class="item" style="width:65%;border-left: 1px solid grey;padding-left:20px;">
+					<pre> 
+							<code>using BandedMatrices
+v(x) = vAvg*(1-(x/h)^2); # parabolic flow
+dcdx(i) = i;           # boundary condition
+ 
+# Discretisation to linear system (A*x + u)
+A = BandedMatrix{Float64}(undef, (nx,nx), (1,1));
+A[band(0)] = [-2 .* v(xi)/D for xi in x];
+A[band(1)] = [1.0 .* v(xi)/D for xi in x[1:end-1]];
+A[band(-1)] = [1.0 .* v(xi)/D for xi in x[2:end]];
+...
+u = zeros(nx);
+u[end] = dcdx(i)*Δx;
+
+							</code>
+					</pre>
+				</div>
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="code1">
+			<h2> Following the DifferentialEquations.jl recipes </h2>
+			<div class="container">
+				<div class="item" style="width:30%">
+						<p style="color:grey">$$\cfrac{\partial c(x)}{\partial y} = \cfrac{D}{v(x)} \cfrac{\partial^2 c(x)}{\partial x^2} \, ,$$</p>
+				</div>
+				<div class="item" style="width:65%;border-left: 1px solid grey;padding-left:20px;">
+					<pre> 
+							<code>A = BandedMatrix{Float64}(undef, (nx,nx), (1,1));
+A[band(0)] = [-2 .* v(xi)/D for xi in x];
+A[band(1)] = [1.0 .* v(xi)/D for xi in x[1:end-1]];
+A[band(-1)] = [1.0 .* v(xi)/D for xi in x[2:end]];
+...
+u = zeros(nx);
+u[end] = dcdx(i)*Δx;
+
+dcdy(c,p,t) = A*c + u; # construct ODE
+prob = ODEProblem(dcdy, c0, (0, xend), []);
+cProfile = solve(prob,Rodas5());
+						</code>
+					</pre>
+				</div>
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="salty">
+			<p>A simulation</p>
+		</section>
+		-->
+
+		<section class="slide  highTitle" id="salty">
+			<h2>Modelling particle interactions is expensive</h2>
+			<img class="center" src="figs/EDFouled4.svg" width=45%>
+		</section>
+
+		<section class="slide  highTitle" id="salty">
+			<h2>Modelling particle interactions is expensive</h2>
+			<div class="container">
+					<div class="item" style="width:69%">
+							<img class="center" src="figs/EDFouled6.png" width=90%>
+					</div>
+					<div class="item next" style="width:39%;border-left: 1px solid grey;padding-left:20px;">
+						<p>$ F_{p,i} = \sum{F_{p,j}} + F_{mem} + F_d \\ + F_{am} + F_h + F_l + F_e ... $</p>
+					</div>
+			</div>
+			<p class="next" style="margin-top:30px;"> <b>&rarr; need for an efficient description!</b></p>
+		</section>
+
+		<section class="slide  highTitle" id="NeurODE1">
+			<h2>ODEs and Neural Networks made a baby...</h2>
+			<img class="center" src="figs/NeuralODEFoul-2.svg">
+			<!--<p> $$\cfrac{\mathrm{d}R}{\mathrm{d}t} = \mathrm{ANN}\left(R(t), V_{ext}\right)$$</p>-->
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODE2">
+			<h2>ODEs and Neural Networks made a baby...</h2>
+			<img class="center" src="figs/NeuralODEFoulPlusODE.svg">
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODE3">
+			<h2>ODEs and Neural Networks made a baby...</h2>
+			<img class="center" src="figs/NeuralODEFoulCombo.svg">
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODE4">
+			<h2>ODEs and Neural Networks made a baby...</h2>
+			<img class="center" src="figs/NeuralODEFoul-1.svg">
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODE5">
+			<h2>ODEs and Neural Networks made a baby...</h2>
+			<img class="center" src="figs/NeuralODEFoulGen.svg">
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODERes">
+			<h2> Electric resistance is indicator of fouling </h2>
+			<img class="center" src="figs/data.svg" width="70%">
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODERes">
+			<h2> Let's test this on a simple example... </h2>
+			<img class="center" src="figs/training.gif" width="70%">
+			<p> $$\cfrac{\mathrm{d}R(t)}{\mathrm{d}t} = \mathrm{ANN}\left(R(t), \, i, \, c_e, \, v\right)$$</p>
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODERes">
+			<h2> Taking it a bit further</h2>
+			<img class="center" src="figs/dataNonLog.svg" width="100%">
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODERes">
+			<h2> Taking it a bit further</h2>
+			<img class="center" src="figs/regularisedModel2NonLog.png" width="100%">
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODERes">
+			<h2> Validation</h2>
+			<img class="center" src="figs/trainingSet.png" width="100%">
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODERes">
+				<h2> Validation</h2>
+				<img class="center" src="figs/test.png" width="100%">
+			</section>
+			
+		<section class="slide  highTitle" id="salty">
+			<h2> Perspectives </h2>
+		</section>
+
+		<section class="slide" id="cover">
+			<h2> An advanced electrodialysis process model <br> in the Julia ecosystem  </h2>
+			<img style="top: 320px;right:2000px;" width="90%" src="figs/coverdrawing.svg" alt="" class="cover">					
+			<p style="position: absolute; bottom: 150px; font-size: 30px;"><a href="mailto:bram.dejaegher@ugent.be">Bram.DeJaegher@UGent.be</a></p>
+			<p> JuliaCon 2019</p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+		</section>
+	<div class="progress"></div>
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
