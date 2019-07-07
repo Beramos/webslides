@@ -229,6 +229,42 @@ cProfile = solve(prob,Rodas5());
 			<p> $$\cfrac{\mathrm{d}R(t)}{\mathrm{d}t} = \mathrm{ANN}\left(R(t), \, i, \, c_e, \, v\right)$$</p>
 		</section>
 			
+		<section class="slide  highTitle" id="code">
+			<h2> Cookbook for neural ODEs </h2>
+			<div class="container">
+				<div class="item" style="width:45%">
+					<ul>
+						<li>Neural network/ML library
+							<ul>
+								<li>ANN structure</li>
+							</ul>
+						</li>
+							<li>ODE solver</li>
+							<li>DataFrames</li>
+							<li>Plotting library</li>
+					</ul>
+				</div>
+				<div class="item" style="width:50%;margin-left:80px;">
+						<pre>
+							<code>using Flux</code>
+							<code>x = Chain(Dense(4,8,swish), </code>
+							<code>    Dense(8,8,σ), </code>
+							<code>    Dense(8,8,swish), </code>
+							<code>    Dense(8,1)) </code>
+							<code>  </code>
+							<code>using DifferentialEquations, DiffEqFlux</code>
+							<code>prob = ODEProblem(dudt_, x, (t0, tend), p)</code>
+							<code>function dudt_(u::TrackedArray, p, t) </code>
+							<code>	Flux.Tracker.collect([ann(u)[1])</code>
+							<code>end</code>
+							<code>  </code>
+							<code>using DataFrames, Plots</code>
+						</pre>
+				</div>
+			</div>
+			<p> <b>WIP</b> Reference to chris rauckakus, orig paper </p>
+		</section>
+			
 		<section class="slide  highTitle" id="NeurODERes">
 			<h2> Taking it a bit further</h2>
 			<img class="center" src="figs/dataNonLog.svg" width="100%">
@@ -245,12 +281,25 @@ cProfile = solve(prob,Rodas5());
 		</section>
 			
 		<section class="slide  highTitle" id="NeurODERes">
-				<h2> Validation</h2>
-				<img class="center" src="figs/test.png" width="100%">
-			</section>
+			<h2> Validation</h2>
+			<img class="center" src="figs/test.png" width="100%">
+			<pre class="next" style="margin-top:40px;">
+				<code>using Flux, DiffEqFlux, DifferentialEquations</code>
+			</pre>
+		</section>
+		
+	<section class="slide  highTitle" id="salty">
+		<h2> Perspectives </h2>
+	</section>
 			
-		<section class="slide  highTitle" id="salty">
-			<h2> Perspectives </h2>
+		<section class="slide  highTitle" id="NeurODERes">
+			<h2> Why I chose Julia... </h2>
+			<ul>
+				<li>Came from Python &amp; C++ <span style="color:grey">(Computational Fluid dynamics)</span></li>
+				<li class="next">Big trade-off between <b>computational speed</b> and <b>development time</b> </li>
+				<li class="next">Integration/interaction packages</li>
+				<li class="next">Facilitates open-source contribution </li>
+			</ul>
 		</section>
 
 		<section class="slide" id="cover">
