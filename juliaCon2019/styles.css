@@ -96,3 +96,13 @@ h2.fork:after{
     background-size: contain;
     left:10px;
 }
+
+a.ref {
+    color:grey;
+    font-size: 18px;
+    border: none;
+}
+
+a.ref::after {
+box-sizing: unset;
+}

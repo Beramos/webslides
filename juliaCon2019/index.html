@@ -240,11 +240,11 @@ cProfile = solve(prob,Rodas5());
 							</ul>
 						</li>
 					</ul>
-					<ul style="position: relative;top:20px;">
-						<li>ODE solver</li>
+					<ul style="position: relative;top:-10px;">
+						<li>ODE solvers</li>
 					</ul>
-					<ul style="position: relative;top:100px;">
-						<li>DataFrames, Plotting, file manipulation</li>
+					<ul style="position: relative;top:110px;">
+						<li>DataFrames, Plotting</li>
 					</ul>
 				</div>
 				<div class="item" style="width:50%;margin-left:80px;">
@@ -253,19 +253,17 @@ cProfile = solve(prob,Rodas5());
 							<code>x = Chain(Dense(4,8,swish), </code>
 							<code>    Dense(8,8,σ), </code>
 							<code>    Dense(8,8,swish), </code>
-							<code>    Dense(8,1)) </code>
-							<code>  </code>
+							<code style="margin-bottom:14px;">    Dense(8,1)) </code>
 							<code>using DifferentialEquations, DiffEqFlux</code>
-							<code>prob = ODEProblem(dudt_, x, (t0, tend), p)</code>
 							<code>function dudt_(u::TrackedArray, p, t) </code>
 							<code>	Flux.Tracker.collect([ann(u)[1])</code>
 							<code>end</code>
-							<code>  </code>
+							<code style="margin-bottom:14px;">prob = ODEProblem(dudt_, x, (t0, tend), p)</code>
 							<code>using DataFrames, Plots, CSV</code>
 						</pre>
 				</div>
 			</div>
-			<p> <b>WIP</b> Reference to chris rauckakus, orig paper </p>
+			<a class="ref" href="https://julialang.org/blog/2019/01/fluxdiffeq">DiffEqFlux.jl – A Julia Library for Neural Differential Equations</a>
 		</section>
 			
 		<section class="slide  highTitle" id="NeurODERes">
