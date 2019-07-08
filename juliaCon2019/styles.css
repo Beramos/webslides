@@ -100,5 +100,6 @@ h2.fork:after{
 a.ref {
     color:grey;
     font-size: 18px;
-    border: none;
+    background: transparent;
+    text-decoration: underline dotted grey;
 }
