@@ -86,3 +86,19 @@ a.ref {
     left:100px;
 }
 
+h2.fork:after{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: url("figs/knifeFork.svg") no-repeat fixed;
+    position: relative;
+    display: inline-block;
+    background-size: contain;
+    left:10px;
+}
+
+a.ref {
+    color:grey;
+    font-size: 18px;
+    border: none;
+}

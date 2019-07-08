@@ -59,127 +59,47 @@
 			</div>
 		</section>
 
-		<section class="slide  highTitle" id="ED">
+		<section class="slide  highTitle" id="ED1">
 			<h2>Electrodialysis removes charged components from fluids</h2>
 			<img class="center" src="figs/ED-2.svg" width=45%>
 		</section>
 
-		<section class="slide  highTitle" id="ED">
+		<section class="slide  highTitle" id="ED2">
 			<h2>Electrodialysis removes charged components from fluids</h2>
 			<img class="center" src="figs/ED-2New.svg" width=45%>
 		</section>
 
-		<section class="slide  highTitle" id="ED">
+		<section class="slide  highTitle" id="ED3">
 			<h2>Electrodialysis removes charged components from fluids</h2>
 			<img class="center" src="figs/ED.svg" width=45%>
 		</section>
 
-		<section class="slide  highTitle" id="ED">
+		<section class="slide  highTitle" id="ED4">
 			<h2>Some charged components are ennoying...</h2>
 			<img class="center" src="figs/EDFouled1.svg" width=45%>
 		</section>
 
-		<section class="slide  highTitle" id="ED">
+		<section class="slide  highTitle" id="ED5">
 			<h2>Some charged components are ennoying...</h2>
 			<img class="center" src="figs/EDFouled2.svg" width=45%>
 		</section>
 
-		<section class="slide  highTitle" id="ED">
+		<section class="slide  highTitle" id="ED6">
 			<h2>Some charged components are ennoying...</h2>
 			<img class="center" src="figs/EDFouled3.svg" width=45%>
 		</section>
 
-		<section class="slide  highTitle" id="ED">
+		<section class="slide  highTitle" id="ED7">
 			<h2>Some charged components are ennoying...</h2>
 			<img class="center" src="figs/EDFouled4.svg" width=45%>
 		</section>
-<!--
-		<section class="slide  highTitle" id="howModel">
-			<p>How can we model this process?</p>
-		</section>
-		
-		<section class="slide  highTitle" id="whatEquat">
-			<h2> A balance between transport processes </h2>
-			<p>$$\cfrac{\partial c}{\partial t} = D\, \nabla \cdot \left( \nabla c + z\,c\,\nabla \varphi \right) - \nabla \cdot \left( c \, v \right)$$</p>
-			<div class="container">
-				<div class="item" style="width:25%">
-						<p>$$D \cfrac{\partial^2 c(x)}{\partial x^2} = v(x)\, \cfrac{\partial c(x)}{\partial y}\, ,$$</p>
-				</div>
-				<div class="item" style="width:15%">
-						<p>$$ \frac{dc(x)}{dx} = i\, \Bigr|_{x=L}\, , $$ </p>
-				</div>
-				<div class="item" style="width:25%">
-						<p>$$ v(x) = v_0 \left( 1 - \cfrac{x}{h}^2 \right)\, $$</p>
-				</div>
-			</div>
-			<p>Some equations & code</p>
-		</section>
-		
-		<section class="slide  highTitle" id="code1">
-			<h2> Following the DifferentialEquations.jl recipes </h2>
-			<div class="container">
-				<div class="item" style="width:30%">
-						<p>$$ v(x) = v_0 \left( 1 - \cfrac{x}{h}^2 \right)\, , $$</p>
-						<p>$$ \frac{dc(x)}{dx} = i\, \Bigr|_{x=L} $$ </p>
-						<p style="color:grey">$$D \cfrac{\partial^2 c(x)}{\partial x^2} = v\, \cfrac{\partial c(x)}{\partial y}\, ,$$</p>
-				</div>
-				<div class="item" style="width:65%;border-left: 1px solid grey;padding-left:20px;">
-					<pre> 
-							<code>using BandedMatrices
-v(x) = vAvg*(1-(x/h)^2); # parabolic flow
-dcdx(i) = i;           # boundary condition
- 
-# Discretisation to linear system (A*x + u)
-A = BandedMatrix{Float64}(undef, (nx,nx), (1,1));
-A[band(0)] = [-2 .* v(xi)/D for xi in x];
-A[band(1)] = [1.0 .* v(xi)/D for xi in x[1:end-1]];
-A[band(-1)] = [1.0 .* v(xi)/D for xi in x[2:end]];
-...
-u = zeros(nx);
-u[end] = dcdx(i)*Δx;
 
-							</code>
-					</pre>
-				</div>
-			</div>
-		</section>
-		
-		<section class="slide  highTitle" id="code1">
-			<h2> Following the DifferentialEquations.jl recipes </h2>
-			<div class="container">
-				<div class="item" style="width:30%">
-						<p style="color:grey">$$\cfrac{\partial c(x)}{\partial y} = \cfrac{D}{v(x)} \cfrac{\partial^2 c(x)}{\partial x^2} \, ,$$</p>
-				</div>
-				<div class="item" style="width:65%;border-left: 1px solid grey;padding-left:20px;">
-					<pre> 
-							<code>A = BandedMatrix{Float64}(undef, (nx,nx), (1,1));
-A[band(0)] = [-2 .* v(xi)/D for xi in x];
-A[band(1)] = [1.0 .* v(xi)/D for xi in x[1:end-1]];
-A[band(-1)] = [1.0 .* v(xi)/D for xi in x[2:end]];
-...
-u = zeros(nx);
-u[end] = dcdx(i)*Δx;
-
-dcdy(c,p,t) = A*c + u; # construct ODE
-prob = ODEProblem(dcdy, c0, (0, xend), []);
-cProfile = solve(prob,Rodas5());
-						</code>
-					</pre>
-				</div>
-			</div>
-		</section>
-		
-		<section class="slide  highTitle" id="salty">
-			<p>A simulation</p>
-		</section>
-		-->
-
-		<section class="slide  highTitle" id="salty">
+		<section class="slide  highTitle" id="mechModel1">
 			<h2>Modelling particle interactions is expensive</h2>
 			<img class="center" src="figs/EDFouled4.svg" width=45%>
 		</section>
 
-		<section class="slide  highTitle" id="salty">
+		<section class="slide  highTitle" id="mechModel2">
 			<h2>Modelling particle interactions is expensive</h2>
 			<div class="container">
 					<div class="item" style="width:69%">
@@ -218,42 +138,92 @@ cProfile = solve(prob,Rodas5());
 			<img class="center" src="figs/NeuralODEFoulGen.svg">
 		</section>
 			
-		<section class="slide  highTitle" id="NeurODERes">
+		<section class="slide  highTitle" id="NeurODERes1">
 			<h2> Electric resistance is indicator of fouling </h2>
 			<img class="center" src="figs/data.svg" width="70%">
 		</section>
 			
-		<section class="slide  highTitle" id="NeurODERes">
+		<section class="slide  highTitle" id="NeurODERes2">
 			<h2> Let's test this on a simple example... </h2>
 			<img class="center" src="figs/training.gif" width="70%">
 			<p> $$\cfrac{\mathrm{d}R(t)}{\mathrm{d}t} = \mathrm{ANN}\left(R(t), \, i, \, c_e, \, v\right)$$</p>
 		</section>
 			
-		<section class="slide  highTitle" id="NeurODERes">
+		<section class="slide  highTitle" id="code">
+			<h2 class="fork"> Cookbook for neural ODEs </h2>
+			<div class="container">
+				<div class="item" style="width:45%">
+					<ul style="position: relative;top:-80px;">
+						<li>Neural network/ML library
+							<ul>
+								<li>ANN structure</li>
+							</ul>
+						</li>
+					</ul>
+					<ul style="position: relative;top:-10px;">
+						<li>ODE solvers</li>
+					</ul>
+					<ul style="position: relative;top:110px;">
+						<li>DataFrames, Plotting</li>
+					</ul>
+				</div>
+				<div class="item" style="width:50%;margin-left:80px;">
+						<pre>
+							<code>using Flux</code>
+							<code>x = Chain(Dense(4,8,swish), </code>
+							<code>    Dense(8,8,σ), </code>
+							<code>    Dense(8,8,swish), </code>
+							<code style="margin-bottom:14px;">    Dense(8,1)) </code>
+							<code>using DifferentialEquations, DiffEqFlux</code>
+							<code>function dudt_(u::TrackedArray, p, t) </code>
+							<code>	Flux.Tracker.collect([ann(u)[1])</code>
+							<code>end</code>
+							<code style="margin-bottom:14px;">prob = ODEProblem(dudt_, x, (t0, tend), p)</code>
+							<code>using DataFrames, Plots, CSV</code>
+						</pre>
+				</div>
+			</div>
+			<a class="ref" href="https://julialang.org/blog/2019/01/fluxdiffeq">DiffEqFlux.jl – A Julia Library for Neural Differential Equations</a>
+		</section>
+			
+		<section class="slide  highTitle" id="NeurODERes3">
 			<h2> Taking it a bit further</h2>
 			<img class="center" src="figs/dataNonLog.svg" width="100%">
 		</section>
 			
-		<section class="slide  highTitle" id="NeurODERes">
+		<section class="slide  highTitle" id="NeurODERes4">
 			<h2> Taking it a bit further</h2>
 			<img class="center" src="figs/regularisedModel2NonLog.png" width="100%">
 		</section>
 			
-		<section class="slide  highTitle" id="NeurODERes">
+		<section class="slide  highTitle" id="validation1">
 			<h2> Validation</h2>
 			<img class="center" src="figs/trainingSet.png" width="100%">
 		</section>
 			
-		<section class="slide  highTitle" id="NeurODERes">
-				<h2> Validation</h2>
-				<img class="center" src="figs/test.png" width="100%">
-			</section>
+		<section class="slide  highTitle" id="validation2">
+			<h2> Validation</h2>
+			<img class="center" src="figs/test.png" width="100%">
+			<pre class="next" style="margin-top:40px;">
+				<code>using Flux, DiffEqFlux, DifferentialEquations</code>
+			</pre>
+		</section>
+		
+	<section class="slide  highTitle" id="perspectives">
+		<h2> Perspectives </h2>
+	</section>
 			
-		<section class="slide  highTitle" id="salty">
-			<h2> Perspectives </h2>
+		<section class="slide  highTitle" id="julia">
+			<h2> Why I chose Julia... </h2>
+			<ul>
+				<li>Came from Python &amp; C++ <span style="color:grey">(Computational Fluid dynamics)</span></li>
+				<li class="next">Big trade-off between <b>computational speed</b> and <b>development time</b> </li>
+				<li class="next">Integration/interaction packages</li>
+				<li class="next">Facilitates open-source contributions </li>
+			</ul>
 		</section>
 
-		<section class="slide" id="cover">
+		<section class="slide" id="cover3">
 			<h2> An advanced electrodialysis process model <br> in the Julia ecosystem  </h2>
 			<img style="top: 320px;right:2000px;" width="90%" src="figs/coverdrawing.svg" alt="" class="cover">					
 			<p style="position: absolute; bottom: 150px; font-size: 30px;"><a href="mailto:bram.dejaegher@ugent.be">Bram.DeJaegher@UGent.be</a></p>
