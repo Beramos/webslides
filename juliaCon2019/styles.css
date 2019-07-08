@@ -102,7 +102,3 @@ a.ref {
     font-size: 18px;
     border: none;
 }
-
-a.ref::after {
-box-sizing: unset;
-}
