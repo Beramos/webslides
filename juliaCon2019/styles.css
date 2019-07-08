@@ -114,3 +114,10 @@ a.ref {
     right:20px;
     margin-top:20px
 }
+
+a.mainAuthor {
+    background: transparent;
+    text-decoration: underline dotted grey;
+    color:black;
+    font: bold;
+}
