@@ -230,18 +230,21 @@ cProfile = solve(prob,Rodas5());
 		</section>
 			
 		<section class="slide  highTitle" id="code">
-			<h2> Cookbook for neural ODEs </h2>
+			<h2 class="fork"> Cookbook for neural ODEs </h2>
 			<div class="container">
 				<div class="item" style="width:45%">
-					<ul>
+					<ul style="position: relative;top:-80px;">
 						<li>Neural network/ML library
 							<ul>
 								<li>ANN structure</li>
 							</ul>
 						</li>
-							<li>ODE solver</li>
-							<li>DataFrames</li>
-							<li>Plotting library</li>
+					</ul>
+					<ul style="position: relative;top:20px;">
+						<li>ODE solver</li>
+					</ul>
+					<ul style="position: relative;top:100px;">
+						<li>DataFrames, Plotting, file manipulation</li>
 					</ul>
 				</div>
 				<div class="item" style="width:50%;margin-left:80px;">
@@ -258,7 +261,7 @@ cProfile = solve(prob,Rodas5());
 							<code>	Flux.Tracker.collect([ann(u)[1])</code>
 							<code>end</code>
 							<code>  </code>
-							<code>using DataFrames, Plots</code>
+							<code>using DataFrames, Plots, CSV</code>
 						</pre>
 				</div>
 			</div>
