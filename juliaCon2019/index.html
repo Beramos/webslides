@@ -173,9 +173,9 @@
 				<div class="item" style="width:50%;margin-left:80px;">
 						<pre>
 							<code>using Flux</code>
-							<code>x = Chain(Dense(4,8,swish), </code>
+							<code>x = Chain(Dense(4,8,σ), </code>
 							<code>    Dense(8,8,σ), </code>
-							<code>    Dense(8,8,swish), </code>
+							<code>    Dense(8,8,σ), </code>
 							<code style="margin-bottom:14px;">    Dense(8,1)) </code>
 							<code>using DifferentialEquations, DiffEqFlux</code>
 							<code>function dudt_(u::TrackedArray, p, t) </code>
@@ -216,6 +216,7 @@
 	<section class="slide  highTitle" id="perspectives">
 		<h2> Perspectives </h2>
 		<ul>
+			<li> Size of network, activation functions?</li>
 			<li> Training/validation with larger dataset </li>
 			<li> Integration of mechanistic knowledge
 				<ul>
