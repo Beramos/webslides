@@ -1,0 +1,139 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> DifferentialEquations.jl: a differential equations suite you might actually like</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+	<body class="shower list">
+		<header class="caption">
+			<h1>DifferentialEquations.jl: <span style="color:darkslategrey;font-size:36px;">a differential equations suite you might actually like</span> </h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+		<section class="slide" id="cover">
+	        <h2 style="margin-bottom: 10px;"> DifferentialEquations.jl </h2>
+	        <h2 s><span style="font-size:26px;margin-left: 10px;">"A differential equations suite you might actually like"</span></h2>
+			<img style="top: 400px;margin-left:140px;" width="60%" src="figs/deriffler.png" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<div style="position: absolute;bottom:30px;">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+		<section class="slide  highTitle" id="lotka">
+			<h2>One example, two languages</h2>
+			<div style="height: 60%;position: relative;">
+				<p>The Lotka-Voltera model:</p>
+				<p>
+						\begin{aligned}
+						{\frac {dx}{dt}}&=\alpha x-\beta xy,\\{\frac {dy}{dt}}&= -\delta y-\gamma xy,
+						\end{aligned}
+				</p>
+				<p>where,</p>
+				<ul>
+					<li>$x$ is the number of prey,</li>
+					<li>$y$ is the number of predator,</li>
+					<li>$\alpha$, $\beta$, $\gamma$, $\delta$ parameters describing the interaction between the species.</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="lotka2">
+			<h2>One example, two languages</h2>
+			<div style="height: 60%;position: relative;">
+				<p>The Lotka-Voltera model:</p>
+				<div style="display: flex">
+					<div style="padding-top:80px;">				
+						<p>
+						\begin{aligned}
+						{\frac {dx}{dt}}&=\alpha x-\beta xy\\{\frac {dy}{dt}}&= -\delta y-\gamma xy
+						\end{aligned}
+					</p>
+					</div>
+					<div style="margin-left: 80px;">
+							<img src="figs/lotka.svg">			
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="lotka3">
+			<h2>One example, two cool features</h2>
+			<div style="height: 60%;position: relative;">
+				<p>The Lotka-Voltera model:</p>
+				<ul>
+					<li>Unitful</li>
+					<li>Emoji</li>
+				</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="lotka3">
+			<h2>One example, two languages</h2>
+			<div style="height: 60%;position: relative;">
+				<p>The Lotka-Voltera model:</p>
+				
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="solvingloco">
+			<h2>DifferentialEquations.jl solves equation you haven't even heard of ...</h2>
+			<div style="height: 60%;position: relative;overflow: scroll;">
+				<ul>
+					<li>Discrete equations (function maps, discrete stochastic simulations</li>
+					<li>Ordinary differential equations (ODEs)</li>
+					<li>Split and Partitioned ODEs (Symplectic integrators, IMEX Methods)</li>
+					<li>Stochastic ordinary differential equations (SODEs or SDEs)</li>
+					<li>Random differential equations (RODEs or RDEs)</li>
+					<li>Differential algebraic equations (DAEs)</li>
+					<li>Delay differential equations (DDEs)</li>
+					<li>Mixed discrete and continuous equations (Hybrid Equations, Jump Diffusions)</li>
+					<li>(Stochastic) partial differential equations </li>
+				</ul>
+			</div>
+	    </section>
+
+		<section class="slide  highTitle" id="solvingloco">
+			<h2>... And is Jam-packed with other features</h2>
+			<div style="height: 60%;position: relative">
+				<ul>
+						<li>Forward and adjoint local sensitivity analysis for fast gradient computations</li>
+						<li>Optimization-based and Bayesian parameter estimation</li>
+						<li>Neural differential equations with DiffEqFlux.jl</li>
+						<li>Automatic distributed, multithreaded, and GPU parallelism of ensemble trajectories</li>
+						<li>Global sensitivity analysis</li>
+						<li>Uncertainty quantification</li>
+						<li>...</li>
+				</ul>
+			</div>
+	    </section>
+
+		<section class="slide  highTitle" id="refs">
+			<h2>References</h2>
+			<ol>
+				<li><a href="https://arxiv.org/abs/1502.05767">https://juliadiffeq.org/2018/04/30/Jupyter.html</a></li>
+			</ol>
+	    </section>
+
+	<div class="progress"></div>
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
