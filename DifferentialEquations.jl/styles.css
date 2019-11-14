@@ -1,0 +1,159 @@
+/* Styles */
+
+.highTitle.slide {
+    padding:20px 100px 0;
+}
+
+.container {
+    display: flex;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.left {
+   width: 50%;
+    padding-left: 120px;
+}
+
+.right {
+    width: 50%;
+    padding-left: 60px;
+}
+
+.source {
+    font-size: 16px;
+    padding-bottom:  2px;
+}
+
+img.center {
+    margin: 0 auto;
+}
+
+code {
+    font-size: 18px;
+}
+
+.apropos {
+    color: grey;
+}
+
+.smallText {
+    font-size: 20px;
+}
+
+.lessSpacing p {
+ margin-bottom: 10px;   
+}
+
+ol >li > ul > li {
+    font-size: 14px;
+}
+
+img.centerFill{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'AnimalesFantastic';
+    src: url("fonts/AnimalesFantastic.otf") format("opentype");
+}
+
+a.ref {
+    font-size:20px;
+    color: grey;
+    text-decoration-style: dotted;
+    position: absolute;
+    bottom: 20px;
+    left:100px;
+}
+
+section#cover.slide::after
+{
+  content:  none;
+}
+
+section#lotka.slide::after
+{
+  background: url(./figs/pint1.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#lotka2.slide::after
+{
+  background: url(./figs/pint2.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#feature.slide::after
+{
+  background: url(./figs/pint3.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#unitful.slide::after
+{
+  background: url(./figs/pint4.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#solvingloco.slide::after
+{
+  background: url(./figs/pint5.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#solvingloco2.slide::after
+{
+  background: url(./figs/pint6.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#overview.slide::after
+{
+  background: url(./figs/pint7.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+
+section#emoji.slide::after
+{
+  background: url(./figs/pint8.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#refs.slide::after
+{
+  background: url(./figs/pint9.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#end.slide::after
+{
+  background: url(./figs/pint10.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
