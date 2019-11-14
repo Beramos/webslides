@@ -25,8 +25,9 @@
 	        <h2 style="margin-bottom: 10px;"> DifferentialEquations.jl </h2>
 	        <h2 s><span style="font-size:26px;margin-left: 10px;">"A differential equations suite you might actually like"</span></h2>
 			<img style="top: 400px;margin-left:140px;" width="60%" src="figs/deriffler.png" alt="" class="cover">
-			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<p style="position: absolute; bottom: 200px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
 			<div style="position: absolute;bottom:30px;">
+				<img src="figs/julia-logo-color.png" width="50%">
 			</div>
 			<!--
 				To apply styles to the certain slides
@@ -72,73 +73,87 @@
 		</section>
 
 		<section class="slide  highTitle" id="feature">
-			<h2>One example, two cool features</h2>
-			<div style="height: 60%;position: relative;">
-				<p>The Lotka-Voltera model:</p>
-				<ul>
-					<li>Unitful</li>
-					<li>Emoji</li>
-				</ul>
-				</div>
-			</div>
-		</section>
-
-		<section class="slide  highTitle" id="unitful">
 			<h2>One example, two languages</h2>
 			<div style="height: 60%;position: relative;">
-				<p>The Lotka-Voltera model:</p>
-				
+				<div style="display: flex; margin-top:100px;">
+					<div>
+						<img src="figs/julia-logo-color.png" width="50%">	
+					</div>
+					<div>
+						<img src="figs/python-logo-color.png" width="50%">	
+					</div>
+				</div>
+				<p class="next"><b>Live!</b></p>
 				</div>
 			</div>
 		</section>
 
 		<section class="slide  highTitle" id="solvingloco">
-			<h2>DifferentialEquations.jl solves equation you haven't even heard of ...</h2>
-			<div style="height: 60%;position: relative;overflow: scroll;">
+			<h2>DifferentialEquations.jl solves equations you haven't even heard of ...</h2>
+			<div style="height: 60%;position: relative;">
 				<ul>
-					<li>Discrete equations (function maps, discrete stochastic simulations</li>
 					<li>Ordinary differential equations (ODEs)</li>
-					<li>Split and Partitioned ODEs (Symplectic integrators, IMEX Methods)</li>
-					<li>Stochastic ordinary differential equations (SODEs or SDEs)</li>
-					<li>Random differential equations (RODEs or RDEs)</li>
-					<li>Differential algebraic equations (DAEs)</li>
-					<li>Delay differential equations (DDEs)</li>
-					<li>Mixed discrete and continuous equations (Hybrid Equations, Jump Diffusions)</li>
-					<li>(Stochastic) partial differential equations </li>
+					<li class="next">Stochastic ordinary differential equations (SODEs or SDEs)</li>
+					<li class="next">Differential algebraic equations (DAEs)</li>
+					<li class="next">Delay differential equations (DDEs)</li>
+					<li class="next">Mixed discrete and continuous equations (Hybrid Equations, Jump Diffusions)</li>
+					<li class="next"> ... </li>
 				</ul>
 			</div>
 	    </section>
-
 		<section class="slide  highTitle" id="solvingloco2">
-			<h2>... And is Jam-packed with other features</h2>
+			<h2>... and is jam-packed with cool features</h2>
 			<div style="height: 60%;position: relative">
 				<ul>
-						<li>Forward and adjoint local sensitivity analysis for fast gradient computations</li>
-						<li>Optimization-based and Bayesian parameter estimation</li>
-						<li>Neural differential equations with DiffEqFlux.jl</li>
-						<li>Automatic distributed, multithreaded, and GPU parallelism of ensemble trajectories</li>
-						<li>Global sensitivity analysis</li>
-						<li>Uncertainty quantification</li>
-						<li>...</li>
+						<li>Forward and adjoint local sensitivity for fast gradient computations</li>
+						<li class="next"><i>SIUnits.jl</i></li>
+						<li class="next">Sensitivity analysis (global, local) </li>
+						<li class="next">Optimisation-based and Bayesian parameter estimation</li>
+						<li class="next">Automatic distributed, multithreaded, and GPU parallelism</li>
+						<li class="next">Neural differential equations with <i>DiffEqFlux.jl</i></li>
+						<li class="next">...</li>
 				</ul>
 			</div>
 	    </section>
 
 		<section class="slide  highTitle" id="overview">
-			<h2>... And is Jam-packed with other features</h2>
+			<h2>A slightly biased review...</h2>
 			<div style="height: 60%;position: relative">
-				<img src="./figs/overview.png" width=100%>
+				<a href="http://www.stochasticlifestyle.com/comparison-differential-equation-solver-suites-matlab-r-julia-python-c-fortran/"><img src="./figs/overview.png" width=100%></a>
+			</div>
+	    </section>
+
+		<section class="slide  highTitle" id="emoji">
+			<h2>This works!</h2>
+			<div style="height: 60%;position: relative;margin-top:100px;">
+			<img src="./figs/emoji.png" width=100%>
 			</div>
 	    </section>
 
 		<section class="slide  highTitle" id="refs">
 			<h2>References</h2>
 			<ol>
-				<li><a href="https://arxiv.org/abs/1502.05767">https://juliadiffeq.org/2018/04/30/Jupyter.html</a></li>
+				<li><a href="https://juliadiffeq.org/2018/04/30/Jupyter.html"> A comparison between Julia and Python</a></li>
+				<li><a href="http://docs.juliadiffeq.org/latest/"> DifferentialEquations.jl documentation</a></li>
+				<li><a href="http://www.stochasticlifestyle.com/comparison-differential-equation-solver-suites-matlab-r-julia-python-c-fortran/"> A Comparison Between Differential Equation Solver Suites In MATLAB, R, Julia, Python, C, Mathematica, Maple, and Fortran</a></li>
 			</ol>
+			</section>
+			
+		<section class="slide" id="end">
+	        <h2 style="margin-bottom: 10px;"> DifferentialEquations.jl </h2>
+	        <h2 s><span style="font-size:26px;margin-left: 10px;">"A differential equations suite you might actually like"</span></h2>
+			<img style="top: 400px;margin-left:140px;" width="60%" src="figs/deriffler.png" alt="" class="cover">
+			<p style="position: absolute; bottom: 200px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/julia-logo-color.png" width="50%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
 	    </section>
 
-	<div class="progress"></div>
+
 	<script src="../shower/shower.min.js"></script>
 	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
 </body>

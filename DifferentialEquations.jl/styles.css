@@ -133,9 +133,26 @@ section#overview.slide::after
   content:  " ";
 }
 
-section#refs.slide::after
+
+section#emoji.slide::after
 {
   background: url(./figs/pint8.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#refs.slide::after
+{
+  background: url(./figs/pint9.svg) no-repeat;
+  width: 60px;
+  height: 115px;
+  content:  " ";
+}
+
+section#end.slide::after
+{
+  background: url(./figs/pint10.svg) no-repeat;
   width: 60px;
   height: 115px;
   content:  " ";
