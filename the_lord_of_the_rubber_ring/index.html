@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title> No title</title>
@@ -72,11 +72,25 @@
 		</section>
 
 		<section class="slide  highTitle" id="intro6">
-			<h2>Previous work</h2>
-			<p>Mechanistic model ED</p>
-				<div class="figures">
-					<img src="figs/electrodialysis_5b.svg" style="width: 76%; margin-right: 5%;" class="center">
-			</div>
+			<h2>Previously: mechanistic model ED</h2>
+			<div class="container">
+					<div class="box3">
+						<img src="figs/compDomSliceInd.svg" height="90%"> 
+					</div>
+					<div class="box3">
+							<img src="figs/equation1.png" width="90%"> 
+							<img src="figs/equation2.png" width="90%"> 
+					</div>
+					<div class="box3">
+							<img src="figs/line_plots2V.svg" height="90%"> 
+					</div>
+					<div class="box3">
+							<video width="320" height="240" autoplay>
+								<source src="vids/electroConvProperScale2_cropped.webm" type="video/webm">
+								Your browser does not support the video tag.			
+							</video>
+					</div>
+				</div>
 		</section>
 
 		<section class="slide  highTitle" id="foulingFactors">
@@ -145,24 +159,31 @@
 				}
 		</style>
 
-		<section class="slide  highTitle" id="intro6">
+		<section class="slide  highTitle" id="expectReal">
 			<h2>Experiments: reality vs. expectations</h2>
 				<div class="container">
 					<div class="box3 container">
 							<div class="box4">
+								<img src="figs/DOEExpeceted.svg" width="90%">
 							</div>
 							<p><b>My design</b></p>
 					</div>
 					<div class="box3 next">
-						<div class="box4"></div>
+						<div class="box4">
+								<img src="figs/DOEExpeceted.svg" width="90%">
+						</div>
 						<p><b>Expected experiments</b></p>		
 					</div>
 					<div class="box3 next">
-						<div class="box4"></div>
+						<div class="box4">
+								<img src="figs/DOEFull.svg" width="90%">
+						</div>
 						<p><b>Experiments performed</b></p>		
 					</div>
 					<div class="box3 next">
-						<div class="box4"></div>
+						<div class="box4">
+								<img src="figs/DOEV2.svg" width="90%">
+						</div>
 						<p><b>What I can actually use</b></p>		
 					</div>
 				</div>
@@ -170,16 +191,24 @@
 		
 		<style>
 				.box3 {
-					width:300px;
+					width:380px;
 					height:220px;
-					border: 1px dashed black;
-					margin: 20px;
+					border: 2px dotted lightgrey;
+					margin: 15px;
+					padding: 10px;
+				}
+
+				.box4 > img {
+					margin-bottom:10px;
+				}
+
+				.box3 > p {
+					display: block;
 				}
 
 				.box4 {
 					width:300px;
 					height:80%;
-					border: 1px dashed black;
 				}
 		</style>
 
