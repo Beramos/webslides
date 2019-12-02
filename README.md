@@ -16,5 +16,5 @@
 * [DifferentialEquations.jl: a differential equations suite you might actually like](https://beramos.github.io/webslides/DifferentialEquations.jl): A 5' presentation on solving differential equations in Julia compared to scipy.
 
 ## Machine learning
-* [he lord of the rubber rings: the trilogy.](https://beramos.github.io/webslides/the_lord_of_the_rubber_ring): A tale on the quest for optimal experimental data on electrodialysis fouling. With the return of the Neural Differential Equation :bow_and_arrow: to predict fouling
+* [The lord of the rubber rings: the trilogy.](https://beramos.github.io/webslides/the_lord_of_the_rubber_ring): A tale on the quest for optimal experimental data on electrodialysis fouling. With the return of the Neural Differential Equation :bow_and_arrow: to predict fouling
 
