@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Lord of the rubber rings, the trilogy</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+	<body class="shower list">
+		<header class="caption">
+			<h1> Lord of the rubber rings, the trilogy </h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+		<section class="slide" id="cover">
+			<h2> Lord of the rubber rings, the trilogy </h2>
+			<img style="top: 370px;margin-left:70px" width="90%" src="figs/daRubberAnnoted.svg" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+		<section class="slide  highTitle" id="intro1">
+			<h2>Electrodialysis</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_1.svg" style="width: 76%;">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="intro2">
+			<h2>Electrodialysis</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_2.svg" style="width: 76%;">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="intro3">
+			<h2>Electrodialysis fouling</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_4.svg" style="width: 76%;">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="intro4">
+			<h2>Electrodialysis fouling</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_5.svg" style="width: 76%;">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="previously">
+			<h2>Previously: mechanistic model ED</h2>
+			<div class="container">
+					<div class="box3">
+						<div class="figure">
+							<img src="figs/compDomSliceInd.svg" height="250px;"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<img src="figs/equation1.png" width="100%"> 
+							<img src="figs/equation2.png" width="100%"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<img src="figs/line_plots2V.svg" height="250px;"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<video width="500" style="margin-top:40px;margin-left:-20px;" autoplay loop>
+								<source src="vids/electroConvProperScale2_cropped.webm" type="video/webm">
+								Your browser does not support the video tag.			
+							</video>
+						</div>
+					</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="foulingFactors">
+			<h2>Prominent fouling factors</h2>
+			<p></p>
+				<div class="container">
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="http://maxgreenproducts.com/humic-growth-solutions/the-science"> <img src="figs/HA.jpeg" width="90%"></a>
+						</div>
+						<p>Foulant props.</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/salt.jpg" width="90%"></a>
+						</div>
+						<p>Salt concentration</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/pump.jpg" width="90%"></a>
+						</div>
+						<p>Crossflow velocity</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/current.jpeg" width="90%"></a>
+						</div>
+						<p>Current</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="https://camblab.info/wp/wp-content/uploads/2016/09/ph-stick-0-14.jpg"> <img src="figs/pH.jpeg" height="90%"></a>
+						</div>
+						<p>pH</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="https://www.membrain.cz/en/images/2017/iontovymenne-membrany-01.jpg"> <img src="figs/IEM.jpeg" width="90%"></a>
+						</div>
+						<p>Membrane props.</p>
+					</div>
+				</div>
+		</section>
+	
+
+		<style>
+				.container {
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				.box {
+					width:230px;
+					height:220px;
+					border: 1px dashed white;
+					margin: 20px;
+				}
+
+				.box5 {
+					width:200px;
+					height:80%;
+				}
+		</style>
+
+		<section class="slide  highTitle" id="intro6">
+			<h2>Quiz intermezzo</h2>
+				<img src="figs/question.png" style="width: 86%; margin-right: 5%;" class="center">			
+		</section>
+
+		<section class="slide  highTitle" id="intro6">
+			<h2>Part 1: The internship of the ring</h2>
+			<div class="figure" style="margin-top:50px;">
+				<img src="figs/internship.png" width=70%>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="foulingFactors">
+			<h2>Experimental factors</h2>
+			<p></p>
+				<div class="container">
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="http://maxgreenproducts.com/humic-growth-solutions/the-science"> <img src="figs/HA.jpeg" width="90%"></a>
+						</div>
+						<p>Foulant props.</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/salt.jpg" width="90%"></a>
+						</div>
+						<p>Salt concentration</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/pump.jpg" width="90%"></a>
+						</div>
+						<p>Crossflow velocity</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/current.jpeg" width="90%"></a>
+						</div>
+						<p>Current</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="https://camblab.info/wp/wp-content/uploads/2016/09/ph-stick-0-14.jpg"> <img src="figs/pH.jpeg" height="90%"></a>
+						</div>
+						<p>pH</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="https://www.membrain.cz/en/images/2017/iontovymenne-membrany-01.jpg"> <img src="figs/IEM.jpeg" width="90%"></a>
+						</div>
+						<p>Membrane props.</p>
+					</div>
+				</div>
+		</section>
+	
+		<style>
+				.box2 {
+					width:400px;
+					height:130px;
+					border: 1px dashed black;
+					margin: 20px;
+				}
+		</style>
+
+		<section class="slide  highTitle" id="expectReal1">
+			<h2>Experiments: reality vs. expectations</h2>
+				<div class="figure">
+					<img src="figs/DOEExpeceted.svg" width="80%">
+				</div>
+				<div style="margin-top:0px;margin-left:400px;">
+					<p><b>My design</b></p>
+				</div>
+		</section>
+
+		<section class="slide  highTitle" id="expectReal">
+				<h2>Experiments: reality vs. expectations</h2>
+					<div class="container">
+						<div class="box3 container">
+								<div class="box4">
+									<img src="figs/DOEExpeceted.svg" width="90%">
+								</div>
+								<div style="margin-top:15px;margin-left:80px;">
+									<p><b>My design</b></p>
+								</div>
+						</div>
+					</div>
+			</section>
+
+		<section class="slide  highTitle" id="expectReal1">
+			<h2>Experiments: reality vs. expectations</h2>
+				<div class="figure">
+					<img src="figs/DOEExpeceted.svg" width="80%">
+				</div>
+				<div style="margin-top:0px;margin-left:300px;">
+					<p><b>Expected experiments</b></p>
+				</div>
+		</section>
+
+		<section class="slide  highTitle" id="expectReal">
+				<h2>Experiments: reality vs. expectations</h2>
+					<div class="container">
+						<div class="box3 container">
+								<div class="box4">
+									<img src="figs/DOEExpeceted.svg" width="90%">
+								</div>
+								<div style="margin-top:15px;margin-left:80px;">
+									<p><b>My design</b></p>
+								</div>
+						</div>
+						<div class="box3">
+							<div class="box4">
+									<img src="figs/DOEExpeceted.svg" width="90%">
+							</div>
+							<div style="margin-top:15px;margin-left:40px;">
+								<p><b>Expected experiments</b></p>		
+							</div>
+						</div>
+					</div>
+			</section>
+			
+		<section class="slide  highTitle" id="expectReal1">
+			<h2>Experiments: reality vs. expectations</h2>
+				<div class="figure">
+					<img src="figs/DOEFull.svg" width="80%">
+				</div>
+				<div style="margin-top:0px;margin-left:300px;">
+					<p><b>Experiments performed</b></p>
+				</div>
+		</section>
+
+		<section class="slide  highTitle" id="expectReal">
+				<h2>Experiments: reality vs. expectations</h2>
+					<div class="container">
+						<div class="box3 container">
+								<div class="box4">
+									<img src="figs/DOEExpeceted.svg" width="90%">
+								</div>
+								<div style="margin-top:15px;margin-left:80px;">
+									<p><b>My design</b></p>
+								</div>
+						</div>
+						<div class="box3">
+							<div class="box4">
+									<img src="figs/DOEExpeceted.svg" width="90%">
+							</div>
+							<div style="margin-top:15px;margin-left:40px;">
+								<p><b>Expected experiments</b></p>		
+							</div>
+						</div>
+						<div class="box3">
+							<div class="box4">
+									<img src="figs/DOEFull.svg" width="90%">
+							</div>
+							<div style="margin-top:15px;margin-left:30px;">
+								<p><b>Experiments performed</b></p>		
+							</div>
+						</div>
+					</div>
+			</section>
+			
+
+		<section class="slide  highTitle" id="expectReal1">
+			<h2>Experiments: reality vs. expectations</h2>
+				<div class="figure">
+					<img src="figs/DOEV2.svg" width="105%">
+				</div>
+				<div style="margin-top:0px;margin-left:300px;">
+					<p><b>What I can actually use</b></p>
+				</div>
+		</section>
+
+		<section class="slide  highTitle" id="expectReal">
+			<h2>Experiments: reality vs. expectations</h2>
+				<div class="container">
+					<div class="box3 container">
+							<div class="box4">
+								<img src="figs/DOEExpeceted.svg" width="90%">
+							</div>
+							<div style="margin-top:15px;margin-left:80px;">
+								<p><b>My design</b></p>
+							</div>
+					</div>
+					<div class="box3">
+						<div class="box4">
+								<img src="figs/DOEExpeceted.svg" width="90%">
+						</div>
+						<div style="margin-top:15px;margin-left:40px;">
+							<p><b>Expected experiments</b></p>		
+						</div>
+					</div>
+					<div class="box3">
+						<div class="box4">
+								<img src="figs/DOEFull.svg" width="90%">
+						</div>
+						<div style="margin-top:15px;margin-left:30px;">
+							<p><b>Experiments performed</b></p>		
+						</div>
+					</div>
+					<div class="box3">
+						<div class="box4">
+								<img src="figs/DOEV2.svg" width="110%">
+						</div>
+						<div style="margin-top:15px;margin-left:30px;">
+							<p><b>What I can actually use</b></p>		
+						</div>
+					</div>
+				</div>
+		</section>
+		
+		<style>
+				.box3 {
+					width:380px;
+					height:220px;
+					margin: 15px;
+					padding: 10px;
+				}
+
+				.box4 > img {
+					margin-bottom:10px;
+				}
+
+				.box3 > p {
+					display: block;
+				}
+
+				.box4 {
+					width:300px;
+					height:80%;
+				}
+		</style>
+
+		<section class="slide  highTitle" id="nuts">
+			<h2>What went wrong?</h2>
+			<div class="container">
+				<div class="figure" style="width:45%">
+					<img alt="bolt" src="figs/theholynuts.svg" height=300px;>
+				</div>
+
+				<div class="figure" style="width:45%">
+					<img alt="bolt" src="figs/daRubber.svg" height=480px;>
+				</div>
+			</div>
+				<a style="color:grey;font-size:12px;" href="https://www.freepik.com/free-photos-vectors/wood">Bolt and nut adapted from: www.freepik.com</a>
+		</section>
+
+		<section class="slide  highTitle" id="expRes">
+				<h2>Experimental results </h2>
+				<div class="figure">
+					<img alt="exp" src="figs/experimentsSummary.svg" width=800px;>
+				</div>
+		</section>
+
+		<section class="slide  highTitle" id="tempCorr">
+				<h2>Temperature compensation </h2>
+				<div style="margin-top:100px;margin-left:100px;">
+					<p>$$R_{20} = 0.889 \cdot 10^{A/B}\, R\, $$</p>
+					<div class="next" style="margin-top:60px;">
+						<p>with,</p>
+						<p>$$ A = 1.37\,(T-20) + 8.36\cdot 10^{-4} (T-20)^2 $$</p>
+						<p>$$ B = 109 + T $$</p>
+					</div>
+				</div>
+		</section>
+		<style>
+			span.mjx-chtml.MJXc-display {
+				display:inline;
+			}
+		</style>
+
+		<section class="slide  highTitle" id="chapt2">
+				<h2>Part 2: The return of the neural ODE</h2>
+				<div class="figure" style="margin-top:50px;">
+					<img src="figs/eyeofMordor.jpg" width=70%>
+				</div>
+			</section>
+	
+		<section class="slide  highTitle" id="NODEs1">
+				<h2>Neural differential equations</h2>
+				<div style="margin-left:200px;margin-top:40px;margin-bottom:40px;">
+					<p>$$\frac{d \mathbf{R}(t)}{dt} = f(\mathbf{R}(t),\, v,\, i, \, C_e)$$</p>
+				</div>
+				<div class="figure next">
+						<img alt="NeuralODE" src="figs/NeuralODEDiagram.svg" width=100%>
+				</div>
+			</section>
+
+			<section class="slide  highTitle" id="NODEs2">
+				<h2>Loss function</h2>
+				<div style="margin-left:200px;margin-top:200px;margin-bottom:40px;">
+					<p>	$$ L = \sum^N_{j=1} \left( \mathbf{R}_j - \hat{\mathbf{R}}_j \right)^2 + \lambda \, \sum^M_{k=1} \left| w_k \right| $$		</p>
+				</div>
+			</section>
+	
+
+			<section class="slide  highTitle" id="split">
+				<h2>The data is split in a Training and Test set</h2>
+				<div class="figure" style="margin-top: 40px;">
+					<img src="figs/DOESplit.svg" width="90%">
+				</div>
+			</section>
+	
+		<section class="slide  highTitle" id="CV">
+				<h2>Cross-validation</h2>
+				<div class="container" style="display:flex;flex-direction: row;">
+					<div class="figure" style="width:48%">
+							<img alt="NeuralODE" src="figs/LOOCVAnnotated.svg" width="100%">
+							<p style="margin-top:40px;width: 100px;">$$ \epsilon_{CV} = \frac{1}{K} \sum^K_{l=1} \left( \mathbf{R}_l - \hat{\mathbf{R}}_l \right)^2 $$</p>
+					</div>
+					<div class="figure next" style="width:48%">
+							<img alt="NeuralODE" src="figs/lambdaTable.png" height="60%">
+					</div>
+				</div>
+		</section>
+	
+		<section class="slide  highTitle" id="test">
+			<h2>Model testing</h2>
+			<div class="container" style="justify-content: center">
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice3SSEV2.svg" width="105%">
+					</div>
+				</div>
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice2SSEV2.svg" width="105%">
+					</div>
+				</div>
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice1SSEV2.svg" width="100%">
+					</div>
+				</div>
+			</div>
+		</section>
+		<style>				
+			.box6 {
+				width:380px;
+				height:220px;
+				margin: 15px;
+				padding: 10px;
+			}
+
+		</style>
+	
+		<section class="slide  highTitle" id="NODEs2">
+				<h2>Mapping the initial fouling rate is easy</h2>
+				<div class="container" style="justify-content: center">
+						<div class="box6">
+							<div class="figure">
+								<img src="figs/contourConcvsVeloCurr0_63.svg" width="100%">
+							</div>
+						</div>
+						<div class="box6">
+							<div class="figure">
+								<img src="figs/contourCurVsVelo0_0.svg" width="100%">
+							</div>
+						</div>
+						<div class="box6">
+							<div class="figure">
+								<img src="figs/contourConcvsCurrVelo0_67.svg" width="100%">
+							</div>
+						</div>
+					</div>
+		</section>
+	
+		<section class="slide  highTitle" id="NODEs2">
+				<h2>Extrapolation</h2>
+				<div class="figure" style="margin-left:-60px;margin-top:140px;">
+					<img src="figs/extrapolationCombined.svg" width=120%;>
+				</div>
+		</section>
+	
+		<section class="slide  highTitle" id="NODEs2">
+				<h2>Part 3: The two models (2020)</h2>
+				<div class="figure" style="margin-top:50px;">
+					<img src="figs/twoTowers.png" width=70%>
+				</div>
+		</section>
+
+		<section class="slide" id="cover">
+			<h2> Lord of the rubber rings, the trilogy </h2>
+			<img style="top: 370px;margin-left:70px" width="90%" src="figs/daRubberAnnoted.svg" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	  </section>
+
+	<div class="progress"></div>
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
