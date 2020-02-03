@@ -20,5 +20,5 @@
 
 ## OneSlides
 A collection of oneslides presented at [BIOMATH](biomath.ugent.be) seminars. Mostly about tools I like to use
-  * [Grammarly](oneSlides/grammarly)
-  * [Weave.jl](oneSlides/weave)
+  * [Grammarly](https://beramos.github.io/webslides/oneSlides/grammarly)
+  * [Weave.jl](https://beramos.github.io/webslides/oneSlides/weave)
