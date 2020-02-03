@@ -1,0 +1,114 @@
+.coverFooter {
+    width: 90%;
+}
+
+.rowx {
+    width: 100%;
+}
+
+/********************************************
+* SLIDE NUMBER
+*********************************************/
+.reveal .slide-number {
+right: 40px;
+bottom: 24px;
+z-index: 31;
+font-size: 30px;
+line-height: 1;
+color: black;
+background-color: rgba(0, 0, 0, 0);
+padding: 5px; }
+
+div.videoWrapper {
+    position: absolute;
+    bottom: 0px;
+    width: 1024px;
+    left: 0px;
+}
+
+.reveal video#electroConv {
+      max-width: 100%;
+      height: auto;
+      position: relative;
+      bottom: -12px;
+}
+
+.reveal .cover h2 {
+    margin-top: 75px;
+}
+
+.reveal .cover .coverName {
+    margin-top: 50px;
+}
+
+.reveal div.grayedOut {
+    color: lightgray;
+}
+
+div.sideEq {
+    position: relative;
+    top: -80px;
+}
+
+.reveal p.arrowke {
+    font-size: 160%;
+    padding: 0;
+}
+
+.reveal section#solv3 p{
+    font-size: 24px;
+}
+.reveal section#solv3 li{
+    font-size: 24px;
+}
+.reveal section#solv3 span{
+    font-size: 24px;
+}
+
+ul.smallText  li {
+    font-size: 24px;
+    line-height: 33px;
+}
+
+div.dottedBox {
+    border: 1.4px dashed gray;padding-left: 90px;
+    margin-bottom: 20px;
+    width: 97%;
+    padding-left: 10px;
+}
+
+p.eq {
+    padding-bottom: 20px;
+    display: table;
+}
+
+p span.MJXc-display {
+    font-size: 50px !important;
+    margin: 0 auto;
+    display: table-cell;
+}
+
+.greyText {
+    color: grey;
+}
+
+
+/* Iframe */
+#outerdiv
+{
+    width:600px;
+    height:600px;
+    overflow:hidden;
+    position:relative;
+}
+
+#innerdiv
+{
+    position:absolute;
+    top:-92px;
+    left: -50px;
+}
+
+.reveal .p .span .bigMath .mjx-char .MJXc-TeX-math-I {
+    font-size: 30px;
+}
