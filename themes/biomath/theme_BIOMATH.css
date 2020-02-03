@@ -1,0 +1,528 @@
+/**
+ * BIOMATH theme for reveal.js.
+ *
+ * By Bram De Jaegher, bram.de.jaegher@gmail.com
+ */
+@import url(font/UGent_Panno.css);
+section.has-dark-background, section.has-dark-background h1, section.has-dark-background h2, section.has-dark-background h3, section.has-dark-background h4, section.has-dark-background h5, section.has-dark-background h6 {
+  color: #fff; }
+
+/*********************************************
+ * GLOBAL STYLES
+ *********************************************/
+body {
+  background: #fff;
+  background-color: #fff;}
+
+.reveal {
+  font-family: "UGent Panno",helvetica,sans-serif;
+  font-size: 32px;
+  font-weight: normal;
+  color: #164b79;}
+
+::selection {
+  color: #fff;
+  background: #98bdef;
+  text-shadow: none; }
+
+::-moz-selection {
+  color: #fff;
+  background: #98bdef;
+  text-shadow: none; }
+
+.reveal .slides > section {
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    height: 100%;
+    padding: 0 0 0 0;
+}
+
+.reveal .slides > section,
+.reveal .slides > section > section {
+  line-height: 1.3;
+  font-weight: inherit; }
+
+
+.reveal .slides .cover .paddingWrapper {
+    padding-left: 40px; 
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+}
+
+.reveal .slides .normalHeader .paddingWrapper {
+    padding-left: 40px; 
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 150px);
+    display: block;
+}
+
+p span.MJXc-display {
+    font-family: MJXc-TeX-main-B,MJXc-TeX-main-Bx,MJXc-TeX-main-Bw;
+    line-height: 0;
+    font-style:normal;
+    font-weight: 400;
+    letter-spacing: normal;
+    font-stretch: 100%;
+    
+}
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  font-family: "UGent Panno",Helvetica,sans-serif;
+  font-weight: 120;
+  line-height: 1.2;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  text-shadow: none;
+  word-wrap: break-word;
+  text-align: left;}
+
+.reveal h1 {
+  font-size: 2.5em;}
+
+.reveal h2 {
+    font-size: 36px;}
+
+.reveal h3 {
+  font-size: 32px; }
+
+.reveal h4 {
+  font-size: 10px; }
+
+.reveal h1 {
+  text-shadow: none; }
+
+.reveal ul {
+    text-align: left;
+    display: block;
+}
+
+.reveal li {
+  font-size: 32px;
+  line-height: 50px;}
+
+.reveal p {
+     text-align: left;
+     padding-left: 20px;
+}
+
+/*********************************************
+ * Cover slide
+ *********************************************/
+.reveal .cover {
+    background-color: white;
+}
+
+.reveal .cover .header {
+    height: 140px;
+    width: 100%;
+    display: block;
+}
+
+.reveal .cover .header > img {
+    height: 100%;
+    display: block;
+}
+
+.reveal .slides .horizontalFiller {
+    height: 100%;
+    width: auto;
+    overflow: auto;
+    display: block;
+}
+
+.reveal .cover .header #logoUGent {
+    float: left;
+}
+
+.reveal .cover .header #logoFaculty {
+    float: right;
+}
+
+.reveal .cover h2 {
+    margin-top: 100px;
+    text-align: left;
+    font-family: "UGent Panno SemiBold",Helvetica,sans-serif;
+    padding-left:20px;
+}
+
+.reveal .cover .coverName {
+    margin-top: 100px;
+    font-size: 28px;
+    text-align: left;
+}
+
+.reveal .cover .additionalInformation {
+    margin-top: 10px;
+    font-size: 22px;
+    text-align: left;
+}
+
+.reveal .cover .coverFooter {
+    text-align: left;
+    margin-top: 70px;
+    bottom: 0px;
+}
+
+.reveal .cover .logoBiomath {
+    display: block;
+    height: 60px;
+    width: auto;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+.reveal .cover .biomathSubtitle {
+    font-size: 26px;
+    margin-bottom: 0px;
+    margin-bottom: 2px;
+}
+
+.reveal .cover .biomathSubSubtitle {
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.reveal p.confidentialFooter {
+    z-index: 30;
+    position: absolute;
+    bottom:0px;
+    left:45%;
+    font-size: 16px;
+    color:gray;
+}
+
+/*********************************************
+ * standard slide
+ *********************************************/
+.reveal .normalHeader {
+        display: block;
+}
+
+.reveal .normalHeader h2 {
+        font-size: 44px;
+        padding-left: 16px;
+        padding-top: 24px;
+        font-family: "UGent Panno SemiLight",Helvetica,sans-serif;
+}
+
+.reveal .normalHeader .header {
+    background-color: rgb(30,100,200);
+    height: 14%;
+}
+
+.reveal .normalHeader .header h2 {
+    color: #fff;
+}
+
+/*
+.reveal img .normal{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-height: 90%;
+  min-width: 90%;
+  transform: translate(-50%, -50%);
+}*/
+
+/*********************************************
+ * table of contents (TOC) slide
+ *********************************************/
+
+
+/*********************************************
+ * special styling
+ *********************************************/
+
+.rowx {
+    width: 100%;
+}
+
+.row30 {
+    width: 100%;
+    height: 30%;
+    display: inline-block;
+    position: relative;
+}
+
+.row40 {
+    width: 100%;
+    height: 40%;
+    display: inline-block;
+    position: relative;
+}
+
+.col60 {
+    display: inline-block;
+    width: 60%;
+    padding: 0;
+    margin: 0;
+}
+
+.col {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100%;
+}
+
+.reveal div .testDiv {
+    background-color: antiquewhite;
+    height: 100%; 
+    width: 20%;
+    border-color: black;
+    border-style: dashed;
+    border-width: thin;
+    margin-right: 10px
+}
+
+.reveal div .flexImage {
+    height: 100%; 
+    margin-right: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.reveal .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.reveal .source {
+    font-size: 16px;
+    padding-bottom:  2px;
+}
+
+.reveal .morePadding {
+    padding-left: 90px;
+}
+
+/*********************************************
+ * OTHER
+ *********************************************/
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 95%;
+  max-height: 95%; }
+
+.reveal strong,
+.reveal b {
+  font-weight: bold; }
+
+.reveal em {
+  font-style: italic; }
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: block;
+  text-align: left;
+  margin: 0 0 0 1em; }
+
+.reveal ol {
+  list-style-type: decimal; }
+
+.reveal ul {
+  list-style-type: disc; }
+
+.reveal ul ul {
+  list-style-type: square; }
+
+.reveal ul ul ul {
+  list-style-type: circle; }
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px; }
+
+.reveal dt {
+  font-weight: bold; }
+
+.reveal dd {
+  margin-left: 40px; }
+
+.reveal q,
+.reveal blockquote {
+  quotes: none; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 70%;
+  margin: 20px auto;
+  padding: 5px;
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block; }
+
+.reveal q {
+  font-style: italic; }
+
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: 20px auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: monospace;
+  line-height: 1.2em;
+  word-wrap: break-word;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+
+.reveal code {
+  font-family: monospace; }
+
+.reveal pre code {
+  display: block;
+  padding: 5px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal; }
+
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.reveal table th {
+  font-weight: bold; }
+
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.2em 0.5em 0.2em 0.5em;
+  border-bottom: 1px so²lid; }
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+  text-align: center; }
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+  text-align: right; }
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+  border-bottom: none; }
+
+.reveal sup {
+  vertical-align: super; }
+
+.reveal sub {
+  vertical-align: sub; }
+
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top; }
+
+.reveal small * {
+  vertical-align: top; }
+
+/*********************************************
+ * LINKS
+ *********************************************/
+.reveal a {
+  color: #2a76dd;
+  text-decoration: none;
+  -webkit-transition: color .15s ease;
+  -moz-transition: color .15s ease;
+  transition: color .15s ease; }
+
+.reveal a:hover {
+  color: #6ca0e8;
+  text-shadow: none;
+  border: none; }
+
+.reveal .roll span:after {
+  color: #fff;
+  background: #1a53a1; }
+
+/*********************************************
+ * IMAGES
+ *********************************************/
+.reveal a img {
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear; }
+
+.reveal a:hover img {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #2a76dd;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+
+/*********************************************
+ * NAVIGATION CONTROLS
+ *********************************************/
+.reveal .controls .navigate-left,
+.reveal .controls .navigate-left.enabled {
+  border-right-color: #2a76dd; }
+
+.reveal .controls .navigate-right,
+.reveal .controls .navigate-right.enabled {
+  border-left-color: #2a76dd; }
+
+.reveal .controls .navigate-up,
+.reveal .controls .navigate-up.enabled {
+  border-bottom-color: #2a76dd; }
+
+.reveal .controls .navigate-down,
+.reveal .controls .navigate-down.enabled {
+  border-top-color: #2a76dd; }
+
+.reveal .controls .navigate-left.enabled:hover {
+  border-right-color: #6ca0e8; }
+
+.reveal .controls .navigate-right.enabled:hover {
+  border-left-color: #6ca0e8; }
+
+.reveal .controls .navigate-up.enabled:hover {
+  border-bottom-color: #6ca0e8; }
+
+.reveal .controls .navigate-down.enabled:hover {
+  border-top-color: #6ca0e8; }
+
+/*********************************************
+ * PROGRESS BAR
+ *********************************************/
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2); }
+
+.reveal .progress span {
+  background: #2a76dd;
+  -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -moz-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985); }
+
+/*********************************************
+ * Fix inherit overwrite of reveal.js
+ *********************************************/
+
+ .reveal span {
+   font: normal;
+ }

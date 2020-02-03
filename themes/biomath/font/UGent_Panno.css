@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'UGent Panno';
+    src: url('ugentpannotext-normal-web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UGent Panno SemiBold';
+    src: url('ugentpannotext-semibold-web.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UGent Panno SemiLight';
+    src: url('ugentpannotext-semilight-web.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UGent Panno Medium';
+    src: url('ugentpannotext-medium-web.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
