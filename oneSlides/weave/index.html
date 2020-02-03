@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Weave.jl</title>
+
+		<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../../themes/biomath/theme_BIOMATH.css">
+		<link rel="stylesheet" href="style.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+        
+        <!-- MathJax -->   
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+            });
+        </script>
+        <script type="text/javascript" async src="../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <!-- User settings -->
+        <style>
+            /* Confidentiality */
+            p.confidentialFooter {
+                display: none;
+            }
+        </style>
+        
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+					<section class="cover" style="background-color: #C7C787"> 
+						<div class="paddingWrapper">
+								<div class="header">  
+								</div>
+								<h2 style="font-size: 40px;"> Literate Programming </h2>
+								<h2  class="fragment" style="font-size: 25px;"> in Julia and Python  </h2>
+								<h2  class="fragment" style="font-size: 20px;"> But shown in Julia </h2>
+								<h2  class="fragment" style="font-size: 15px;"> of course.</h2>
+						</div>
+					</section>
+
+					<section class="cover" style="background-color: #C7C787"> 
+						<div class="paddingWrapper">
+								<div class="header">  
+								</div>
+								<h2 style="font-size: 40px;"> Literate Programming </h2>
+								<img src="figs/def.png">
+								<div style="margin-top:100px;">
+									<ul>
+										<li class="fragment" style="font-size:40px;"> <i>Jupyter notebooks</i> (Julia, Python, R)</li>
+									</ul>
+								</div>
+						</div>
+					</section>
+
+					<section class="cover" style="background-color: #C7C787"> 
+						<div class="paddingWrapper">
+								<div class="header">  
+								</div>
+								<h2 style="font-size: 40px;"> Literate Programming </h2>
+								<img src="figs/def.png">
+								<div style="margin-top:100px;">
+									<ul>
+										<li class="" style="font-size:40px;"><i>Weave.jl</i> (Julia)</li>
+										<li class="fragment" style="font-size:25px;"><i>Pweave</i> (Python)</li>
+										<li class="fragment" style="font-size:20px;"><i>Knitr</i> (R)</li>
+									</ul>
+								</div>
+						</div>
+					</section>
+				</div>
+		 </div>
+                
+		<script src="../../reveal.js/lib/js/head.min.js"></script>
+		<script src="../../reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                    width: 1024,
+                    height: 768,
+                    slideNumber: true,
+                    transition: 'none',
+				dependencies: [
+					{ src: '../../reveal.js/plugin/markdown/marked.js' },
+					{ src: '../../reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
