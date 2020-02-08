@@ -17,7 +17,7 @@
 
 ## Machine learning
 * [The lord of the rubber rings: the trilogy.](https://beramos.github.io/webslides/the_lord_of_the_rubber_ring): A tale on the quest for optimal experimental data on electrodialysis fouling. With the return of the Neural Differential Equation :bow_and_arrow: to predict fouling
-* [A machine learning approach to model electrodialysis fouling](https://beramos.github.io/webslides/YWP2020): Neural Differential Equations to model electrodialysis fouling, a presentation for the Young water professionals conference 2020. 
+* [A machine learning approach to model electrodialysis fouling](https://beramos.github.io/webslides/YWP2020): Neural Differential Equations to model electrodialysis fouling, a presentation for the Young Water Professionals conference 2020. 
 
 ## OneSlides
 A collection of oneslides presented at [BIOMATH](https://biomath.ugent.be) seminars. Mostly about tools I like to use
