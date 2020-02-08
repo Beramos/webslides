@@ -1,0 +1,142 @@
+/* Styles */
+
+.highTitle.slide {
+    padding:20px 100px 0;
+}
+
+.container {
+    display: flex;
+}
+
+.item {
+    margin: auto;
+}
+
+.wrapper {
+    width: 100%;
+}
+
+.left {
+   width: 50%;
+    padding-left: 120px;
+}
+
+.right {
+    width: 50%;
+    padding-left: 60px;
+}
+
+.source {
+    font-size: 16px;
+    padding-bottom:  2px;
+}
+
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+img.Hcenter {
+    margin-top: 100px;;
+}
+
+
+code {
+    font-size: 18px;
+}
+
+.slide pre {
+    margin-bottom: 0px;
+}
+
+.apropos {
+    color: grey;
+}
+
+.smallText {
+    font-size: 20px;
+}
+
+.lessSpacing p {
+ margin-bottom: 10px;   
+}
+
+ol >li > ul > li {
+    font-size: 14px;
+}
+
+img.centerFill{
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 5%;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'AnimalesFantastic';
+    src: url("fonts/AnimalesFantastic.otf") format("opentype");
+}
+
+a.ref {
+    font-size:20px;
+    color: grey;
+    text-decoration-style: dotted;
+    position: absolute;
+    bottom: 20px;
+    left:100px;
+}
+
+a.ref {
+    color:grey;
+    font-size: 18px;
+    background: transparent;
+    text-decoration: underline dotted grey;
+}
+
+.slide::after {
+    background: url("figs/YWPlogo.png") no-repeat;
+    /*content: "";*/
+    /*background: transparent;*/
+    width: 1030px;
+    height: 60px;
+    position: absolute;
+    background-size: contain;
+    right:0px;
+    top:582px;
+    padding-top:28px;
+    padding-bottom:20px;
+    color:black;
+    font-size:16px;
+}
+
+
+.slide#cover1::after {
+    content:"";
+}
+
+.slide#cover2::after {
+    content:"";
+}
+
+.slide#cover3::after {
+    content:"";
+}
+
+a.mainAuthor {
+    background: transparent;
+    text-decoration: underline dotted grey;
+    color:black;
+    font: bold;
+}
+
+.slide#cover1{
+    background: url("figs/background.jpg")
+}
+
+.slide#cover2{
+    background: url("figs/background.jpg")
+}
+
+.slide#cover3{
+    background: url("figs/background.jpg")
+}
