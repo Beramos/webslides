@@ -153,6 +153,49 @@
 				</div>
 		</section>
 	
+		<section class="slide  highTitle" id="foulingFactors">
+			<h2>There are many factors that influence fouling</h2>
+			<p></p>
+				<div class="container" style="margin-top:-20px;">
+					<div style="opacity: 0.2" class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="http://maxgreenproducts.com/humic-growth-solutions/the-science"> <img src="figs/HA.jpeg" width="90%"></a>
+						</div>
+						<p>Foulant props.</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/salt.jpg" width="90%"></a>
+						</div>
+						<p>Salt concentration</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/pump.jpg" width="90%"></a>
+						</div>
+						<p>Crossflow velocity</p>
+					</div>
+					<div class="box container"> 
+						<div class="box5">
+							<a style="background: none" href=""> <img src="figs/current.jpeg" width="90%"></a>
+						</div>
+						<p>Current</p>
+					</div>
+					<div style="opacity: 0.2" class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="https://camblab.info/wp/wp-content/uploads/2016/09/ph-stick-0-14.jpg"> <img src="figs/pH.jpeg" height="90%"></a>
+						</div>
+						<p>pH</p>
+					</div>
+					<div style="opacity: 0.2" class="box container"> 
+						<div class="box5">
+							<a style="background: none" href="https://www.membrain.cz/en/images/2017/iontovymenne-membrany-01.jpg"> <img src="figs/IEM.jpeg" width="90%"></a>
+						</div>
+						<p>Membrane props.</p>
+					</div>
+				</div>
+		</section>
+	
 		<style>
 				.container {
 					display: flex;
@@ -246,29 +289,24 @@
 		</section>
 	
 		<section class="slide  highTitle" id="split">
-			<h2>The data is split in a Training and Test set</h2>
+			<h2>22 timeseries at different process conditions</h2>
 			<div class="figure" style="margin-top: 40px;">
 				<img src="figs/DOESplit.svg" width="90%">
 			</div>
 		</section>
 
 
-		<section class="slide  highTitle" id="test">
-			<h2>Model testing</h2>
-			<div class="container" style="justify-content: center">
+		<section class="slide  highTitle" id="expRes">
+			<h2>Some examples of experiments</h2>
+			<div class="container" style="justify-content: center;margin-left:-220px;">
 				<div class="box6">
 					<div class="figure">
-						<img src="figs/Slice3SSEV2.svg" width="105%">
+						<img src="figs/Slice3SSEV2NoModel.svg" width="160%">
 					</div>
 				</div>
-				<div class="box6">
+				<div class="box6" style="margin-left:30px">
 					<div class="figure">
-						<img src="figs/Slice2SSEV2.svg" width="105%">
-					</div>
-				</div>
-				<div class="box6">
-					<div class="figure">
-						<img src="figs/Slice1SSEV2.svg" width="100%">
+						<img src="figs/Slice2SSEV2NoModel.svg" width="160%">
 					</div>
 				</div>
 			</div>
@@ -277,37 +315,70 @@
 			.box6 {
 				width:380px;
 				height:220px;
-				margin: 15px;
-				padding: 10px;
+				padding: 40px;
 			}
-
 		</style>
-	
-		<section class="slide  highTitle" id="NODEs2">
-				<h2>Mapping the initial fouling rate is easy</h2>
-				<div class="container" style="justify-content: center">
-						<div class="box6">
-							<div class="figure">
-								<img src="figs/contourConcvsVeloCurr0_63.svg" width="100%">
-							</div>
-						</div>
-						<div class="box6">
-							<div class="figure">
-								<img src="figs/contourCurVsVelo0_0.svg" width="100%">
-							</div>
-						</div>
-						<div class="box6">
-							<div class="figure">
-								<img src="figs/contourConcvsCurrVelo0_67.svg" width="100%">
-							</div>
-						</div>
+
+		<section class="slide  highTitle" id="ModelTraining">
+			<h2>Model training results</h2>
+			<div class="container" style="justify-content: center;margin-left:-220px;">
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice3SSEV2.svg" width="160%">
 					</div>
+				</div>
+				<div class="box6" style="margin-left:30px">
+					<div class="figure">
+						<img src="figs/Slice2SSEV2.svg" width="160%">
+					</div>
+				</div>
+			</div>
+		</section>
+		<style>				
+			.box6 {
+				width:380px;
+				height:220px;
+				padding: 40px;
+			}
+		</style>
+
+		<section class="slide  highTitle" id="ModelTesting">
+			<h2>Model test results </h2>
+			<div class="container" style="justify-content: center;margin-left:-220px;">
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice3SSEV2Test.svg" width="160%">
+					</div>
+				</div>
+				<div class="box6" style="margin-left:30px">
+					<div class="figure">
+						<img src="figs/Slice2SSEV2Test.svg" width="160%">
+					</div>
+				</div>
+			</div>
+		</section>
+		<style>				
+			.box6 {
+				width:380px;
+				height:220px;
+				padding: 40px;
+			}
+		</style>
+
+		<section class="slide  highTitle" id="mapping">
+				<h2>A continuous representation of the fouling rate</h2>
+				<div class="container" style="justify-content: center">
+						<div style="margin-left:0px;margin-top:0px;">
+							<div class="figure">
+								<img src="figs/contourConcvsVeloCurr0_63.svg" width="110%">
+							</div>
+						</div>
 		</section>
 	
-		<section class="slide  highTitle" id="NODEs2">
-				<h2>Extrapolation works well</h2>
-				<div class="figure" style="margin-left:-60px;margin-top:140px;">
-					<img src="figs/extrapolationCombined.svg" width=110%;>
+		<section class="slide  highTitle" id="extrapol">
+				<h2>Extrapolation in time works well</h2>
+				<div class="figure" style="margin-left:40px;">
+					<img src="figs/extrapolationTime.svg" width=90%;>
 				</div>
 		</section>
 		
