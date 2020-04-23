@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Hybrid model </title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+	<body class="shower list">
+		<header class="caption">
+			<h1> Hybrid model </h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+		<section class="slide" id="cover">
+			<h2> Hybrid model </h2>
+			<img style="top: 370px;margin-left:70px" width="90%" src="figs/daRubberAnnoted.svg" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+		<section class="slide  highTitle" id="intro1">
+			<h2>Electrodialysis</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_1.svg" style="width: 76%;">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="intro2">
+			<h2>Electrodialysis</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_2.svg" style="width: 76%;">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="intro3">
+			<h2>Electrodialysis fouling</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_4.svg" style="width: 76%;">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="intro4">
+			<h2>Electrodialysis fouling</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_5.svg" style="width: 76%;">
+			</div>
+		</section>
+
+			
+		<section class="slide  highTitle" id="NODEs2">
+			<h2>Part 3: The two models (2020)</h2>
+			<div class="figure" style="margin-top:50px;">
+				<img src="figs/twoTowers.png" width=70%>
+			</div>
+	</section>
+
+
+		<section class="slide  highTitle" id="previously">
+			<h2>Previously: mechanistic model ED</h2>
+			<div class="container">
+					<div class="box3">
+						<div class="figure">
+							<img src="figs/compDomSliceInd.svg" height="250px;"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<img src="figs/equation1.png" width="100%"> 
+							<img src="figs/equation2.png" width="100%"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<img src="figs/line_plots2V.svg" height="250px;"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<video width="500" style="margin-top:40px;margin-left:-20px;" autoplay loop>
+								<source src="vids/electroConvProperScale2_cropped.webm" type="video/webm">
+								Your browser does not support the video tag.			
+							</video>
+						</div>
+					</div>
+			</div>
+		</section>
+
+		<style>
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.box {
+				width:230px;
+				height:220px;
+				border: 1px dashed white;
+				margin: 20px;
+			}
+
+			.box5 {
+				width:200px;
+				height:80%;
+			}
+		</style>
+
+		<style>
+			.box3 {
+				width:380px;
+				height:220px;
+				margin: 15px;
+				padding: 10px;
+			}
+
+			.box4 > img {
+				margin-bottom:10px;
+			}
+
+			.box3 > p {
+				display: block;
+			}
+
+			.box4 {
+				width:300px;
+				height:80%;
+			}
+		</style>
+	
+		<section class="slide  highTitle" id="NODEs1">
+			<h2>Neural differential equations</h2>
+			<div style="margin-left:200px;margin-top:40px;margin-bottom:40px;">
+				<p>$$\frac{d \mathbf{R}(t)}{dt} = f(\mathbf{R}(t),\, v,\, i, \, C_e)$$</p>
+			</div>
+			<div class="figure next">
+					<img alt="NeuralODE" src="figs/NeuralODEDiagram.svg" width=100%>
+			</div>
+		</section>
+		</section>
+
+		<section class="slide  highTitle" id="test">
+			<h2>Neural differential equations</h2>
+			<div class="container" style="justify-content: center">
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice3SSEV2.svg" width="105%">
+					</div>
+				</div>
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice2SSEV2.svg" width="105%">
+					</div>
+				</div>
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice1SSEV2.svg" width="100%">
+					</div>
+				</div>
+			</div>
+		</section>
+		<style>				
+			.box6 {
+				width:380px;
+				height:220px;
+				margin: 15px;
+				padding: 10px;
+			}
+
+		</style>
+
+		<section class="slide" id="cover">
+			<h2> Hybrid model</h2>
+			<img style="top: 370px;margin-left:70px" width="90%" src="figs/daRubberAnnoted.svg" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	  </section>
+
+	<div class="progress"></div>
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
