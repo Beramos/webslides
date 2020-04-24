@@ -183,24 +183,6 @@
 			</div>
 		</section>
 
-		<section class="slide  highTitle" id="hybrid">
-			<h2>Hybrid approach</h2>
-			<p>An ED system, simplified</p>
-			<div class="figure">
-				<img src="figs/systemBoundaries.svg" width="60%">
-			</div>
-		</section>
-
-		<section class="slide  highTitle" id="thecakeisalie">
-			<h2>The main challenge is dividing the cake...</h2>
-			<div>
-				<p>	$$ L = \sum^N_{j=1} \left( \mathbf{R}_j - \hat{\mathbf{R}}_j \right)^2 + \lambda \, \sum^M_{k=1} \left| w_k \right| $$		</p>
-			</div>
-			<p> $$a\cdot f(x) + b\cdot g(x)$$</p>
-			<p> The cake is a lie...</p>
-			<p> It is a loss function</p>
-		</section>
-
 		<section class="slide  highTitle" id="approach">
 			<h2>A simple solution often works better</h2>
 			<p>Sadly, it didn't find a simple one</p>
@@ -228,6 +210,14 @@
 					<div>
 							<p>&rarr; Solved using the method-of-lines <span style="color:grey">(DifferentialEquations.jl)</span></p>
 					</div>
+				</div>
+		</section>
+
+		<section class="slide  highTitle" id="BasicEDDomain">
+			<h2>The basic ED model</h2>
+			<p>Purpose: predict boundary layer concentration</p>
+			<div class="figure">
+					<img src="figs/systemBoundaries.svg" width="60%">
 				</div>
 		</section>
 			
@@ -304,7 +294,26 @@
 			</div>
 			<p style="margin-top:30px"> &rarr; Neural Differential Equation</p>
 		</section>
-		
+
+		<section class="slide  highTitle" id="thecakeisalie">
+			<h2>The main challenge is dividing the cake.</h2>
+				<p class="next"> The cake is a lie...</p>
+				<p class="next"> It is a loss-function</p>
+		</section>
+
+		<section class="slide  highTitle" id="loss">
+				<h2>The main challenge is dividing the cake</h2>
+				<div style="margin-top:100px">
+					<p> $$a\, f(x) + NN(x, \theta)$$</p>
+					<p> $$a\,f(x) \cdot NN(x, \theta)$$</p>
+				</div>
+				<div style="margin-top:100px;">
+					<p>	$$ L = \sum^N_{j=1} \left( \mathbf{R}_j - \hat{\mathbf{R}}_j \right)^2 $$		</p>
+				</div>
+				<p class="next"> &rarr; Withhold some information from the data-driven model</p>
+				<p class="next" style="padding-left:260px"><b> Divide and Conquer strategy&#8482 </b></p>
+			</section>
+
 		<section class="slide  highTitle" id="foulingMod5">
 			<h2>Hybrid fouling model (mechanistic part)</h2>
 			<p>Purpose: predict number of collisions</p>
