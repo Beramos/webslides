@@ -13,7 +13,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="basicModel.svg">
+   sodipodi:docname="basicModel2.svg">
   <metadata
      id="metadata173">
     <rdf:RDF>
@@ -39,9 +39,9 @@
      inkscape:window-height="1386"
      id="namedview171"
      showgrid="false"
-     inkscape:zoom="7.333333"
-     inkscape:cx="503.7196"
-     inkscape:cy="248.6562"
+     inkscape:zoom="1.833333"
+     inkscape:cx="287.7137"
+     inkscape:cy="196.4643"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -484,4 +484,55 @@
        y="1238.64"
        id="text169">concentrate</text>
   </g>
+  <circle
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:0.9;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#4d4d4d;fill-opacity:1;fill-rule:evenodd;stroke:#4d4d4d;stroke-width:6.7170324;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     id="path3501"
+     cx="2290.909"
+     cy="506.9092"
+     r="10.56876" />
+  <path
+     style="fill:#333333;fill-rule:evenodd;stroke:#333333;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+     d="M 2293.863,507.1623 2160.397,642.1708"
+     id="path3503"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="1979.3848"
+     y="663.53351"
+     id="text4585"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4587"
+       x="1979.3848"
+       y="663.53351">Outlet</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2320.9658"
+     y="519.53943"
+     id="text4585-3"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4587-6"
+       x="2320.9658"
+       y="519.53943">Inlet</tspan></text>
+  <path
+     style="fill:#333333;fill-rule:evenodd;stroke:#333333;stroke-width:4px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow1Lend-7)"
+     d="M 2293.75,507.3047 2160.284,372.2961"
+     id="path3503-3"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cc" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="2003.5547"
+     y="361.45758"
+     id="text4585-5"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan4587-62"
+       x="2003.5547"
+       y="361.45758">Outlet</tspan></text>
 </svg>
