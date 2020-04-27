@@ -10,13 +10,13 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="180.0945mm"
-   height="153.0478mm"
-   viewBox="0 0 638.1304 542.2952"
+   width="202.9929mm"
+   height="153.0477mm"
+   viewBox="0 0 719.2664 542.295"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="foulingModleMarked3.svg">
+   sodipodi:docname="foulingModleMarked3Fin.svg">
   <defs
      id="defs4">
     <marker
@@ -57,17 +57,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.9899495"
-     inkscape:cx="231.0043"
-     inkscape:cy="215.4989"
+     inkscape:zoom="0.7"
+     inkscape:cx="-365.9237"
+     inkscape:cy="-75.59548"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1279"
-     inkscape:window-height="1385"
+     inkscape:window-width="2560"
+     inkscape:window-height="1386"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-maximized="1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -80,7 +80,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -88,7 +88,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-39.75258,-122.1857)">
+     transform="translate(-39.75258,-122.1858)">
     <image
        y="122.1856"
        x="65.38033"
@@ -153,5 +153,11 @@
          y="659.98645"
          id="tspan5789"
          style="font-size:25.0000076px">(Collisions)</tspan></text>
+    <path
+       style="fill:#5aa02c;fill-rule:evenodd;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 648.8746,594.8619 667.1589,594.7803 678.1585,643.4218 741.0954,595.8111 757.6868,595.7499 685.2401,659.4098 666.0472,658.3997 Z"
+       id="path4161"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc" />
   </g>
 </svg>
