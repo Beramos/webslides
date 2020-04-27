@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Hybrid models: divide and conquer </title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+	<body class="shower list">
+		<header class="caption">
+			<h1> Hybrid models: is divide and conquer the winning strategy? </h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+		<section class="slide" id="cover">
+			<h2> Hybrid models: is divide and conquer the winning strategy?</h2>
+			<img style="height:50%; margin-top:50px;margin-left:60px" src="figs/cover.jpg" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+		<section class="slide  highTitle" id="intro1">
+			<h2>Electrodialysis</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_1.svg" style="width: 76%;">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="intro2">
+			<h2>Electrodialysis</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_2.svg" style="width: 76%;">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="intro3">
+			<h2>Electrodialysis fouling</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_4.svg" style="width: 76%;">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="intro4">
+			<h2>Electrodialysis fouling</h2>
+				<div class="figure">
+					<img src="figs/electrodialysis_5.svg" style="width: 76%;">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="previously">
+			<h2>Previously: mechanistic model ED</h2>
+			<div class="container">
+					<div class="box3">
+						<div class="figure">
+							<img src="figs/compDomSliceInd.svg" height="250px;"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<img src="figs/equation1.png" width="100%"> 
+							<img src="figs/equation2.png" width="100%"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<img src="figs/line_plots2V.svg" height="250px;"> 
+						</div>
+					</div>
+					<div class="box3 next">
+						<div class="figure">
+							<video width="500" style="margin-top:40px;margin-left:-20px;" autoplay loop>
+								<source src="vids/electroConvProperScale2_cropped.webm" type="video/webm">
+								Your browser does not support the video tag.			
+							</video>
+						</div>
+					</div>
+			</div>
+		</section>
+
+		<style>
+			.container {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.box {
+				width:230px;
+				height:220px;
+				border: 1px dashed white;
+				margin: 20px;
+			}
+
+			.box5 {
+				width:200px;
+				height:80%;
+			}
+		</style>
+
+		<style>
+			.box3 {
+				width:380px;
+				height:220px;
+				margin: 15px;
+				padding: 10px;
+			}
+
+			.box4 > img {
+				margin-bottom:10px;
+			}
+
+			.box3 > p {
+				display: block;
+			}
+
+			.box4 {
+				width:300px;
+				height:80%;
+			}
+		</style>
+	
+		<section class="slide  highTitle" id="NODEs1">
+			<h2>Previously: neural differential equations</h2>
+			<div style="margin-left:-50px;margin-top:40px;margin-bottom:40px;">
+				<p>$$\frac{d \mathbf{R}(t)}{dt} = f(\mathbf{R}(t),\, v,\, i, \, C_e)$$</p>
+			</div>
+			<div class="figure next">
+					<img alt="NeuralODE" src="figs/NeuralODEDiagram.svg" width=100%>
+			</div>
+		</section>
+		</section>
+
+		<section class="slide  highTitle" id="test">
+			<h2>Previously: neural differential equations</h2>
+			<div class="container" style="justify-content: center">
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice3SSEV2.svg" width="105%">
+					</div>
+				</div>
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice2SSEV2.svg" width="105%">
+					</div>
+				</div>
+				<div class="box6">
+					<div class="figure">
+						<img src="figs/Slice1SSEV2.svg" width="100%">
+					</div>
+				</div>
+			</div>
+		</section>
+		<style>				
+			.box6 {
+				width:380px;
+				height:220px;
+				margin: 15px;
+				padding: 10px;
+			}
+		</style>
+
+		<section class="slide  highTitle" id="hybrid">
+			<h2>Experiments (APAM fouling)</h2>
+			<div class="figure">
+				<img style="margin-top:0px" src="figs/experiments.png" width=80%>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="approach">
+			<h2>A simple solution often works better</h2>
+			<p class="next">Sadly, I did not find one...</p>
+			<div class="figure next">
+				<img class="" src="figs/modelStructure.svg" width="105%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="BasicEDSchem">
+			<h2>The basic ED model</h2>
+			<p>Purpose: prediction of boundary layer concentration (C<sub>b</sub>)</p>
+			<div class="figure" style="margin-top:100px;">
+				<img class="center"  src="figs/modelStructureBEDM.svg" width="150%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="BasicEDDomain">
+			<h2>The basic ED model</h2>
+			<p>Purpose: prediction of boundary layer concentration (C<sub>b</sub>)</p>
+			<div class="figure">
+					<img src="figs/systemBoundaries.svg" width="60%">
+				</div>
+		</section>
+
+		<section class="slide  highTitle" id="BasicEDEq">
+			<h2>The basic ED model</h2>
+			<p>Purpose: prediction of boundary layer concentration (C<sub>b</sub>)</p>
+				<div>
+					<div class="figure">
+							<img src="figs/equation1.png" width="50%"> 
+							<img src="figs/equation2.png" width="50%"> 
+					</div>
+					<div class="next" style="margin-top:50px;">
+							<p>&rarr; Solved using the method-of-lines <span style="color:grey">(DifferentialEquations.jl)</span></p>
+					</div>
+				</div>
+		</section>
+
+			
+		<section class="slide  highTitle" id="BasicEDRes1">
+			<h2>The basic ED model</h2>
+			<p>Purpose: prediction of boundary layer concentration (C<sub>b</sub>)</p>
+			<div style="width:40%">
+				<div class="figure">
+					<img style="margin-left:60px;" src="figs/basicModel.svg">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="BasicEDRes2">
+			<h2>The basic ED model</h2>
+			<p>Purpose: prediction of boundary layer concentration (C<sub>b</sub>)</p>
+			<div style="width:40%">
+				<div class="figure">
+					<img style="margin-left:60px;" src="figs/basicModel2.svg">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="BasicEDRes3">
+			<h2>The basic ED model</h2>
+			<p>Purpose: prediction of boundary layer concentration (C<sub>b</sub>)</p>
+			<div style="width:40%">
+				<div class="figure">
+					<img style="margin-left:60px;" src="figs/basicModel3.svg">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="foulingMod1">
+			<h2>Fouling model</h2>
+			<p>Purpose: prediction of fouling resistance</p>
+			<div style="width:40%">
+				<div class="figure">
+					<img style="margin-left:60px;" src="figs/foulingEquation.png" width="100%">
+					<img class="next" style="margin-left:90px;margin-top:60px;" src="figs/resistanceModel.png" width="100%">
+			</div></div>
+		</section>
+			
+		<section class="slide  highTitle" id="foulingMod2">
+			<h2>Hybrid fouling model</h2>
+			<p>Purpose: prediction of fouling resistance</p>
+			<div style="width:40%">
+				<div class="figure">
+					<img style="margin-left:60px;" src="figs/foulingModleMarked-2.svg" width="100%">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="foulingMod3">
+			<h2>Hybrid fouling model</h2>
+			<p>Purpose: prediction of fouling resistance</p>
+			<div style="width:40%">
+				<div class="figure">
+					<img style="margin-left:60px;" src="figs/foulingModleMarked-1.svg" width="100%">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="foulingMod4">
+			<h2>Hybrid fouling model</h2>
+			<p>Purpose: prediction of fouling resistance</p>
+			<div style="width:40%">
+				<div class="figure">
+					<img style="margin-left:60px;" src="figs/foulingModleMarked.svg" width="100%">
+			</div>
+		</section>
+			
+		<section class="slide  highTitle" id="foulingMod6">
+			<h2>Hybrid fouling model</h2>
+			<p>Purpose: prediction of fouling resistance</p>
+			<div style="width:40%">
+				<div class="figure">
+					<img style="margin-left:60px;" src="figs/foulingModleMarked3.svg" width="100%">
+			</div>
+			<p style="margin-top:30px"> &rarr; Neural Differential Equation</p>
+		</section>
+
+		<section class="slide  highTitle" id="thecakeisalie">
+			<h2>The main challenge is dividing the cake.</h2>
+				<p class="next"> The cake is a lie...</p>
+				<p class="next"> It is a loss function.</p>
+		</section>
+
+		<section class="slide  highTitle" id="loss">
+				<h2>The main challenge is dividing the cake.</h2>
+				<div style="margin-top:100px">
+					<p> $$a\, f(x) + NN(x, \theta)$$</p>
+					<p> $$a\,f(x) \cdot NN(x, \theta)$$</p>
+				</div>
+				<div style="margin-top:100px;">
+					<p>	$$ L = \sum^N_{j=1} \left( \mathbf{R}_j - \hat{\mathbf{R}}_j \right)^2 $$		</p>
+				</div>
+				<p class="next"> &rarr; Separate training/calibration procedure.</p>
+				<p class="next"> &rarr; Withhold some information from the data-driven model.</p>
+				<p class="next" style="padding-left:260px"><b> Divide and Conquer strategy&#8482 </b></p>
+			</section>
+
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Hybrid fouling model (mechanistic part)</h2>
+			<p>Purpose: predict number of collisions</p>
+			<div class="figure">
+					<img class="" src="figs/modelStructureMech.svg" width="105%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Hybrid fouling model (mechanistic part)</h2>
+			<p>Purpose: predict number of collisions</p>
+			<div style ="margin-top:-80px;" class="figure">
+				<img src="figs/mechModelEqs1.svg" width=90%>
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Hybrid fouling model (mechanistic part)</h2>
+			<p>Purpose: predict number of collisions</p>
+			<div style ="margin-top:-80px;" class="figure">
+				<img src="figs/mechModelEqs2.svg" width=90%>
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Hybrid fouling model (mechanistic part)</h2>
+			<p>Purpose: predict number of collisions</p>
+			<div style ="margin-top:-80px;" class="figure">
+				<img src="figs/mechModelEqs3.svg" width=90%>
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Hybrid fouling model (mechanistic part)</h2>
+			<p>Purpose: predict number of collisions</p>
+			<div style="width:40%">
+					<div class="figure">
+						<img style="margin-left:60px;" src="figs/foulingEquation.png" width="100%">
+						<img class="next" style="margin-left:90px;margin-top:60px;" src="figs/resistanceModel.png" width="100%">
+				</div></div>
+				<p class="next">&rarr; Calibrate $\gamma$</p>
+				<p class="next">&rarr; For membrane filtration there are tables for $\gamma$ </p>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod6">
+			<h2>Hybrid fouling model (mechanistic part)</h2>
+			<p>Purpose: predict number of collisions</p>
+			<div class="figure">
+					<img class="" src="figs/collisionModel.svg" width="70%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Hybrid fouling model (data-driven part)</h2>
+			<div class="figure">
+					<img style="margin-top:100px" src="figs/foulingModleMarked3Fin.svg" width="60%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Hybrid fouling model (data-driven part)</h2>
+			<div class="figure">
+					<img style="margin-top:100px" src="figs/simpleML2.svg" width="105%">
+			</div>
+		</section>
+		
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>The model is trained with 3 time series</h2>
+			<p>Current is varied</p>
+			<div class="figure">
+					<img class="" src="figs/trainingset.svg" width="70%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>The model is tested with 9 time series </h2>
+			<div class="container" style="justify-content: center;margin-top:-0px">
+					<div class="box6">
+						<div class="figure">
+							<img src="figs/testset1.svg" width="105%">
+						</div>
+					</div>
+					<div class="box6">
+						<div class="figure">
+							<img src="figs/testset2.svg" width="105%">
+						</div>
+					</div>
+					<div class="box6">
+						<div class="figure">
+							<img src="figs/testset3.svg" width="100%">
+						</div>
+					</div>
+				</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>The model is tested with 9 time series </h2>
+				<div class="figure next">
+					<img class="" src="figs/modelStructure.svg" width="105%">
+				</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>The model is tested with 9 time series </h2>
+				<div class="figure next">
+					<img class="" src="figs/modelStructure2.svg" width="105%">
+				</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>The evolution of $\alpha$ vs. mass fouling layer</h2>
+			<div class="figure">
+				<img src="figs/alphaVsR.svg" width=80%>
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Conclusions</h2>
+			<p><b>Hybrid models are cool!</b>  <span style="padding-left:40px;font-size:30px" class="next">if:</span></p>
+			<ul>
+				<li class="next">The mechanistic part is pretty good</li>
+				<li class="next">You can train both models separately</li>
+				<li class="next">You are a bit lucky</li>
+			</ul>
+		</section>
+		
+
+		<section class="slide" id="last">
+			<h2> Hybrid models: divide and conquer</h2>
+			<img style="height:40%; margin-top:10px;margin-left:-100px" src="figs/cover.jpg" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a>, Wim De Schepper, Arne Verliefde, Ingmar Nopens</p>
+			<div style="position: absolute;bottom:30px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	  </section>
+
+	<div class="progress"></div>
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
