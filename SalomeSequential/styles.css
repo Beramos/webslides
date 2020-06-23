@@ -58,10 +58,6 @@ img.centerFill{
     position: relative;
 }
 
-@font-face {
-    font-family: 'AnimalesFantastic';
-    src: url("fonts/AnimalesFantastic.otf") format("opentype");
-}
 
 a.ref {
     font-size:20px;
