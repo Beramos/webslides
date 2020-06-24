@@ -1,0 +1,214 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Sequential meshing in Salome </title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+	<body class="shower list">
+		<header class="caption">
+			<h1>A quest to mesh spacers in Salome</h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+		<section class="slide" id="cover">
+	        <h2 style="margin-bottom: 10px;font-size: 30px;color: black"> A quest to mesh spacers in Salome </h2>
+	        <h2 s><span style="font-size:20px;margin-left: 10px;">How to make massive meshes</span></h2>
+			<img style="top: 300px;margin-left:140px;" width="70%" src="figs/onlySpacers.png" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;"><a href="mailto:bram.dejaegher@ugent.be">Bram De Jaegher</a></p>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+		<section class="slide  highTitle" id="what">
+			<h2>What I want to model</h2>
+			<img src="figs/realSystem.jpg" class="center" width=100%>
+		</section>
+
+		<section class="slide  highTitle" id="geom">
+			<h2>Geometry: generic spacer model</h2>
+			<div style="margin:0 auto; display: flex; height: 60%; width:95%;">
+				<div class="next" style="width:49%">
+					<img src="figs/top1Cropped.png" width=95%>
+					<p style="margin-top:-20px;margin-left:90px;">"Thick and even"</p>
+				</div>
+				<div class="next" style="width:49%">
+					<img src="figs/top2Cropped.png" width=90%>
+					<p style="margin-left:80px;">"Thin and elongated"</p>
+				</div>
+			</div>
+			<div class="next" style="margin-top:60px;margin-left:200px;">
+				<p><i>"We've got all angles covered."</i></p>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="geom">
+			<h2>Geometry: generic spacer model</h2>
+			<div style="margin:0 auto; display: flex; height: 60%; width:95%;">
+				<img src="figs/onlySpacers.png" width=100%>
+			</div>
+			<div class="next" style="margin-top:60px;margin-left:300px;">
+				<p><i>"We know you like shapes."</i></p>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="geom">
+			<h2>Geometry: generic spacer model</h2>
+			<div style="margin:0 auto; display: flex; height: 60%; width:95%;">
+				<img src="figs/geomDetail.png" width=100%>
+			</div>
+			<div class="next" style="margin-top:60px;margin-left:300px;">
+				<p><i>"We have eyes for detail!"</i></p>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="geom">
+			<h2>Release: fall 2020</h2>
+			<div style="margin:0 auto; display: flex; height: 80%; width:100%;">
+				<img src="figs/meshingSim.png" width=100%>
+			</div>
+			<div class="next" style="margin-top:60px;margin-left:300px;">
+				<p><i>"Get it at your local FOSS retailer!"</i></p>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="problem">
+			<h2>Meshing: Salome</h2>
+			<pre>
+				<code>SIGSEGV segmentation violation detected address 30</code>
+				<code>SIGSEGV segmentation violation detected address 298</code>
+				<code>SIGSEGV segmentation violation detected address 1030</code>
+				<code>SIGSEGV segmentation violation detected address 4560</code>
+				<code>SIGSEGV segmentation violation detected address 10987</code>
+				<code>SIGSEGV segmentation violation detected address 29876</code>
+			</pre>
+			<p class="next"><b>Salome does not cope well with large meshes (>20M)</b></p>
+			<ul>
+				<li class="next">Poor RAM allocation</li>
+				<li class="next">Max number of cells</li>
+			</ul>
+		</section>
+
+		<section class="slide  highTitle" id="solutionOverview1">
+			<h2>Meshing: Salome</h2>
+			<p>Separation in Salome, merging in OpenFOAM (2 options)</p>
+			<ol>
+				<li>Different meshes: <i>mergeMesh + AMI</i></li>
+				<li>Identical meshes: <i>mergeMesh + stitchMesh</i></li>
+			</ol>
+		</section>
+
+		<section class="slide  highTitle" id="solutionOverview2">
+			<h2>Meshing: Salome</h2>
+			<p>Separation in Salome, merging in OpenFOAM (2 options))</p>
+			<ul>
+				<li>Option 1 is easy just cut the geometry and mesh separately</li>
+				<li>Option 2 is more challenging</li>
+			</ul>
+			<p class="next">&rightarrow; <b>Focus on option 2</b></p>
+		</section>
+
+		<section class="slide  highTitle" id="goal1">
+			<h2>Separation meshing in Salome</h2>
+			<p><b>Goal </b>(rough mesh for demo):</p>
+			<img width="120%" src="figs/fullMesh.png" style="margin-left:-80px;">
+		</section>
+
+		<section class="slide  highTitle" id="goal2">
+			<h2>Separation meshing in Salome</h2>
+			<p><b>Goal </b>(rough mesh for demo):</p>
+			<img width="85%" src="figs/meshCloseup.png">
+		</section>
+
+		<section class="slide  highTitle" id="proc1">
+			<h2>Separation meshing in Salome</h2>
+			<p><b>Procedure:</b></p>
+			<ul style="margin-top:-30px;">
+				<li>Cut geometry in parts</li>
+				<li>Load geometry first part</li>
+				<li>Mesh first part</li>
+			</ul>
+			<img width="90%" src="figs/meshPart1.png">
+		</section>
+
+		<section class="slide  highTitle" id="proc2">
+			<h2>Separation meshing in Salome</h2>
+			<p><b>Procedure:</b></p>
+			<ul style="margin-top:-30px;" start="3">
+				<li>Load next geometry part</li>
+				<li>Project mesh boundary</li>
+				<li>Mesh second part</li>
+			</ul>
+			<img width="90%" src="figs/meshPart2.png">
+		</section>
+
+		<section class="slide  highTitle" id="proc3">
+			<h2>Separation meshing in Salome</h2>
+			<p><b>Procedure:</b></p>
+			<ul style="margin-top:-30px;" start="3">
+				<li>Remove previous mesh</li>
+				<li style="visibility: hidden;">Load next geometry</li>
+				<li style="visibility: hidden;">Project boundary and mesh</li>
+			</ul>
+			<img width="90%" src="figs/meshPart3.png">
+		</section>
+
+		<section class="slide  highTitle" id="proc4">
+			<h2>Separation meshing in Salome</h2>
+			<p><b>Procedure:</b></p>
+			<ul style="margin-top:-30px;" start="3">
+				<li>Load next geometry part</li>
+				<li>Project mesh boundary</li>
+				<li>Mesh second part</li>
+			</ul>
+			<img width="90%" src="figs/meshPart4.png">
+		</section>
+
+		<section class="slide  highTitle" id="proc4">
+			<h2>Merging in OpenFOAM</h2>
+			<p><b>Procedure:</b></p>
+			<pre>
+				<code>mergeMesh mesh1 mesh2 -overwrite</code>
+				<code>stitchMesh patch1 patch2</code>
+				<code>mergeMesh mesh1 mesh3 -overwrite</code>
+				<code>stitchMesh patch2 patch3</code>
+			</pre>
+			<img width="90%" src="figs/fullMesh.png">
+		</section>
+
+		<section class="slide  highTitle" id="res1">
+			<h2>Some preliminary results</h2>
+			<img src="figs/u.png" width=100%>
+	    </section>
+
+		<section class="slide  highTitle" id="res2">
+			<h2>Some preliminary results</h2>
+			<img src="figs/tubes.png" width=100%>
+		</section>
+
+		<section class="slide  highTitle" id="geom">
+			<h2>Release: fall 2020</h2>
+			<div style="margin:0 auto; display: flex; height: 80%; width:100%;">
+				<img src="figs/meshingSim.png" width=100%>
+			</div>
+			<div class="next" style="margin-top:60px;margin-left:300px;">
+				<p><i>"Get it at your local FOSS retailer!"</i></p>
+			</div>
+		</section>
+	<div class="progress"></div>
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
