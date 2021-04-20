@@ -1,0 +1,499 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>⚡ How does pulsed-electric fields reduce electrodialysis fouling? ⚡</title>
+
+		<link rel="stylesheet" href="../../reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="../../themes/biomath/theme_BIOMATH.css">
+		<link rel="stylesheet" href="style.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../../reveal.js/lib/css/zenburn.css">
+        
+        <!-- MathJax -->   
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+              tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+            });
+        </script>
+        <script type="text/javascript" async src="../../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/css/print/pdf.css' : '../../reveal.js/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+        
+        <!-- User settings -->
+        <style>
+            /* Confidentiality */
+            p.confidentialFooter {
+                display: none;
+            }
+        </style>
+        
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                 <section class="cover"> 
+                    <div class="paddingWrapper">
+                        <div class="header">  
+                            <img src="../../themes/biomath/figs/logo_UGent_EN_RGB_color.svg" alt="logoUGent" id="logoUGent">
+                            <img src="../../themes/biomath/figs/icon_UGent_BW_EN_RGB_color.svg" alt="logoFaculty" id="logoFaculty">    
+                            <div class=horizontalFiller></div>
+                        </div>
+                        <h2 style="font-size: 30px;"> ⚡ How does pulsed-electric fields reduce electrodialysis fouling? ⚡</h2>
+                        <p class="coverName">Bram De Jaegher, Ingmar Nopens, Arne Verliefde, Wim De Schepper</p>
+                        <p class="additionalInformation"> 19/10/2020 </p>
+                        <div class="coverFooter">
+                            <div class="rowx" style="height: 50px;">
+                                <div class="col" style="width: 55%;">
+                                    <img class="logoBiomath" src="../../themes/biomath/figs/Biomath_logo.svg" alt="logoBiomath">
+                                </div>
+                                <div class="col" style="width: 15%;margin-left: 50px;margin-right: 20px;">
+                                    <img id="logoPaintCover" src="figs/paint.png">
+                                </div>
+                                <div class="col" style="width: 20%;">
+                                    <img id="logoVitoCover" src="figs/vito.svg">
+                                </div>
+                            </div>
+                            <div class="videoWrapper">
+                                <video id="electroConv" nocontrols loop autoplay>
+                                  <source src="vids/electroConvBlue.webm" type="video/webm">
+                                Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <p class="confidentialFooter">Confidential</p>
+                    </div>
+                </section>
+
+                <section class="normalHeader"> 
+                    <div class="header">  
+                        <h2> Electrodialysis? </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures">
+                            <img src="figs/electrodialysis_1.svg" style="width: 76%; margin-right: 5%;" class="center">
+                        </div>
+                    </div>
+                        <aside class="notes">
+	                   </aside>
+                </section>                
+                <section class="normalHeader"> 
+                    <div class="header">  
+                        <h2> Electrodialysis? </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures">
+                            <img src="figs/electrodialysis_2.svg" style="width: 76%; margin-left: 5%;" class="center">
+                        </div>
+                    </div>
+                        <aside class="notes">
+	                   </aside>
+                </section>                
+                <section class="normalHeader"> 
+                    <div class="header">  
+                        <h2> Electrodialysis fouling? </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures">
+                            <img src="figs/electrodialysis_4.svg" style="width: 76%; margin-left: 5%;" class="center">
+                        </div>
+                    </div>
+                        <aside class="notes">
+	                   </aside>
+                </section>                
+                <section class="normalHeader"> 
+                    <div class="header">  
+                        <h2> Electrodialysis fouling? </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures">
+                            <img src="figs/electrodialysis_5.svg" style="width: 76%; margin-left: 5%;" class="center">
+                        </div>
+                    </div>
+                        <aside class="notes">
+	                   </aside>
+                </section>
+
+                <section class="normalHeader"> 
+                    <div class="header">  
+                        <h2> Pulsed electric fields (PEF)? </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <p><i>PEF applies a block wave with a specific frequency and duty cycle.</i></p>
+                        <div class="figure" style="margin-left:-150px;margin-top:50px;">
+                            <img src="figs/PEFpars.svg" width=80%>
+                        </div>
+                    </div>
+                        <aside class="notes">
+	                   </aside>
+                </section>
+
+                <section class="normalHeader"> 
+                    <div class="header">  
+                        <h2> Research on pulsed electric fields </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures">
+                            <img src="figs/pefPapers.png" style="width: 80%; margin-top: -5%;" class="center">
+                        </div>
+                        <ul>
+                            <li class="fragment" style="font-size: 26px;">Reduces fouling but optimal PEF-parameters are difficult to obtain</li>
+                            <li class="fragment" style="font-size: 26px;">Advanced PEF-models are available but none of them consider fouling</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="normalHeader" id="twoEffects"> 
+                    <div class="header">  
+                        <h2> I want to quantify two effects... </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <ol style="margin-top:75px;margin-left:75px;">
+                            <li style="margin-bottom:50px;">The effect of PEF on the <b>fouling rate</b>.</li>
+                            <li class="fragment" style="margin-bottom:50px;">The effect of PEF on the <b>process efficiency</b> (cost).</li>
+                        </ol>
+                        <p class="fragment"> &RightArrow;  Using a <b>model-based</b> approach...</p>
+                        <p class="fragment"> &RightArrow;  ...And sodium dodecyl sulphate (SDS) as foulant</p>
+                        <div class="figures fragment">
+                            <img src="figs/SDS.png" style="width: 80%;" class="center">
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="normalHeader" id="domain1"> 
+                    <div class="header">  
+                        <h2> The electrodialysis model </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <p><i>A 1D, three-component, Kedem-Katchalsky solver</i></p>
+                        <div class="figures">
+                            <img src="figs/domain1.png" style="width: 75%; margin-top: 0%;" class="center">
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="normalHeader" id="domain2"> 
+                    <div class="header">  
+                        <h2> The electrodialysis model </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <p><i>A 1D, three-component, Kedem-Katchalsky solver</i></p>
+                        <div class="figures">
+                            <img src="figs/domain2.png" style="width: 75%; margin-top: 0%;" class="center">
+                        </div>
+                        <p style="padding-left:200px;margin-top:2px;"><b>Fixed</b> concentration in <b> bulk flow </b> (assumption)</p>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="domain3"> 
+                    <div class="header">  
+                        <h2> The electrodialysis model </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <p><i>A 1D, three-component, Kedem-Katchalsky solver</i></p>
+                        <div class="figures">
+                            <img src="figs/domain3.png" style="width: 75%; margin-top: 0%;" class="center">
+                        </div>
+                        <p style="padding-left:200px;margin-top:2px;"><b>Nernst-Planck</b> equation in <b> diffusion boundary layer </b></p>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="domain4"> 
+                    <div class="header">  
+                        <h2> The electrodialysis model </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <p><i>A 1D, three-component, Kedem-Katchalsky solver</i></p>
+                        <div class="figures">
+                            <img src="figs/domain4.png" style="width: 75%; margin-top: 0%;" class="center">
+                        </div>
+                        <p style="padding-left:200px;margin-top:2px;"><b>Kedem-Katchalsky</b> equation in <b> ion-exchange membrane </b>(IEM)</p>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="equations"> 
+                    <div class="header">  
+                        <h2> The electrodialysis model </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <p><i>There are <b>27</b> equations in the model, here are three of them...</i></p>
+                        <p style="margin-top:30px;">Nernst-Planck equation <span style="color:grey">(solution)</span>:</p>
+                        <p style="margin-left:30px;">$$\displaystyle J_{i,x}= - D_i\, \cfrac{\delta c_i}{\delta x} + \cfrac{j\, t_i}{z_i \, F}$$</p>
+                        <p class="fragment">Solved for Na<sup>+</sup>, Cl<sup>-</sup> &amp; DS<sup>-</sup></p>
+                        <div class="fragment" style="margin-top:30px;">
+                        <p> Kedem-Katchalsky equation <span style="color:grey">(membrane)</span>:</p>
+                        <p style="margin-left:30px;">$$\displaystyle J_{x}= - P_m\, \cfrac{\delta c}{\delta x} + \cfrac{j\, t_{c,m}}{z \, F}$$</p>
+                        <p style="margin-left:30px;margin-top:10px;">$$\displaystyle P_m = \cfrac{2 \, R \, T \, \kappa_m (1-t_{c,m})t_{app, m} \, g}{F^2\, c}$$</p>
+                        <p style="margin-top:30px;" class="fragment">Solved for NaCl as a whole <span style="color:grey">(No SDS)</span></p>
+                        <p class="fragment">&rarr; SDS is not able to penetrate deep into the IEM</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="sim1"> 
+                    <div class="header">  
+                        <h2> Simulating concentration polarisation </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures">
+                            <img src="figs/anim_fps100.gif" style="width: 60%; margin-top: 10%;" class="center">
+                        </div>
+                        <p>with a pulse period of 60s.</p>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="sim2"> 
+                    <div class="header">  
+                        <h2> Simulating concentration polarisation </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures">
+                            <div style="display: flex; width: 100%;margin-top:-40px;">
+                                <div style="width: 49%; height:250px;">
+                                    <div class="figures">
+                                        <img src="figs/concentrationprofiles1.svg" style="width: 90%; margin-top: 10%;" class="center">
+                                    </div>    
+                                </div>
+                                <div style="width: 49%; height:250px;">
+                                    <div class="figures">
+                                        <img src="figs/concentrationprofiles2.svg" style="width: 90%; margin-top: 10%;" class="center">
+                                    </div>    
+                                </div>
+                            </div>
+
+                            <div style="display: flex; width: 100%;margin-top:60px">
+                                <div style="width: 49%; height:250px;">
+                                    <div class="figures">
+                                        <img src="figs/boundaryconcentrationprofiles.svg" style="width: 90%; margin-top: 10%;" class="center">
+                                    </div>    
+                                </div>
+                                <div style="width: 49%; height:250px;">
+                                    <div class="figures">
+                                        <img src="figs/currentprofile.svg" style="width: 90%; margin-top: 10%;" class="center">
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="exp1"> 
+                    <div class="header">  
+                        <h2> Fouling experiments at different frequencies </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures" style="margin-top:-90px">
+                            <img src="figs/ResistanceTime.png" style="width: 80%; margin-top: 10%;" class="center">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="exp2"> 
+                    <div class="header">  
+                        <h2> Fouling experiments at different frequencies </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures" style="margin-top:-90px">
+                            <img src="figs/foulingRateIFOFreqScatter.png" style="width: 80%; margin-top: 10%;" class="center">
+                        </div>
+                        <p class="fragment">Three repetitions for each setting</p>
+                        <p class="fragment">&rarr; eliminates other time-dependent phenomena as causal factor</p>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="exp3"> 
+                    <div class="header">  
+                        <h2> Fouling experiments at different frequencies </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures" style="margin-top:-90px">
+                            <img src="figs/foulingRateIFOFreqScatter.png" style="width: 60%; margin-top: 10%;" class="center">
+                        </div>
+                    <p><b>Take-away messages:</b></p>
+                    <ul>
+                        <li class="fragment">Fouling rate decreases with increasing frequency.</li>
+                        <li class="fragment">High frequencies are better than DC operation.</li>
+                    </ul>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="sim3"> 
+                    <div class="header">  
+                        <h2> A comparison with simulation results </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <p>Concentration of SDS at the IEM surface:</p>
+                        <div class="figures" style="margin-top:-50px;">
+                            <img src="figs/DBLC_vs_frequency075A.png" style="width: 80%; margin-top: 10%;" class="center">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="sim4"> 
+                    <div class="header">  
+                        <h2> A comparison with simulation results </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <p>Concentration of SDS at the IEM surface:</p>
+                        <div class="figures" style="margin-top:-70px;">
+                            <img src="figs/DBLC_vs_frequency075A.png" style="width: 60%; margin-top: 10%;" class="center">
+                        </div>
+                        <p><b>Take-away messages:</b></p>
+                    <ul>
+                        <li class="fragment">Fouling rate decreases with increasing frequency.</li>
+                        <li class="fragment" style="color:#dc1e14">High frequencies are better than DC operation.</li>
+                    </ul>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="sim5"> 
+                    <div class="header">  
+                        <h2> Are the simulations faulty? </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                       <p><i>There are also other fouling reduction mechanisms in play,</i></p>
+                       <ul>
+                           <li style="margin-top:20px;" class="fragment">Electroconvection <span style="color:grey">(shear effects)</span></li>
+                           <li style="margin-top:20px;" class="fragment">Reduced water splitting <span style="color:grey">(pH effects)</span></li>
+                           <li style="margin-top:20px;" class="fragment">Fouling layer relaxation <span style="color:grey">(electric/shear effects)</span>?</li>
+                       </ul>
+                       <p style="margin-top: 50px;" class="fragment">But, <b>relaxation</b> of concentration polarisation is shown to be an important factor</p>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="cap1"> 
+                    <div class="header">  
+                        <h2> But what is the effect on the desalination process?</h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures" style="margin-top:-70px;">
+                            <img src="figs/desal_eff_model1.svg" style="width:75%; margin-top: 10%;" class="center">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="cap2"> 
+                    <div class="header">  
+                        <h2> But what is the effect on the desalination process?</h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures" style="margin-top:-70px;">
+                            <img src="figs/desal_eff_model2.svg" style="width:75%; margin-top: 10%;" class="center">
+                        </div>
+                        <p>Can be simulated quite easily.</p>
+                        <p>
+                            <a style="font-size:22px;text-decoration-line: underline;text-decoration-style: dotted;"  href="http://dx.doi.org/10.1016/j.electacta.2015.02.197">P. Sistat et al. 2015 10.1016/j.electacta.2015.02.197 </a>
+                        </p>        
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="energy"> 
+                    <div class="header">  
+                        <h2> The overall energy efficiency of the process </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <div class="figures" style="margin-top:-70px;">
+                            <img src="figs/Energy_vs_alpha.svg" style="width:75%; margin-top: 10%;" class="center">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="normalHeader" id="conc"> 
+                    <div class="header">  
+                        <h2> Conclusions and perspectives </h2>
+                    </div>
+                    <div class="paddingWrapper">
+                        <h3>Conclusions:</h3>
+                        <ul>
+                            <li>PEF can improve the fouling behaviour</li>
+                            <li class="fragment">But choosing the right frequency is essential!
+                                <ul>
+                                    <li class="fragment">Low frequencies are counterproductive</li>
+                                    <li class="fragment">High frequencies are also counterproductive <span style="color:grey">(galvanostatic)</span></li>
+                                </ul>
+                            </li>
+                            <li class="fragment">There is an important trade-off with the energy consumption</li>
+                        </ul>
+                        <div class="fragment" style="margin-top:40px;">
+                        <h3>Perspectives:</h3>
+                            <ul >
+                                <li>Including fouling in the energy efficiency
+                                    <ul>
+                                        <li>Predictive model for fouling resistance required</li>
+                                    </ul>
+                                </li>
+                                <li class="fragment">System optimisation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="cover"> 
+                    <div class="paddingWrapper">
+                        <div class="header">  
+                            <img src="../../themes/biomath/figs/logo_UGent_EN_RGB_color.svg" alt="logoUGent" id="logoUGent">
+                            <img src="../../themes/biomath/figs/icon_UGent_BW_EN_RGB_color.svg" alt="logoFaculty" id="logoFaculty">    
+                            <div class=horizontalFiller></div>
+                        </div>
+                        <h2 style="font-size: 30px;"> ⚡ How does pulsed-electric fields reduce electrodialysis fouling? ⚡ </h2>
+                        <p class="coverName">Bram De Jaegher, Ingmar Nopens, Arne Verliefde, Wim De Schepper</p>
+                        <p class="additionalInformation"> 19/10/2020 </p>
+                        <div class="coverFooter">
+                            <div class="rowx" style="height: 50px;">
+                                <div class="col" style="width: 55%;">
+                                    <img class="logoBiomath" src="../../themes/biomath/figs/Biomath_logo.svg" alt="logoBiomath">
+                                </div>
+                                <div class="col" style="width: 15%;margin-left: 50px;margin-right: 20px;">
+                                    <img id="logoPaintCover" src="figs/paint.png">
+                                </div>
+                                <div class="col" style="width: 20%;">
+                                    <img id="logoVitoCover" src="figs/vito.svg">
+                                </div>
+                            </div>
+                            <div class="videoWrapper">
+                                <video id="electroConv" nocontrols loop autoplay>
+                                  <source src="vids/electroConvBlue.webm" type="video/webm">
+                                Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        </div>
+                        <p class="confidentialFooter">Confidential</p>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+                
+		<script src="../../reveal.js/lib/js/head.min.js"></script>
+		<script src="../../reveal.js/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+                    width: 1024,
+                    height: 768,
+                    slideNumber: true,
+                    transition: 'none',
+				dependencies: [
+					{ src: '../../reveal.js/plugin/markdown/marked.js' },
+					{ src: '../../reveal.js/plugin/markdown/markdown.js' },
+					{ src: '../../reveal.js/plugin/notes/notes.js', async: true },
+					{ src: '../../reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
