@@ -22,11 +22,20 @@
 			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
 		</header>
 		<section class="slide" id="cover">
-			<h2> Breaking barriers with hybrid models: </h2>
+			<h2 style="margin-top:-30px;"> Breaking barriers with hybrid models: </h2>
 			<h2 style="font-size: 30px; padding-left:5%;color:slategray"> towards low-fouling electrodialysis for bio-based processing</h2>
 			<img style="height:50%; margin-top:50px;margin-left:60px" src="figs/bla" alt="" class="cover">
 			<p style="position: absolute; bottom: 80px; font-size: 24px;color:#585a5e">Bram De Jaegher</p>
-			<div style="position: absolute;bottom:30px;">
+			<p style="position: absolute; bottom: 60px; font-size: 20px;color:#585a5e">26/11/2021</p>
+
+			<div>
+				<img style="top: 400px;margin-left:170px;" width="100%" src="figs/design_only_ED.svg" alt="" class="cover">
+				<img id="smoke" style="position:absolute; top: 209px;margin-left:-100px;" width="50%" src="figs/smoke.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 323px;margin-left:405px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 323px;margin-left:710px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+			</div>
+
+			<div style="position: absolute;bottom:10px;">
 				<img src="figs/Biomath_logo.svg" width="15%">
 				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
 				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
@@ -36,6 +45,49 @@
 				set slide ID to get needed elements
 	        -->
 	    </section>
+
+		<style>
+			img#smoke {
+				animation: grow-shrink 4s infinite;
+			}
+
+			@keyframes grow-shrink {
+				0% {transform:scale(1);}
+				50% {transform:scale(1.05);}
+				100% {transform:scale(1);}
+			}
+
+			img.jiggle {
+				animation: jiggle 2s infinite;
+			}
+
+			@keyframes jiggle {
+				0% {transform:rotate(0);}
+				50% {transform:rotate(0);}
+				51% {transform:rotate(5deg);}
+				51% {transform:rotate(0);}
+				52% {transform:rotate(5deg);}
+				53% {transform:rotate(0);}
+				54% {transform:rotate(5deg);}
+				55% {transform:rotate(0);}
+				56% {transform:rotate(5deg);}
+				57% {transform:rotate(0);}
+				58% {transform:rotate(5deg);}
+				59% {transform:rotate(0);}
+				60% {transform:rotate(5deg);}
+				61% {transform:rotate(0);}
+				62% {transform:rotate(5deg);}
+				63% {transform:rotate(0);}
+				64% {transform:rotate(5deg);}
+				65% {transform:rotate(0);}
+				66% {transform:rotate(5deg);}
+				67% {transform:rotate(0);}
+				68% {transform:rotate(5deg);}
+				69% {transform:rotate(0);}
+				100% {transform:rotate(0);}
+			}
+
+		</style>
 
 		<section class="slide  highTitle" id="intro0">
 			<h2>Electrodialysis removes salt from water.</h2>
@@ -129,8 +181,6 @@
 				left: 20px;
 			}
 		</style>
-
-
 
 		<section class="slide  highTitle" id="intro2_1">
 			<h2>Electrodialysis?</h2>
