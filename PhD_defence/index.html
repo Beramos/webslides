@@ -40,8 +40,52 @@
 		<section class="slide  highTitle" id="intro0">
 			<h2>Electrodialysis removes salt from water.</h2>
 			<div class="figure">
+				<img id="hand" style="position:absolute;margin-left:10%" src="figs/handOfWater.png" width="100%">
+				<img id="salt" style="position:absolute;margin-left:100%;margin-top:21%" src="figs/saltShaker.png" width="20%">
+				<img class="flick" id="flick" style="position:absolute;opacity: 0;" src="figs/flick.png" width="70%">
 			</div>
 		</section>
+
+		<style>
+
+      section.active > * img#hand {
+				animation: hand 1s;
+			}
+
+			@keyframes hand {
+				from {margin-left:75%;}
+				to {margin-left:10%;}
+			}
+
+      section.active > * img#salt{
+				animation: salt 4s, forwards;
+				-webkit-animation: salt 4s, forwards;
+			}
+
+			@keyframes salt {
+				0% {margin-left:100%;}
+				25% {margin-left:35%;}
+				50% {margin-left:35%;}
+				100% {margin-left:100%;}
+			}
+
+
+	  
+      section.active > * img#flick{
+				animation-name: flick;
+				animation-delay: 2s;
+				animation-duration: 1.5s;
+			}
+
+			@keyframes flick {
+				0% {opacity: 0%;}
+				50% {opacity: 100%;}
+				75% {opacity: 100%;}
+				100% {opacity: 0%;}
+			}
+
+		</style>
+		
 
 		<section class="slide  highTitle" id="intro1">
 			<h2>Why research on electrodialysis?</h2>
