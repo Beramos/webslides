@@ -612,69 +612,120 @@
 		}
 
 		const obj = document.getElementById("counter");
-		animateValue(obj, 0, 3600, 1000000);
-
-				</script>
-
+		animateValue(obj, 0, 7200, 2000000);
+		</script>
 
 		<section class="slide  highTitle" id="introMod1">
-			<h2>Introduction to modelling</h2>
-			<div class="figure"></div>
-			<p>Dropping a ball</p>
+			<h2>How do we describe electrodialysis?</h2>
+			<div class="row" style="margin-top: 50px;">
+				<div class="column">
+					<p><b>physics-based</b></p>
+					<ul style="margin-left:40px">
+						<li>Movement of ions</li>
+						<li>Movement of water</li>
+					</ul>
+					<p>physics can be rather complicated</p>
+				</div>
+				<div class="column" style="border-left: dotted lightgray 5px;padding-left:30px;">
+					<p><b>data-driven</b></p>
+					<ul style="margin-left:40px">
+						<li>No assumptions one physics</li>
+						<li>Learn a relationship</li>
+					</ul>
+					<p>These models can be quite unintelligent.</p>
+				</div>
+			</div>
 		</section>
-
+		
 		<section class="slide  highTitle" id="introMod2">
 			<h2>Introduction to modelling</h2>
 			<div class="figure"></div>
-			<p>Can be easily simulated with physics</p>
+			<p>Add illustration isaac newton</p>
 		</section>
 
-		<section class="slide  highTitle" id="introMod3">
-			<h2>Introduction to modelling</h2>
+		<section class="slide  highTitle" id="what">
+			<h2>What do we want?</h2>
 			<div class="figure"></div>
-			<p>But what is the situation is much more complicated</p>
+			<p>Illustration of ED setup in computer</p>
+			<p>Simulate fouling &rightarrow; cost</p>
+			<p>Optimise</p>
 		</section>
 
-		<section class="slide  highTitle" id="introMod4">
-			<h2>Introduction to modelling</h2>
-			<div class="figure"></div>
-			<p>data-driven models</p>
-			<p>Finding an expression that fits this curve</p>
-			<p>&rarr; you have model that describes what you see but no need to understand the process</p>
+		<section class="slide  highTitle" id="solution0">
+			<h2>My solutions to simulate electrodialysis?</h2>
 		</section>
 
-		<section class="slide  highTitle" id="Results">
-			<h2>Introduction to modelling</h2>
-			<div class="figure"></div>
+		<section class="slide  highTitle" id="solution2_1">
+			<h2>Simulation of pulsed-electric fields</h2>
+			<div class="figure" style="margin-left:-10%;margin-top: -60px;">
+				<img src="figs/domain.svg" width=95%>
+				<img src="figs/anim_fps100.gif" width=46% style="position: absolute;top:18%;left:32.5%;">
+			</div>
+			<div class="next" style="position:absolute;background-color: #fff; top:458px;left:443px;padding-left:30px;padding:20px;">
+				<ul>
+					<li class=""><span style="text-decoration:underline;">Estimate</span> fouling severity.</li>
+					<li class="next"><span style="text-decoration:underline;">Estimate</span> energy consumption.</li>
+					<p class="next">&rarr; <b>Uncertainty on the physics of fouling.</b></p>
+				</ul>
+			</div>	
 		</section>
 
-		<section class="slide  highTitle" id="Results">
-			<h2>PEF</h2>
-			<div class="figure"></div>
+		<!-- 
+					<h2>What can we do with this model?</h2>
+			<ul>
+				<li>Learning about pulsed electric fields</li>
+				<li>Predicting the effect of process parameters like frequency on fouling</li>
+				<li>Optimisation/reduction of fouling</li>
+			</ul>
+			<p>Still some work to be done to understand all physics.</p>
+		</section>
+		 -->
+
+		<section class="slide  highTitle" id="solution3">
+			<h2>Simulation of complex foulants</h2>
+			<div class="figure" style="margin-top: 100px;">
+				<img src="figs/blackBox.svg" width = 850px;>
+				<img src="figs/blackBox2.svg" width = 850px; style="position: absolute; top:170px" class="next">
+				<img src="figs/blackBox3.svg" width = 850px; style="position: absolute; top:170px" class="next">
+			</div>
+			<div class="next" style="position:absolute;background-color: #fff; top:395px;left:331px;padding-left:30px;padding:20px;">
+				<ul>
+					<li class=""><span style="text-decoration:underline;">Quantify</span> fouling severity.</li>
+					<li class="next"><span style="text-decoration:underline;">Quantify</span> energy consumption.</li></li>
+					<li class="next"><span style="text-decoration:underline;">No assumptions</span> on the physics of fouling.</li></li>
+					<p class="next">&rarr; <b>Need for more experimental data.</b></p>
+				</ul>
+			</div>
 		</section>
 
-		<section class="slide  highTitle" id="Results">
-			<h2>Black-box</h2>
-			<div class="figure"></div>
+		<section class="slide  highTitle" id="solution4">
+			<h2>Simulation of well-described foulants</h2>
 		</section>
-
-		<section class="slide  highTitle" id="Results">
-			<h2>hybrid</h2>
-			<div class="figure"></div>
-		</section>
-
 
 		<section class="slide" id="last">
-			<h2> Breaking barriers with hybrid models: </h2>
+			<h2 style="margin-top:-30px;"> Breaking barriers with hybrid models: </h2>
 			<h2 style="font-size: 30px; padding-left:5%;color:slategray"> towards low-fouling electrodialysis for bio-based processing</h2>
 			<img style="height:50%; margin-top:50px;margin-left:60px" src="figs/bla" alt="" class="cover">
 			<p style="position: absolute; bottom: 80px; font-size: 24px;color:#585a5e">Bram De Jaegher</p>
-			<div style="position: absolute;bottom:30px;">
+			<p style="position: absolute; bottom: 60px; font-size: 20px;color:#585a5e">26/11/2021</p>
+
+			<div>
+				<img style="top: 400px;margin-left:170px;" width="100%" src="figs/design_only_ED.svg" alt="" class="cover">
+				<img id="smoke" style="position:absolute; top: 209px;margin-left:-100px;" width="50%" src="figs/smoke.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 323px;margin-left:405px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 323px;margin-left:710px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+			</div>
+
+			<div style="position: absolute;bottom:10px;">
 				<img src="figs/Biomath_logo.svg" width="15%">
 				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
 				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
 			</div>
-	  </section>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
 
 	<div class="progress"></div>
 	<script src="../shower/shower.min.js"></script>
