@@ -1,7 +1,6 @@
 # Presentations
 
 ## OpenFOAM related material
-
 * Templates: example presentations for different templates
 * [SnappyHexMesh: non-closed surfaces](https://beramos.github.io/webslides/STL-OpenFOAM/): Seminar on how to generate watertight geometries to use with OpenFOAMs SnappyHexMesh mesher
 * [OpenFOAM tricks & tips: debugging and VSCode intellisense](https://beramos.github.io/webslides/OpenFOAMTrickTips1_gdb_VSCode/): Seminar on using gdb, the GNU debugger, with OpenFOAM and an introduction to VSCode intellisense smart code completion
@@ -24,3 +23,6 @@
 A collection of oneslides presented at [BIOMATH](https://biomath.ugent.be) seminars. Mostly about tools I like to use
   * [Grammarly](https://beramos.github.io/webslides/oneSlides/grammarly)
   * [Weave.jl](https://beramos.github.io/webslides/oneSlides/weave)
+
+## Miscellaneous 
+* [Public PhD defence](https://beramos.github.io/webslides/PhD_defence)
