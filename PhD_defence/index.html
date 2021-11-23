@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Breaking barriers with hybrid models </title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+	<body class="shower list">
+		<header class="caption">
+			<h1> Breaking barriers with hybrid models </h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+		<section class="slide" id="cover">
+			<h2 style="margin-top:-30px;"> Breaking barriers with hybrid models: </h2>
+			<h2 style="font-size: 30px; padding-left:5%;color:slategray"> towards low-fouling electrodialysis for bio-based processing</h2>
+			<img style="height:50%; margin-top:50px;margin-left:60px" src="figs/bla" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;color:#585a5e">Bram De Jaegher</p>
+			<p style="position: absolute; bottom: 60px; font-size: 20px;color:#585a5e">26/11/2021</p>
+
+			<div>
+				<img style="top: 400px;margin-left:170px;" width="100%" src="figs/design_only_ED.svg" alt="" class="cover">
+				<img id="smoke" style="position:absolute; top: 209px;margin-left:-100px;" width="50%" src="figs/smoke.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 323px;margin-left:405px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 323px;margin-left:710px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+			</div>
+
+			<div style="position: absolute;bottom:10px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+		<style>
+			img#smoke {
+				animation: grow-shrink 4s infinite;
+			}
+
+			@keyframes grow-shrink {
+				0% {transform:scale(1);}
+				50% {transform:scale(1.05);}
+				100% {transform:scale(1);}
+			}
+
+			img.jiggle {
+				animation: jiggle 2s infinite;
+			}
+
+			@keyframes jiggle {
+				0% {transform:rotate(0);}
+				50% {transform:rotate(0);}
+				51% {transform:rotate(5deg);}
+				51% {transform:rotate(0);}
+				52% {transform:rotate(5deg);}
+				53% {transform:rotate(0);}
+				54% {transform:rotate(5deg);}
+				55% {transform:rotate(0);}
+				56% {transform:rotate(5deg);}
+				57% {transform:rotate(0);}
+				58% {transform:rotate(5deg);}
+				59% {transform:rotate(0);}
+				60% {transform:rotate(5deg);}
+				61% {transform:rotate(0);}
+				62% {transform:rotate(5deg);}
+				63% {transform:rotate(0);}
+				64% {transform:rotate(5deg);}
+				65% {transform:rotate(0);}
+				66% {transform:rotate(5deg);}
+				67% {transform:rotate(0);}
+				68% {transform:rotate(5deg);}
+				69% {transform:rotate(0);}
+				100% {transform:rotate(0);}
+			}
+
+		</style>
+
+		<section class="slide  highTitle" id="intro01">
+				<div class="row">
+					<div class="column">
+						<h2 style="font-size: 40px;">30 min overview:</h2>
+						<div class="figure center" style="margin-left: -50px;">
+							<img src="figs/front.svg" height="460px" style="box-shadow: 10px 10px 5px lightgray;border:0.1px solid #b8b8b8;">
+						</div>
+					</div>
+					<div class="column" style="border-left:lightgrey dotted 5px;margin-left:-30px">
+					 <ul style="margin-top:45%;margin-left:15%">
+						<li>Why is electrodialysis important?</li>
+						<li>What is electrodialysis?</li>
+						<li>What is modelling?</li>
+						<li>Why modelling?</li>
+						<li>What did you do?</li>
+					 </ul>
+					</div>
+				</div>
+		</section>
+
+		<style>
+			.row {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 100%;
+				}
+
+			.column {
+				display: flex;
+				flex-direction: column;
+				flex-basis: 100%;
+				flex: 1;
+				}
+
+		</style>
+		</section>
+
+		<section class="slide  highTitle" id="intro0">
+			<h2>Electrodialysis removes salt from water.</h2>
+			<div class="figure">
+				<img id="hand" style="position:absolute;margin-left:10%" src="figs/handOfWater.png" width="100%">
+				<img id="salt" style="position:absolute;margin-left:100%;margin-top:21%" src="figs/saltShaker.png" width="20%">
+				<img class="flick" id="flick" style="position:absolute;opacity: 0;" src="figs/flick.png" width="70%">
+			</div>
+		</section>
+
+		<style>
+      section.active > * img#hand {
+				animation: hand 1s;
+			}
+
+			@keyframes hand {
+				from {margin-left:75%;}
+				to {margin-left:10%;}
+			}
+
+      section.active > * img#salt{
+				animation: salt 4s, forwards;
+				-webkit-animation: salt 4s, forwards;
+			}
+
+			@keyframes salt {
+				0% {margin-left:100%;margin-top: 21%; transform:rotate(0deg)}
+				25% {margin-left:35%;margin-top: 21%; transform:rotate(0deg)}
+				50% {margin-left:35%;margin-top: 21%; transform:rotate(0deg)}
+				100% {margin-left:100%; margin-top: -20%; transform:rotate(360deg);}
+			}
+			
+      section.active > * img#flick{
+				animation-name: flick;
+				animation-delay: 2s;
+				animation-duration: 1.5s;
+			}
+
+			@keyframes flick {
+				0% {opacity: 0%;}
+				50% {opacity: 100%;}
+				75% {opacity: 100%;}
+				100% {opacity: 0%;}
+			}
+		</style>
+		
+
+		<section class="slide  highTitle" id="intro1_1">
+			<h2>Why research on electrodialysis?</h2>
+			<div class="figure">
+				<img style="margin-left:-10%" src="figs/applications.png" width="120%">
+			</div>
+			<div class="blocker" id="blocker1"></div>
+			<div class="blocker" id="blocker2"></div>
+		</section>
+
+		<section class="slide  highTitle" id="intro1_2">
+			<h2>Why research on electrodialysis?</h2>
+			<div class="figure">
+				<img style="margin-left:-10%" src="figs/applications.png" width="120%">
+			</div>
+			<div class="blocker" id="blocker2"></div>
+		</section>
+
+		<section class="slide  highTitle" id="intro1_3">
+			<h2>Why research on electrodialysis?</h2>
+			<div class="figure">
+				<img style="margin-left:-10%" src="figs/applications.png" width="120%">
+			</div>
+		</section>
+
+		<style>
+			div.blocker {
+				background-color: #fff;
+				position:absolute;
+				z-index: 10;
+			}
+
+			div#blocker1 {
+				width: 705px;
+				height: 157px;
+				top: 280px;
+				left: 20px;
+			}
+
+			div#blocker2 {
+				width: 705px;
+				height: 157px;
+				top: 425px;
+				left: 20px;
+			}
+		</style>
+
+		<section class="slide  highTitle" id="EDWhat">
+			<h2>What is electrodialysis?</h2>
+			<div class="figure">
+				<img style="margin-left:10%" src="figs/current3.svg" width="550px">
+
+				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
+					<img src="figs/current2.svg" width="550px">
+				</div>
+
+				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
+					<img src="figs/current4.svg" width="550px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;background-color: #fff;padding-left: 200px;">
+					<img src="figs/current.svg" width="450px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding-left: 200px;background-color: #fff">
+					<img src="figs/current5.svg" width="450px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current6.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current8.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current9.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current10.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current11.svg" width="750px">
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="realED">
+			<h2>In reality, ED is much more complicated.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_stack_schematic.svg" width="100%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling1">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/fouling.svg" width="300px">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling2">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/fouling2.svg" width="300px">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling3">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/fouling3.svg" width="300px">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling4">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/fouling4.svg" width="300px">
+			</div>
+			<div style="position: absolute;display: inline;top:51%;left:41.1%;font-size:21px">
+				<p>&#9889 &#128163 &#128165</p>
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="fouling6">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled.svg" width="100%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="fouling7">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled_1.svg" width="100%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="fouling8">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled_2.svg" width="100%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling5">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="row">
+				<div class="column">
+					<div class="figure">
+						<img style="margin:0 auto;margin-top:8%" src="figs/fouling4.svg" width="300px">
+					</div>
+					<div style="position: absolute;display: inline;top:51%;left:20.55%;font-size:21px">
+						<p>&#9889 &#128163 &#128165</p>
+					</div>
+				</div>
+				<div class="column" style="border-left: 5px dotted lightgray;">
+					<ul class = "nodot" style="margin-left: 10%;margin-top: 30%;">
+						<li>&uparrow; energy consumption</li>
+						<li class="next">&uparrow; cleaning cost</li>
+						<li class="next">&uparrow; membrane replacement</li>
+						<!--<li class="next"><p style="font-size: 50px;display: inline;margin-left:5%;">. . .</p></li>-->
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<style>
+			ul.nodot >li::before {
+				content:'';
+			}
+		</style>
+
+		<section class="slide  highTitle" id="modelling">
+			<h2>Why modelling?</h2>
+			<div class="row">
+				<div class="column">
+					<div class="row">
+						<div class="column">
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Pump speed</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Salt concentration</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Membranes</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Current</p>
+							</div>	
+						</div>
+						<div class="column">
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/pump.jpg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/salt.jpg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/IEM.jpeg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/electricity.svg" height="100px">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column" style="border-left: lightgray dotted 5px;justify-content: center;">
+					<div class="figure">
+						<img style="margin-left:10%;" src="figs/ED_fouled_1.svg" width="110%">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="modelling">
+			<h2>Why modelling?</h2>
+			<div class="row">
+				<div class="column">
+					<div class="row">
+						<div class="column">
+							<div style="height: 150px;">
+								<p style="margin-top:20%;">Pump speed &uparrow;</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Salt concentration</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Membranes</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Current</p>
+							</div>	
+						</div>
+						<div class="column">
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/pump.jpg" height="125px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/salt.jpg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/IEM.jpeg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/electricity.svg" height="100px">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column" style="border-left: lightgray dotted 5px;justify-content: center;">
+					<div class="figure">
+						<img style="margin-left:10%;" src="figs/ED_fouled.svg" width="110%">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="modelling">
+			<h2>Why modelling?</h2>
+			<div class="row">
+				<div class="column">
+					<div class="row">
+						<div class="column">
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Pump speed</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Salt concentration</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Membranes</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Current &uparrow;</p>
+							</div>	
+						</div>
+						<div class="column">
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/pump.jpg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/salt.jpg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/IEM.jpeg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img src="figs/electricity.svg" height="150px">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column" style="border-left: lightgray dotted 5px;justify-content: center;">
+					<div class="figure">
+						<img style="margin-left:10%;" src="figs/ED_fouled_2.svg" width="110%">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="modelling">
+			<h2>Why modelling?</h2>
+			<div class="row">
+				<div class="column">
+					<div class="row">
+						<div class="column">
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Pump speed</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Salt concentration</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Membranes</p>
+							</div>
+							<div style="height: 100px;">
+								<p style="margin-top:20%;">Current</p>
+							</div>	
+						</div>
+						<div class="column">
+							<div class="figure" style="margin-top:5%">
+								<img id="pumper" src="figs/pump.jpg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img id="salter" src="figs/salt.jpg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img id="IEM" src="figs/IEM.jpeg" height="100px">
+							</div>
+							<div class="figure" style="margin-top:5%">
+								<img id="current" src="figs/electricity.svg" height="100px">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column" style="border-left: lightgray dotted 5px;justify-content: center;">
+					<div class="figure">
+						<img style="margin-left:10%;" src="figs/ED_fouled.svg" width="110%">
+					</div>
+					<div class="next">
+						<div class="foulingLayer" id="layer1"></div>
+						<div class="foulingLayer" id="layer2"></div>
+					</div>
+					<div class="next" style="position:absolute; top:80%;margin-left:10%">
+						<p style="display: inline-block">Days of experiments: </p> <div style="display: inline-block;" id="counter">0</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<style>
+
+			div.foulingLayer {
+				background-color: #c8bdb7ff; width:5px; height: 172px; position:absolute;
+			}
+
+			div.foulingLayer#layer1{
+				left:74.7%;
+				top:36%;
+			}
+
+			div.foulingLayer#layer2{
+				left:76.9%;
+				top:36%;
+			}
+
+			section.active > * div#layer1{
+				animation: foul1 3s infinite;
+			}
+
+			section.active > * div#layer2{
+				animation: foul2 3s infinite;
+			}
+
+			section.active > * img#pumper{
+				animation: grow-shrink 1.5s infinite;
+			}
+
+			section.active > * img#current{
+				animation: grow-shrink 1.9s infinite;
+			}
+
+			section.active > * img#salter{
+				animation: grow-shrink 4.04s infinite;
+			}
+
+			section.active > * img#IEM{
+				animation: IEM 2.1s infinite;
+			}
+
+			@keyframes foul1 {
+				0% {transform: scaleX(1);}
+				50% {transform: scaleX(5) translate(-40%, 0%);}
+				100% {transform: scaleX(1);}
+			}
+
+			@keyframes foul2 {
+				0% {transform: scaleX(1);}
+				50% {transform: scaleX(5) translate(+40%, 0%);}
+				100% {transform: scaleX(1);}
+			}
+
+			@keyframes grow-shrink {
+				0% {transform: scale(1);}
+				50% {transform: scale(1.1);}
+				100% {transform: scale(1);}
+			}
+
+			@keyframes IEM {
+				0% {filter: hue-rotate(0deg);}
+				25% {filter: hue-rotate(45deg);}
+				50% {filter: hue-rotate(90deg);}
+				75% {filter: hue-rotate(135deg);}
+				100% {filter: hue-rotate(0deg);}
+			}
+
+		</style>
+
+		<script>
+			function animateValue(obj, start, end, duration) {
+			let startTimestamp = null;
+			const step = (timestamp) => {
+				if (!startTimestamp) startTimestamp = timestamp;
+				const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+				obj.innerHTML = Math.floor(progress * (end - start) + start);
+				if (progress < 1) {
+					window.requestAnimationFrame(step);
+				}
+			};
+			window.requestAnimationFrame(step);
+		}
+
+		const obj = document.getElementById("counter");
+		animateValue(obj, 0, 7200, 2000000);
+		</script>
+
+		<section class="slide  highTitle" id="introMod1">
+			<h2>How do you describe electrodialysis?</h2>
+			<div class="row" style="margin-top: 50px;">
+				<div class="column">
+					<p><b>physics-based</b></p>
+					<ul style="margin-left:40px">
+						<li>Movement of ions</li>
+						<li>Movement of water</li>
+					</ul>
+					<p>physics can be rather complicated</p>
+				</div>
+				<div class="column" style="border-left: dotted lightgray 5px;padding-left:30px;">
+					<p><b>data-driven</b></p>
+					<ul style="margin-left:40px">
+						<li>No assumptions one physics</li>
+						<li>Learn a relationship</li>
+					</ul>
+					<p>These models can be quite unintelligent.</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="what">
+			<h2>What is the objective?</h2>
+			<div class="figure" style="margin-left: -19%;margin-top:12%">
+				<img src="figs/model.svg" width="1100px">
+				<img class="next" src="figs/model2.svg" width="1000px" style="position: absolute;top:131px;left:17px">
+			</div>
+			<ul class="next" style="margin-left:40%;margin-top:-30px;">
+				<li><b>Process optimisation</b></li>
+				<li><b>Fouling reduction</b></li>
+			</ul>
+		</section>
+
+		<section class="slide" id="solution0">
+				<h2 style="font-size: 60px;">My <span style="color:grey">solutions</span> to simulate electrodialysis fouling.</h2>
+		</section>
+
+		<section class="slide  highTitle" id="solution2_1">
+			<h2>Simulation of pulsed-electric fields</h2>
+			<div class="figure" style="margin-left:-10%;margin-top: -60px;">
+				<img src="figs/domain.svg" width=95%>
+				<img src="figs/anim_fps100.gif" width=46% style="position: absolute;top:18%;left:32.5%;">
+			</div>
+			<div class="next" style="position:absolute;background-color: #fff; top:458px;left:443px;padding-left:30px;padding:20px;">
+				<ul>
+					<li class=""><span style="text-decoration:underline;">Estimate</span> fouling severity.</li>
+					<li class="next"><span style="text-decoration:underline;">Estimate</span> energy consumption.</li>
+					<p class="next">&rarr; <b>Uncertainty on the physics of fouling.</b></p>
+				</ul>
+			</div>	
+		</section>
+
+		<!-- 
+					<h2>What can we do with this model?</h2>
+			<ul>
+				<li>Learning about pulsed electric fields</li>
+				<li>Predicting the effect of process parameters like frequency on fouling</li>
+				<li>Optimisation/reduction of fouling</li>
+			</ul>
+			<p>Still some work to be done to understand all physics.</p>
+		</section>
+		 -->
+
+		<section class="slide  highTitle" id="solution3">
+			<h2>Simulation of complex foulants</h2>
+			<div class="figure" style="margin-top: 100px;">
+				<img src="figs/blackBox.svg" width = 850px;>
+				<img src="figs/blackBox2.svg" width = 850px; style="position: absolute; top:170px" class="next">
+				<img src="figs/blackBox3.svg" width = 850px; style="position: absolute; top:170px" class="next">
+			</div>
+			<div class="next" style="position:absolute;background-color: #fff; top:395px;left:331px;padding-left:30px;padding:20px;">
+				<ul>
+					<li class=""><span style="text-decoration:underline;">Quantify</span> fouling severity.</li>
+					<li class="next"><span style="text-decoration:underline;">Quantify</span> energy consumption.</li></li>
+					<li class="next"><span style="text-decoration:underline;">No assumptions</span> on the physics of fouling.</li></li>
+					<p class="next">&rarr; <b>Need for more experimental data.</b></p>
+				</ul>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="intermezzo">
+			<h2>Still not sure about this data-driven modelling thing...</h2>
+			<div class="figure">
+				<img src="figs/training.gif" width=80%> 
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="solution4">
+			<h2>Simulation of well-described foulants</h2>
+			<div class="figure" style="margin-top: 100px;">
+				<img src="figs/hybrid1.svg" width = 850px;>
+				<img src="figs/hybrid2.svg" width = 850px; style="position: absolute; top:170px" class="next">
+				<img src="figs/hybrid3.svg" width = 850px; style="position: absolute; top:170px" class="next">
+			</div>
+			<div class="next" style="position:absolute;background-color: #fff; top:395px;left:331px;padding-left:30px;padding:20px;">
+				<ul>
+					<li class=""><span style="text-decoration:underline;">Quantify</span> fouling severity.</li>
+					<li class="next"><span style="text-decoration:underline;">Quantify</span> energy consumption.</li></li>
+					<li class="next"><span style="text-decoration:underline;">Some</span> physics are included</li></li>
+					<p class="next">&rarr; <b>Need for less experimental data.</b></p>
+				</ul>
+			</div>
+		</section>
+		
+		<section class="slide" id="takehome">
+			<h2>Take home message</h2>
+			<ul>
+				<li>Electrodialysis is an <b>awesome technology.</b></li>
+				<li class="next">Suffers from <b>fouling.</b></li>
+				<li class="next"><b>Models</b> help to improve electrodialysis and <b>save costs</b>.</li>
+				<li class="next"><b>More</b> fundamental <b>research</b> needed to understand and simulate electrodialysis.</li>
+			</ul>
+		</section>
+		
+		<section class="slide  highTitle" id="covered">
+			<h2 style="font-size: 38px;">There is of course a lot more...</h2>
+			<div class="figure center" style="margin-left: -50px;">
+				<img src="figs/front.svg" height="400px" style="box-shadow: 10px 10px 5px lightgray;border:0.1px solid #b8b8b8;">
+			</div>
+			<h2 style="font-size: 38px;margin-top:20px;">... but you will have to read my PhD.</h2>
+	</section>
+
+	<section class="slide" id="last">
+			<h2 style="margin-top:-30px;"> Breaking barriers with hybrid models: </h2>
+			<h2 style="font-size: 30px; padding-left:5%;color:slategray"> towards low-fouling electrodialysis for bio-based processing</h2>
+			<img style="height:50%; margin-top:50px;margin-left:60px" src="figs/bla" alt="" class="cover">
+			<p style="position: absolute; bottom: 80px; font-size: 24px;color:#585a5e">Bram De Jaegher</p>
+			<p style="position: absolute; bottom: 60px; font-size: 20px;color:#585a5e">26/11/2021</p>
+
+			<div>
+				<img style="top: 400px;margin-left:170px;" width="100%" src="figs/design_only_ED.svg" alt="" class="cover">
+				<img id="smoke" style="position:absolute; top: 209px;margin-left:-100px;" width="50%" src="figs/smoke.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 323px;margin-left:405px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 323px;margin-left:710px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+			</div>
+
+			<div style="position: absolute;bottom:10px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+	<div class="progress"></div>
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
