@@ -53,7 +53,7 @@
 
 			@keyframes grow-shrink {
 				0% {transform:scale(1);}
-				50% {transform:scale(1.05);}
+				50% {transform:scale(1.005);}
 				100% {transform:scale(1);}
 			}
 
@@ -99,9 +99,8 @@
 					</div>
 					<div class="column" style="border-left:lightgrey dotted 5px;margin-left:-30px">
 					 <ul style="margin-top:45%;margin-left:15%">
-						<li>Why is electrodialysis important?</li>
 						<li>What is electrodialysis?</li>
-						<li>What is modelling?</li>
+						<li>Why is electrodialysis important?</li>
 						<li>Why modelling?</li>
 						<li>What did you do?</li>
 					 </ul>
@@ -172,6 +171,60 @@
 			}
 		</style>
 		
+		<section class="slide  highTitle" id="EDWhat">
+			<h2>What is electrodialysis?</h2>
+			<div class="figure">
+				<img style="margin-left:10%" src="figs/current3.svg" width="550px">
+
+				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
+					<img src="figs/current2.svg" width="550px">
+				</div>
+
+				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
+					<img src="figs/current4.svg" width="550px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;background-color: #fff;padding-left: 200px;">
+					<img src="figs/current.svg" width="450px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding-left: 200px;background-color: #fff">
+					<img src="figs/current5.svg" width="450px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current6.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current8.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current8_2.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current9.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current10.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current11.svg" width="750px">
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="realED">
+			<h2>In reality, ED is much more complicated.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_stack_schematic.svg" width="100%">
+			</div>
+		</section>
+
 
 		<section class="slide  highTitle" id="intro1_1">
 			<h2>Why research on electrodialysis?</h2>
@@ -218,56 +271,6 @@
 				left: 20px;
 			}
 		</style>
-
-		<section class="slide  highTitle" id="EDWhat">
-			<h2>What is electrodialysis?</h2>
-			<div class="figure">
-				<img style="margin-left:10%" src="figs/current3.svg" width="550px">
-
-				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
-					<img src="figs/current2.svg" width="550px">
-				</div>
-
-				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
-					<img src="figs/current4.svg" width="550px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;background-color: #fff;padding-left: 200px;">
-					<img src="figs/current.svg" width="450px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding-left: 200px;background-color: #fff">
-					<img src="figs/current5.svg" width="450px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current6.svg" width="750px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current8.svg" width="750px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current9.svg" width="750px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current10.svg" width="750px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current11.svg" width="750px">
-				</div>
-			</div>
-		</section>
-
-		<section class="slide  highTitle" id="realED">
-			<h2>In reality, ED is much more complicated.</h2>
-			<div class="figure">
-				<img style="margin:0 auto;margin-top:8%" src="figs/ED_stack_schematic.svg" width="100%">
-			</div>
-		</section>
 
 		<section class="slide  highTitle" id="fouling1">
 			<h2>Fouling is a problem for ED.</h2>
@@ -614,6 +617,18 @@
 		animateValue(obj, 0, 7200, 2000000);
 		</script>
 
+		<section class="slide  highTitle" id="what">
+			<h2>What is the objective?</h2>
+			<div class="figure" style="margin-left: -19%;margin-top:12%">
+				<img src="figs/model.svg" width="1100px">
+				<img class="next" src="figs/model2.svg" width="1000px" style="position: absolute;top:131px;left:17px">
+			</div>
+			<ul class="next" style="margin-left:40%;margin-top:-30px;">
+				<li><b>Process optimisation</b></li>
+				<li><b>Fouling reduction</b></li>
+			</ul>
+		</section>
+
 		<section class="slide  highTitle" id="introMod1">
 			<h2>How do you describe electrodialysis?</h2>
 			<div class="row" style="margin-top: 50px;">
@@ -634,18 +649,6 @@
 					<p>These models can be quite unintelligent.</p>
 				</div>
 			</div>
-		</section>
-
-		<section class="slide  highTitle" id="what">
-			<h2>What is the objective?</h2>
-			<div class="figure" style="margin-left: -19%;margin-top:12%">
-				<img src="figs/model.svg" width="1100px">
-				<img class="next" src="figs/model2.svg" width="1000px" style="position: absolute;top:131px;left:17px">
-			</div>
-			<ul class="next" style="margin-left:40%;margin-top:-30px;">
-				<li><b>Process optimisation</b></li>
-				<li><b>Fouling reduction</b></li>
-			</ul>
 		</section>
 
 		<section class="slide" id="solution0">
@@ -746,7 +749,7 @@
 
 			<div>
 				<img style="top: 400px;margin-left:170px;" width="100%" src="figs/design_only_ED.svg" alt="" class="cover">
-				<img id="smoke" style="position:absolute; top: 209px;margin-left:-100px;" width="50%" src="figs/smoke.svg" alt="" class="cover">
+				<img id="smoke2" style="position:absolute; top: 374px;margin-left:177px;" width="50%" src="figs/smoke.svg" alt="" class="cover">
 				<img class="jiggle" style="position:absolute; top: 323px;margin-left:405px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
 				<img class="jiggle" style="position:absolute; top: 323px;margin-left:710px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
 			</div>
