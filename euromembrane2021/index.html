@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Enhancing physics-based models with machine learning to 
+		predict fouling in electrodialysis. </title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+    <link rel="stylesheet" href="styles.css">
+
+     <!-- MathJax -->   
+	 <script type="text/x-mathjax-config">
+		MathJax.Hub.Config({
+		  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+		});
+	</script>
+	<script type="text/javascript" async src="../MathJax/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+	<body class="shower list">
+		<header class="caption">
+			<h1> Enhancing physics-based models with machine learning to 
+				predict fouling in electrodialysis. </h1>
+			<p><a style="color:darkslateblue;border-bottom-style: groove;border-bottom-width: thin;" href="mailto:bram.de.jaegher@gmail.com">Bram De Jaegher</a></p>
+		</header>
+
+		<section class="slide" id="cover">
+			<h2 style="margin-top:10px;font-size:40px;"> Enhancing physics-based models with machine learning to predict fouling in electrodialysis </h2>
+			<img style="height:50%; margin-top:50px;margin-left:60px" src="figs/bla" alt="" class="cover">
+
+			<p style="font-size: 24px;color:#3c3d3f"><b>Bram De Jaegher</b>, Ingmar Nopens, Wim De Schepper, Arne Verliefde</p>
+			<p style="font-size: 20px;color:#404247"> <i>Euromembrane 2021</i></p>
+
+			<div>
+				<img style="top: 400px;margin-left:250px;margin-top:50px;" width="70%" src="figs/design_only_ED.svg" alt="" class="cover">
+				<img id="smoke" style="position:absolute; top: 330px;margin-left:96px;" width="30%" src="figs/smoke.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 386px;margin-left:540px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 386px;margin-left:749px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+			</div>
+
+			<img src="figs/logo_ugent.svg" style="position:absolute;top:15px;left:15px;" width="80px">
+			<img src="figs/logo_FBW.svg" style="position:absolute;top:15px;right:15px;" width="280px">
+
+			<div style="position: absolute;bottom:10px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+		<style>
+			/* Hide page number on first page */
+			section#cover.slide::after {
+				visibility: hidden;
+			}
+			
+
+			img#smoke {
+				animation: grow-shrink 4s infinite;
+			}
+
+			@keyframes grow-shrink {
+				0% {transform:scale(1);}
+				50% {transform:scale(1.05);}
+				100% {transform:scale(1);}
+			}
+
+			img.jiggle {
+				animation: jiggle 2s infinite;
+			}
+
+			@keyframes jiggle {
+				0% {transform:rotate(0);}
+				50% {transform:rotate(0);}
+				51% {transform:rotate(5deg);}
+				51% {transform:rotate(0);}
+				52% {transform:rotate(5deg);}
+				53% {transform:rotate(0);}
+				54% {transform:rotate(5deg);}
+				55% {transform:rotate(0);}
+				56% {transform:rotate(5deg);}
+				57% {transform:rotate(0);}
+				58% {transform:rotate(5deg);}
+				59% {transform:rotate(0);}
+				60% {transform:rotate(5deg);}
+				61% {transform:rotate(0);}
+				62% {transform:rotate(5deg);}
+				63% {transform:rotate(0);}
+				64% {transform:rotate(5deg);}
+				65% {transform:rotate(0);}
+				66% {transform:rotate(5deg);}
+				67% {transform:rotate(0);}
+				68% {transform:rotate(5deg);}
+				69% {transform:rotate(0);}
+				100% {transform:rotate(0);}
+			}
+
+		</style>
+
+			<style>
+			.row {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				width: 100%;
+				}
+
+			.column {
+				display: flex;
+				flex-direction: column;
+				flex-basis: 100%;
+				flex: 1;
+				}
+
+		</style>
+		</section>
+
+		<section class="slide  highTitle" id="realED">
+			<h2>About electrodialysis...</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_stack_schematic.svg" width="100%">
+			</div>
+		</section>
+
+
+
+		<section class="slide  highTitle" id="EDWhat">
+			<h2>How does electrodialysis work?</h2>
+			<div class="figure">
+				<img style="margin-left:10%" src="figs/current3.svg" width="550px">
+
+				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
+					<img src="figs/current2.svg" width="550px">
+				</div>
+
+				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
+					<img src="figs/current4.svg" width="550px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;background-color: #fff;padding-left: 200px;">
+					<img src="figs/current.svg" width="450px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding-left: 200px;background-color: #fff">
+					<img src="figs/current5.svg" width="450px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current6.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current8.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current9.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current10.svg" width="750px">
+				</div>
+
+				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
+					<img src="figs/current11.svg" width="750px">
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="intro1_1">
+			<h2>Why research on electrodialysis?</h2>
+			<div class="figure">
+				<img style="margin-left:-10%" src="figs/applications.png" width="120%">
+			</div>
+			<div class="blocker" id="blocker1"></div>
+			<div class="blocker" id="blocker2"></div>
+		</section>
+
+		<section class="slide  highTitle" id="intro1_2">
+			<h2>Why research on electrodialysis?</h2>
+			<div class="figure">
+				<img style="margin-left:-10%" src="figs/applications.png" width="120%">
+			</div>
+			<div class="blocker" id="blocker2"></div>
+		</section>
+
+		<section class="slide  highTitle" id="intro1_3">
+			<h2>Why research on electrodialysis?</h2>
+			<div class="figure">
+				<img style="margin-left:-10%" src="figs/applications.png" width="120%">
+			</div>
+		</section>
+
+		<style>
+			div.blocker {
+				background-color: #fff;
+				position:absolute;
+				z-index: 10;
+			}
+
+			div#blocker1 {
+				width: 705px;
+				height: 157px;
+				top: 280px;
+				left: 20px;
+			}
+
+			div#blocker2 {
+				width: 705px;
+				height: 157px;
+				top: 425px;
+				left: 20px;
+			}
+		</style>
+
+		<section class="slide  highTitle" id="fouling6">
+			<h2>Fouling is a problem for electrodialysis.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled.svg" width="100%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="fouling7">
+			<h2>Fouling is a problem for electrodialysis.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled_1.svg" width="100%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="fouling8">
+			<h2>Fouling is a problem for electrodialysis.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled_2.svg" width="100%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="fouling9">
+			<h2>Fouling is a problem for electrodialysis.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled_3.svg" width="100%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling5">
+			<h2>Fouling is a problem for electrodialysis.</h2>
+			<div class="row">
+				<div class="column">
+					<div class="figure">
+						<img style="margin:0 auto;margin-top:8%" src="figs/fouling4.svg" width="300px">
+					</div>
+					<div style="position: absolute;display: inline;top:51%;left:20.55%;font-size:21px">
+						<p>&#9889 &#128163 &#128165</p>
+					</div>
+				</div>
+				<div class="column" style="border-left: 5px dotted lightgray;">
+					<ul class = "nodot" style="margin-left: 10%;margin-top: 30%;">
+						<li>&uparrow; energy consumption</li>
+						<li class="next">&uparrow; cleaning cost</li>
+						<li class="next">&uparrow; membrane replacement</li>
+						<!--<li class="next"><p style="font-size: 50px;display: inline;margin-left:5%;">. . .</p></li>-->
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<style>
+			ul.nodot >li::before {
+				content:'';
+			}
+		</style>
+
+		<section class="slide  highTitle" id="what">
+			<h2>The objective is developing a virtual electrodialysis stack.</h2>
+			<div class="figure" style="margin-left: -19%;margin-top:12%">
+				<img src="figs/model.svg" width="1100px">
+				<img class="next" src="figs/model2.svg" width="1000px" style="position: absolute;top:191px;left:17px">
+			</div>
+			<ul class="next" style="margin-left:40%;margin-top:-70px;z-index:10;">
+				<li><b>Process optimisation</b></li>
+				<li><b>Fouling reduction</b></li>
+			</ul>
+		</section>
+	
+
+		<section class="slide  highTitle" id="twoMods">
+			<h2>The battle of two modelling paradigms.</h2>
+			<div class="row" style="margin-top: 50px;">
+				<div class="column">
+					<p><b>Mechanistic models:</b></p>
+					<p>&rarr; rely on an accurate description of physics/chemistry.</p>
+					<ul style="margin-left:0px">
+						<li>physics tend to be complex...</li>
+						<li>...with a high computational cost.</li>
+					</ul>
+				</div>
+				<div class="column" style="border-left: dotted lightgray 5px;padding-left:30px;">
+					<p><b>data-driven</b></p>
+					<ul style="margin-left:40px">
+						<li>No assumptions one physics</li>
+						<li>Computers learn a relationship</li>
+					</ul>
+					<p>These models can be quite <i>un</i>intelligent.</p>
+				</div>
+			</div>
+			<p style="margin-top:50px;margin-left:12%"><b>But why not combine these two paradigms?</b></p>
+		</section>
+
+		<section class="slide" id="solution0">
+				<h2 style="font-size: 60px;">Our <span style="color:grey">hybrid solution</span> to simulate electrodialysis <span style="color:grey">fouling</span>.</h2>
+		</section>
+
+		<section class="slide  highTitle" id="fouling5">
+			<h2> The flux of foulants is estimated with physics. </h2>
+			<p> Solving hydrodynamics and ion transport:</p>
+			<div class="figure">
+				<img src="figs/equation1.png" width="50%"> 
+				<img src="figs/equation2.png" width="50%"> 
+			</div>
+			<div class="next">
+				<p> Along with the flux <span style="color:grey">(collisions)</span> of foulants to the membrane:</p>
+				<div class="figure">
+					<img src="figs/equation3.png" width="25%"> 
+				</div>
+				<p class="next"> Which depends on the properties of the foulants.</p>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling7">
+			<h2>Simulations for a change in current. </h2>
+			<div class="row">
+				<div class="column">
+					<img src="figs/equation4.png" width=60% style="margin-top:100px;">
+					<img src="figs/equation5.png" width=60% style="margin-top:25px;">
+				</div>
+				<div class="column">
+					<div class="figure">
+						<img src="figs/collisionModel.svg" width=150% style="margin-left: -120px;">
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling7">
+			<h2>Adding a neural network to learn attachment.</h2>
+			<div class="figure">
+				<img style="margin-top:100px" src="figs/foulingModleMarked.svg" width="50%">
+		</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling7">
+			<h2>Adding a neural network to learn attachment.</h2>
+			<div class="figure">
+				<img style="margin-top:100px" src="figs/simpleML.svg" width="100%">
+		</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling8">
+			<h2>The model is trained with 3 time series.</h2>
+			<p>For a <b>change</b> in electrical <b>current.</b></p>
+			<div class="figure">
+					<img class="" src="figs/trainingset.svg" width="70%">
+			</div>
+		</section>
+		
+		<section class="slide  highTitle" id="fouling9">
+			<h2>The model is tested on new data... </h2>
+			<div class="row" style="margin-top:10%">
+				<div class="column">
+					<img src="figs/testset1.svg" width="120%">
+				</div>
+				<div class="column">
+					<img src="figs/testset3.svg" width="120%">
+				</div>
+			</div>
+			<h2 style="font-size:40px;margin-top:40px;">...and can predict a change in foulant concentration.</h2>
+		</section>
+
+		<section class="slide  highTitle" id="foulingMod5">
+			<h2>Analysing the neural network.</h2>
+			<p>The evolution of $\alpha$ vs. the resistance of the fouling layer <span style="color:grey">(size)</span>.</p>
+			<div class="figure">
+				<img src="figs/alphaVsR.svg" width=80%>
+			</div>
+		</section>
+		
+		<section class="slide" id="takehome">
+			<div>
+			<h2>Take home messages</h2>
+				<ul>
+					<li>Electrodialysis is an <b>awesome technology.</b></li>
+					<li class="next">Suffers from <b>fouling.</b></li>
+					<li class="next">Our model predicts fouling as a function of process settings...</li>
+					<li class="next">This <b>model</b> helps to improve electrodialysis and <b>save costs</b>.</li>
+					<li class="next"><b>More</b> fundamental <b>research</b> needed to understand and simulate electrodialysis.</li>
+				</ul>
+			</div>
+		</section>
+		<style>
+			.slide ul > li::before {
+				margin-top:15px;
+			}
+		</style>
+		
+		<section class="slide" id="cover">
+			<h2 style="margin-top:10px;font-size:40px;"> Enhancing physics-based models with machine learning to predict fouling in electrodialysis </h2>
+			<img style="height:50%; margin-top:50px;margin-left:60px" src="figs/bla" alt="" class="cover">
+
+			<p style="font-size: 24px;color:#3c3d3f"><b>Bram De Jaegher</b>, Ingmar Nopens, Wim De Schepper, Arne Verliefde</p>
+			<p style="font-size: 20px;color:#404247"> <i>Euromembrane 2021</i></p>
+
+			<div>
+				<img style="top: 400px;margin-left:250px;margin-top:50px;" width="70%" src="figs/design_only_ED.svg" alt="" class="cover">
+				<img id="smoke" style="position:absolute; top: 330px;margin-left:96px;" width="30%" src="figs/smoke.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 386px;margin-left:540px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+				<img class="jiggle" style="position:absolute; top: 386px;margin-left:749px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
+			</div>
+
+			<img src="figs/logo_ugent.svg" style="position:absolute;top:15px;left:15px;" width="80px">
+			<img src="figs/logo_FBW.svg" style="position:absolute;top:15px;right:15px;" width="280px">
+
+			<div style="position: absolute;bottom:10px;">
+				<img src="figs/Biomath_logo.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/vito.svg" width="15%">
+				<img style="position: relative; top:10px;margin-left: 16px;" src="figs/paint.png" width="10%">
+			</div>
+			<!--
+				To apply styles to the certain slides
+				set slide ID to get needed elements
+	        -->
+	    </section>
+
+	<div class="progress"></div>
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
