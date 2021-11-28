@@ -119,6 +119,15 @@
 		</style>
 		</section>
 
+		<section class="slide  highTitle" id="realED">
+			<h2>About electrodialysis...</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_stack_schematic.svg" width="100%">
+			</div>
+		</section>
+
+
+
 		<section class="slide  highTitle" id="EDWhat">
 			<h2>What is electrodialysis?</h2>
 			<div class="figure">
@@ -159,13 +168,6 @@
 				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
 					<img src="figs/current11.svg" width="750px">
 				</div>
-			</div>
-		</section>
-
-		<section class="slide  highTitle" id="realED">
-			<h2>In reality, ED is much more complicated.</h2>
-			<div class="figure">
-				<img style="margin:0 auto;margin-top:8%" src="figs/ED_stack_schematic.svg" width="100%">
 			</div>
 		</section>
 
@@ -235,6 +237,13 @@
 				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled_2.svg" width="100%">
 			</div>
 		</section>
+		
+		<section class="slide  highTitle" id="fouling9">
+			<h2>Fouling is a problem for ED.</h2>
+			<div class="figure">
+				<img style="margin:0 auto;margin-top:8%" src="figs/ED_fouled_3.svg" width="100%">
+			</div>
+		</section>
 
 		<section class="slide  highTitle" id="fouling5">
 			<h2>Fouling is a problem for ED.</h2>
@@ -265,7 +274,7 @@
 		</style>
 
 		<section class="slide  highTitle" id="what">
-			<h2>What is the objective?</h2>
+			<h2>The objective is developing a virtual ED stack.</h2>
 			<div class="figure" style="margin-left: -19%;margin-top:12%">
 				<img src="figs/model.svg" width="1100px">
 				<img class="next" src="figs/model2.svg" width="1000px" style="position: absolute;top:131px;left:17px">
@@ -277,34 +286,35 @@
 		</section>
 	
 
-		<section class="slide  highTitle" id="introMod1">
-			<h2>How do you describe electrodialysis?</h2>
+		<section class="slide  highTitle" id="twoMods">
+			<h2>The battle of two modelling paradigms.</h2>
 			<div class="row" style="margin-top: 50px;">
 				<div class="column">
-					<p><b>physics-based</b></p>
-					<ul style="margin-left:40px">
+					<p><b>Mechanistic models:</b></p>
+					<p>&rarr; rely on an accurate description of physics/chemistry.</p>
+					<ul style="margin-left:0px">
+						<li>physics tend to be complex.</li>
+						<li>with a high computational cost.</li>
 					</ul>
-					<p>physics can be rather complicated</p>
-					<p>Far beyond our current understanding of physics</p>
 				</div>
 				<div class="column" style="border-left: dotted lightgray 5px;padding-left:30px;">
 					<p><b>data-driven</b></p>
 					<ul style="margin-left:40px">
 						<li>No assumptions one physics</li>
-						<li>Learn a relationship</li>
+						<li>Computers learn a relationship</li>
 					</ul>
-					<p>These models can be quite unintelligent.</p>
+					<p>These models can be quite <i>un</i>intelligent.</p>
 				</div>
 			</div>
-			<p><b>Why not combine them.</b></p>
+			<p style="margin-top:50px;margin-left:12%"><b>But why not combine these two paradigms?</b></p>
 		</section>
 
 		<section class="slide" id="solution0">
-				<h2 style="font-size: 60px;">My <span style="color:grey">solutions</span> to simulate electrodialysis fouling.</h2>
+				<h2 style="font-size: 60px;">Our <span style="color:grey">hybrid solution</span> to simulate electrodialysis <span style="color:grey">fouling</span>.</h2>
 		</section>
 
 		<section class="slide  highTitle" id="fouling5">
-			<h2> Mechanistic description of foulant flux </h2>
+			<h2> The flux of foulants is estimated with physics. </h2>
 			<p> Solving hydrodynamics and ion transport:</p>
 			<div class="figure">
 				<img src="figs/equation1.png" width="50%"> 
@@ -319,23 +329,8 @@
 			</div>
 		</section>
 
-		<section class="slide  highTitle" id="fouling6">
-			<h2> Mechanistic description of foulant flux </h2>
-			<p> Solving hydrodynamics and ion transport:</p>
-			<div class="figure">
-				<img src="figs/equation1.png" width="50%"> 
-				<img src="figs/equation2.png" width="50%"> 
-			</div>
-			<div class="next">
-				<p> Along with the flux <span style="color:grey">(collisions)</span> of foulants to the membrane:</p>
-				<div class="figure">
-					<img src="figs/equation3.png" width="25%"> 
-				</div>
-			</div>
-		</section>
-
 		<section class="slide  highTitle" id="fouling7">
-			<h2>Simulation mechanistic model. </h2>
+			<h2>Simulations for a change in current. </h2>
 			<div class="row">
 				<div class="column">
 					<img src="figs/equation4.png" width=60% style="margin-top:100px;">
@@ -350,14 +345,14 @@
 		</section>
 
 		<section class="slide  highTitle" id="fouling7">
-			<h2>Adding a neural network to learn attachment. </h2>
+			<h2>Adding a neural network to learn attachment.</h2>
 			<div class="figure">
 				<img style="margin-top:100px" src="figs/foulingModleMarked.svg" width="50%">
 		</div>
 		</section>
 
 		<section class="slide  highTitle" id="fouling7">
-			<h2>Adding a neural network to learn attachment. </h2>
+			<h2>Adding a neural network to learn attachment.</h2>
 			<div class="figure">
 				<img style="margin-top:100px" src="figs/simpleML.svg" width="100%">
 		</div>
@@ -372,7 +367,7 @@
 		</section>
 		
 		<section class="slide  highTitle" id="fouling9">
-			<h2>The model testing on new data. </h2>
+			<h2>The model is tested on new data... </h2>
 			<div class="row" style="margin-top:10%">
 				<div class="column">
 					<img src="figs/testset1.svg" width="120%">
@@ -381,6 +376,7 @@
 					<img src="figs/testset3.svg" width="120%">
 				</div>
 			</div>
+			<h2 style="font-size:40px;margin-top:40px;">...and can predict a change in foulant concentration.</h2>
 		</section>
 
 		<section class="slide  highTitle" id="foulingMod5">
@@ -392,14 +388,22 @@
 		</section>
 		
 		<section class="slide" id="takehome">
-			<h2>Take home message</h2>
-			<ul>
-				<li>Electrodialysis is an <b>awesome technology.</b></li>
-				<li class="next">Suffers from <b>fouling.</b></li>
-				<li class="next"><b>Models</b> help to improve electrodialysis and <b>save costs</b>.</li>
-				<li class="next"><b>More</b> fundamental <b>research</b> needed to understand and simulate electrodialysis.</li>
-			</ul>
+			<div>
+			<h2>Take home messages</h2>
+				<ul>
+					<li>Electrodialysis is an <b>awesome technology.</b></li>
+					<li class="next">Suffers from <b>fouling.</b></li>
+					<li class="next">Our model predicts <b>fouling</b> as a function of process settings...</li>
+					<li class="next">This <b>model</b> helps to improve electrodialysis and <b>save costs</b>.</li>
+					<li class="next"><b>More</b> fundamental <b>research</b> needed to understand and simulate electrodialysis.</li>
+				</ul>
+			</div>
 		</section>
+		<style>
+			.slide ul > li::before {
+				margin-top:15px;
+			}
+		</style>
 		
 		<section class="slide" id="cover">
 			<h2 style="margin-top:10px;font-size:40px;"> Enhancing physics-based models with machine learning to predict fouling in electrodialysis </h2>
