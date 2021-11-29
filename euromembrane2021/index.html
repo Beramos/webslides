@@ -32,7 +32,7 @@
 			<p style="font-size: 20px;color:#404247"> <i>Euromembrane 2021</i></p>
 
 			<div>
-				<img style="top: 400px;margin-left:250px;margin-top:50px;" width="70%" src="figs/design_only_ED.svg" alt="" class="cover">
+				<img style="top: 400px;margin-left:250px;margin-top:50px;" width="70%" src="figs/design_only_ED.png" alt="" class="cover">
 				<img id="smoke" style="position:absolute; top: 330px;margin-left:96px;" width="30%" src="figs/smoke.svg" alt="" class="cover">
 				<img class="jiggle" style="position:absolute; top: 386px;margin-left:540px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
 				<img class="jiggle" style="position:absolute; top: 386px;margin-left:749px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
@@ -126,48 +126,31 @@
 			</div>
 		</section>
 
-
+		<section class="slide  highTitle" id="EDWhat">
+			<h2>How does electrodialysis work?</h2>
+			<div class="figure">
+				<img style="margin-left:10%" src="figs/current8.svg" width="650px">
+			</div>
+		</section>
 
 		<section class="slide  highTitle" id="EDWhat">
 			<h2>How does electrodialysis work?</h2>
 			<div class="figure">
-				<img style="margin-left:10%" src="figs/current3.svg" width="550px">
+				<img style="margin-left:10%" src="figs/current9.svg" width="650px">
+			</div>
+		</section>
 
-				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
-					<img src="figs/current2.svg" width="550px">
-				</div>
+		<section class="slide  highTitle" id="EDWhat">
+			<h2>How does electrodialysis work?</h2>
+			<div class="figure">
+				<img style="margin-left:10%" src="figs/current10.svg" width="650px">
+			</div>
+		</section>
 
-				<div class="next" style="position:absolute;margin-left:8%;top:104px;">
-					<img src="figs/current4.svg" width="550px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;background-color: #fff;padding-left: 200px;">
-					<img src="figs/current.svg" width="450px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding-left: 200px;background-color: #fff">
-					<img src="figs/current5.svg" width="450px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current6.svg" width="750px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current8.svg" width="750px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current9.svg" width="750px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current10.svg" width="750px">
-				</div>
-
-				<div class="next" style="position:absolute;top:82px;padding:40px;background-color: #fff">
-					<img src="figs/current11.svg" width="750px">
-				</div>
+		<section class="slide  highTitle" id="EDWhat">
+			<h2>How does electrodialysis work?</h2>
+			<div class="figure">
+				<img style="margin-left:10%" src="figs/current11.svg" width="650px">
 			</div>
 		</section>
 
@@ -291,19 +274,19 @@
 			<div class="row" style="margin-top: 50px;">
 				<div class="column">
 					<p><b>Mechanistic models:</b></p>
-					<p>&rarr; rely on an accurate description of physics/chemistry.</p>
-					<ul style="margin-left:0px">
+					<p class="next">&rarr; rely on an accurate description of physics/chemistry.</p>
+					<ul style="margin-left:0px" class="next">
 						<li>physics tend to be complex...</li>
 						<li>...with a high computational cost.</li>
 					</ul>
 				</div>
 				<div class="column" style="border-left: dotted lightgray 5px;padding-left:30px;">
 					<p><b>data-driven</b></p>
-					<ul style="margin-left:40px">
+					<ul style="margin-left:40px" class="next">
 						<li>No assumptions one physics</li>
 						<li>Computers learn a relationship</li>
 					</ul>
-					<p>These models can be quite <i>un</i>intelligent.</p>
+					<p class="next">These models can be quite <i>un</i>intelligent.</p>
 				</div>
 			</div>
 			<p style="margin-top:50px;margin-left:12%"><b>But why not combine these two paradigms?</b></p>
@@ -314,6 +297,39 @@
 		</section>
 
 		<section class="slide  highTitle" id="fouling5">
+			<h2> The flux of foulants is estimated with physics. </h2>
+			<p> Solving hydrodynamics and ion transport:</p>
+			<div class="figure">
+				<img src="figs/equation1.png" width="50%"> 
+				<img src="figs/equation2.png" width="50%"> 
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="baseModel">
+			<h2> Simulation of basic ED model. </h2>
+			<p> Solving hydrodynamics and ion transport:</p>
+			<div class="figure">
+				<img src="figs/basicModel.svg" width="80%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="baseModel2">
+			<h2> Simulation of basic ED model. </h2>
+			<p> Solving hydrodynamics and ion transport:</p>
+			<div class="figure">
+				<img src="figs/basicModel2.svg" width="80%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="baseModel3">
+			<h2> Simulation of basic ED model. </h2>
+			<p> Solving hydrodynamics and ion transport:</p>
+			<div class="figure">
+				<img src="figs/basicModel3.svg" width="80%">
+			</div>
+		</section>
+
+		<section class="slide  highTitle" id="fouling5_2">
 			<h2> The flux of foulants is estimated with physics. </h2>
 			<p> Solving hydrodynamics and ion transport:</p>
 			<div class="figure">
@@ -413,7 +429,7 @@
 			<p style="font-size: 20px;color:#404247"> <i>Euromembrane 2021</i></p>
 
 			<div>
-				<img style="top: 400px;margin-left:250px;margin-top:50px;" width="70%" src="figs/design_only_ED.svg" alt="" class="cover">
+				<img style="top: 400px;margin-left:250px;margin-top:50px;" width="70%" src="figs/design_only_ED.png" alt="" class="cover">
 				<img id="smoke" style="position:absolute; top: 330px;margin-left:96px;" width="30%" src="figs/smoke.svg" alt="" class="cover">
 				<img class="jiggle" style="position:absolute; top: 386px;margin-left:540px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
 				<img class="jiggle" style="position:absolute; top: 386px;margin-left:749px;" width="3%" src="figs/electricity.svg" alt="" class="cover">
