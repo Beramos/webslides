@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> Presentations </title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../shower/themes/ribbon/styles/screen-16x10.css">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+	<style>
+		section.slide.deck{
+			padding: 0;
+		}
+	</style>
+	
+	
+	<body class="shower list index">
+		<header class="caption">
+			<h1> Presentations: </h1>
+		</header>
+
+		<section class="slide deck">
+			<iframe name="iframe1" onload="init_iframe(window.iframe1);" height="100%" width="100%" src="localhost:8301/PhD_defence/#cover" title="description"></iframe> 
+		</section>
+
+		<section class="slide">
+
+		</section>
+
+	<script type="text/javascript">
+		function init_iframe(obj) {
+				$(obj.document.getElementsByTagName("body")[0]).click(function() { alert("d"); });
+		}
+	</script>
+
+	<script>
+		//$(".deck").contents().find("body").removeClass("list")
+		//$(".deck").contents().find("body").addClass("full")
+		//cont = $(".deck").contents().find("body")
+		//console.log(cont)	
+	</script>
+	
+	<script src="../shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+</body>
+</html>
